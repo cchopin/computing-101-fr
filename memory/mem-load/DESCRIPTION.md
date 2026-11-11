@@ -50,4 +50,4 @@ Pour cela, on le charge dans `rdi`, dont la valeur, rappelons-le, est le premier
 Bon courage !
 
 ----
-*NOTE* : pour résoudre ce défi, il faut passer à `/challenge/check` soit le binaire exécutable produit, soit le fichier d'assembleur `.s`.
+*NOTE* : pour résoudre ce défi, assemblez et liez votre code, puis passez à `/challenge/check` le binaire exécutable.
