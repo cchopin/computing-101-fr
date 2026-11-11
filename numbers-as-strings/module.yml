@@ -1,0 +1,213 @@
+name: "Des nombres sous forme de chaînes (Numbers as Strings)"
+resources:
+- name: "(révision) Assembleur (Assembly), en anglais"
+  type: lecture
+  video: TdTOH1GfrWg
+  playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+  slides: 1sBB34ZUVjT3MDjYvGiZU3z6CTLGvO1hHEdHliPUJ0iw
+- type: challenge
+  id: atoi-digit
+  name: "Un seul chiffre (A Single Digit)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: atoi-digit
+- type: challenge
+  id: atoi-two-digits
+  name: "Deux chiffres (Two Digits)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: atoi-two-digits
+- type: challenge
+  id: atoi
+  name: "De la chaîne à l'entier (String to Integer)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: atoi
+- type: challenge
+  id: atoi-negative
+  name: "Nombres négatifs (Negative Numbers)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: atoi-negative
+- type: challenge
+  id: atoi-terminate
+  name: "Où s'arrête le nombre (Where the Number Ends)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: atoi-terminate
+- type: challenge
+  id: atoi-argv1
+  name: "Un programme complet (A Whole Program)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: atoi-argv1
+- type: challenge
+  id: itoa-digit
+  name: "Un seul chiffre, de nouveau en texte (A Single Digit, Back to Text)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: itoa-digit
+- type: challenge
+  id: itoa-two-digits
+  name: "Division et reste (Divide and Remainder)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: itoa-two-digits
+- type: challenge
+  id: itoa-minimal
+  name: "Supprimer le zéro initial (Drop the Leading Zero)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: itoa-minimal
+- type: challenge
+  id: itoa
+  name: "De l'entier à la chaîne (Integer to String)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: itoa
+- type: challenge
+  id: itoa-negative
+  name: "Nombres négatifs, de nouveau en texte (Negative Numbers, Back to Text)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: itoa-negative
+- type: challenge
+  id: memory-sum
+  name: "Tout additionner (Sum Them All)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: memory-sum
+- type: header
+  content: "La calculatrice"
+- type: markdown
+  expandable: False
+  name: "La calculatrice (The Calculator)"
+  content: |
+    Vous pouvez transformer un texte en nombre avec votre `atoi`, et un nombre en texte avec votre `itoa`.
+    Maintenant, vous allez utiliser les deux ensemble pour construire une petite calculatrice en ligne de commande.
+    Elle lit une expression dans `argv` (un opérande de gauche, un opérateur et un opérande de droite), par exemple `prog 6 + 7`.
+    Les opérandes sont des chaînes que vous savez déjà traiter : on applique `atoi` à chacune.
+    L'opérateur est la nouveauté : c'est un caractère unique selon lequel le programme se branche pour décider du calcul, et il s'arrête pour tout opérateur non pris en charge.
+    On applique ensuite `itoa` au résultat, puis `write` vers la sortie standard, exactement comme pour votre programme d'addition.
+    Nous ajouterons un groupe d'opérateurs à la fois : l'addition, puis la soustraction, puis la multiplication, puis les opérateurs bit à bit, et enfin les opérateurs unaires. Chacun réutilise les `atoi` et `itoa` que vous avez déjà écrits.
+- type: challenge
+  id: calc-1-add
+  name: "Addition (Addition)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: calc-1-add
+- type: challenge
+  id: calc-2-sub
+  name: "Soustraction (Subtraction)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: calc-2-sub
+- type: challenge
+  id: calc-3-mul
+  name: "Multiplication (Multiplication)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: calc-3-mul
+- type: challenge
+  id: calc-4-bitwise-binops
+  name: "Opérateurs bit à bit (Bitwise Operators)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: calc-4-bitwise-binops
+- type: challenge
+  id: calc-5-unop
+  name: "Opérateurs unaires (Unary Operators)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: calc-5-unop
+- type: header
+  content: "printf"
+- type: markdown
+  expandable: False
+  name: "printf"
+  content: |
+    Les programmes n'affichent presque jamais une seule chaîne fixe.
+    Ils affichent des messages assemblés à partir de mots fixes et de valeurs changeantes : `answer: 13`, `hello, hacker`, `opened 3 files`, et ainsi de suite.
+    On pourrait écrire chaque message à la main, mais chaque nouvelle forme de message demanderait alors ses propres boucles de copie, ses conversions de nombres et ses appels à `write`.
+    Une **chaîne de format** est une recette compacte pour construire ces messages.
+    Les caractères ordinaires de la recette sont affichés tels quels, tandis que des marqueurs spéciaux indiquent où placer la valeur suivante.
+    Le code qui exécute une telle recette s'appelle un **formateur**.
+    `printf` est le nom traditionnel d'un formateur qui affiche son résultat.
+
+    Ce mini-module vous fera construire votre propre `printf`.
+    Votre version sera particulière : elle sera à vous !
+    De nombreuses autres versions de `printf` existent. Par exemple, la « bibliothèque standard C », qui fournit des fonctions utiles pour écrire des applications en langage C, en contient une implémentation, et votre ligne de commande en dispose aussi :
+
+    ```console
+    hacker@dojo:~$ printf Hello
+    Hello
+    hacker@dojo:~$
+    ```
+
+    Nous construirons cette idée pas à pas : texte littéral, octet de saut de ligne ASCII, caractères de syntaxe échappés, nombres décimaux, valeurs répétées, chaînes, et enfin octets quelconques.
+- type: challenge
+  id: printf-literal
+  name: "Sortie littérale (Literal Output)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: printf-literal
+- type: challenge
+  id: printf-newline
+  name: "Échappements de saut de ligne (Newline Escapes)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: printf-newline
+- type: challenge
+  id: printf-escapes
+  name: "Syntaxe échappée (Escaped Syntax)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: printf-escapes
+- type: challenge
+  id: printf-number
+  name: "Marqueurs décimaux (Decimal Markers)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: printf-number
+- type: challenge
+  id: printf-numbers
+  name: "Plusieurs marqueurs décimaux (Multiple Decimal Markers)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: printf-numbers
+- type: challenge
+  id: printf-string
+  name: "Marqueurs de chaîne (String Markers)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: printf-string
+- type: challenge
+  id: printf-hex
+  name: "Échappements d'octets hexadécimaux (Hex Byte Escapes)"
+  import:
+    dojo: computing-101
+    module: numbers-as-strings
+    challenge: printf-hex
