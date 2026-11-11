@@ -1,0 +1,272 @@
+name: "Cours accéléré d'assembleur (Assembly Crash Course)"
+resources:
+  - name: "Révision : architecture des ordinateurs (Computer Architecture), en anglais"
+    type: lecture
+    video: o_kSgUPJk4c
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1sVyPL92gbzg_it9aIeC-CjXtF2tpvAmZTKjWc-SlU0c
+  - name: "Révision : assembleur (Assembly), en anglais"
+    type: lecture
+    video: TdTOH1GfrWg
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1sBB34ZUVjT3MDjYvGiZU3z6CTLGvO1hHEdHliPUJ0iw
+  - name: "Révision : données (Data), en anglais"
+    type: lecture
+    video: 21MvbpgssU8
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1SeyZbM_qCDz4t03KDZ8Q0qi1GzsSSSJAkO-KeVlAL7w
+  - name: "Révision : registres (Registers), en anglais"
+    type: lecture
+    video: IWbIZerH930
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1U8Rsz7FNTmy-3wGtPB-YCyanIIbox1J90adze9-1cfo
+  - name: "Révision : mémoire (Memory), en anglais"
+    type: lecture
+    video: HahXfnOsSUU
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1lbPbd-jLj7VS7M-ntGhpv4_8WqSfqzLBNWG68_BIRL0
+  - name: "Flot de contrôle (Control Flow), en anglais"
+    type: lecture
+    video: 0a8NlF7z7Ro
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1wX5TH6DQjXw4GJo_T6I9GF7bhC689T52HSHaMUCmj1E
+  - name: "Révision : appels système (System Calls), en anglais"
+    type: lecture
+    video: vspq0u2tvhU
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1vEuZ1PW8Wvm88INmWbjoKY8srEKSkv2g4o-V42BsN9Y
+  - name: "Construire des programmes (Building Programs), en anglais"
+    type: lecture
+    video: IITocH-WGH4
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1Y35BuIvvG8k3txjcsMXjygzsP7rDaNpbDHz3TMO91Fo
+  - name: "Astuce : déboguer son assembleur (Tip - Debugging Your Assembly)"
+    type: markdown
+    content: |
+      Ces défis sont écrits en Python et exécutent votre code assembleur dans un émulateur.
+      On ne peut donc pas utiliser les outils de débogage habituels, comme `gdb`, pour déboguer le défi. Un outil de débogage spécial a toutefois été ajouté à ces défis.
+      Si le défi exécute une instruction `int3` présente dans votre code assembleur, l'émulateur affiche l'état courant des registres et de la mémoire.
+      C'est très utile pour raisonner sur son code !
+  - name: "Pour aller plus loin (Further Reading)"
+    type: markdown
+    content: |
+      - Une excellente série d'introduction, qui couvre une partie des bases, proposée par [LiveOverflow](https://www.youtube.com/watch?v=iyAyN3GFM7A&list=PLhixgUqwRTjxglIswKp9mpkfPNfHkzyeN&index=1) (en anglais).
+      - [Ike: The Systems Hacking Handbook](https://ike.mahaloz.re/1_introduction/introduction.html), excellent guide sur l'organisation des ordinateurs (en anglais).
+      - Un [tutoriel complet d'assembleur](https://github.com/mytechnotalent/Reverse-Engineering-Tutorial) pour plusieurs architectures (amd64 est celle qui nous intéresse ici), en anglais.
+      - Le cours [« Architecture 1001: x86-64 Assembly »](https://ost2.fyi/Arch1001) d'OpenSecurityTraining2 (en anglais).
+      - Un [livre complet sur l'assembleur x86_64](https://open.umn.edu/opentextbooks/textbooks/733), en anglais.
+      - Un [jeu](https://squallygame.com/) pour apprendre l'assembleur x86, et un autre pour [tester ses connaissances](https://oooverflow.io/zero-is-you/) (en anglais).
+      - Un [schéma](https://soc.me/interfaces/x86-prefixes-and-escape-opcodes-flowchart) des préfixes et des opcodes d'échappement de x86 (en anglais).
+      - Une [référence x86](https://www.felixcloutier.com/x86/) non officielle, mais très détaillée et utile (en anglais).
+  - type: header
+    content: "Défis"
+  - type: challenge
+    id: level-1
+    name: "Définir un registre (set-register)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-1
+  - type: challenge
+    id: level-2-a
+    name: "Définir plusieurs registres (set-multiple-registers)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-2-a
+  - type: challenge
+    id: level-2
+    name: "Ajouter à un registre (add-to-register)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-2
+  - type: challenge
+    id: level-3
+    name: "Équation linéaire avec des registres (linear-equation-registers)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-3
+  - type: challenge
+    id: level-4
+    name: "Division entière (integer-division)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-4
+  - type: challenge
+    id: level-5
+    name: "Opération modulo (modulo-operation)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-5
+  - type: challenge
+    id: level-6-a
+    name: "Définir l'octet de poids fort (set-upper-byte)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-6-a
+  - type: challenge
+    id: level-6
+    name: "Modulo efficace (efficient-modulo)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-6
+  - type: challenge
+    id: level-7
+    name: "Extraction d'octet (byte-extraction)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-7
+  - type: challenge
+    id: level-8
+    name: "ET bit à bit (bitwise-and)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-8
+  - type: challenge
+    id: level-9
+    name: "Vérifier la parité (check-even)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-9
+  - type: challenge
+    id: level-10-a
+    name: "Lecture en mémoire (memory-read)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-10-a
+  - type: challenge
+    id: level-10-b
+    name: "Écriture en mémoire (memory-write)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-10-b
+  - type: challenge
+    id: level-10
+    name: "Incrémenter en mémoire (memory-increment)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-10
+  - type: challenge
+    id: level-11-a
+    name: "Accès aux octets (byte-access)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-11-a
+  - type: challenge
+    id: level-11
+    name: "Accès en mémoire selon la taille (memory-size-access)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-11
+  - type: challenge
+    id: level-12
+    name: "Écriture en little-endian (little-endian-write)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-12
+  - type: challenge
+    id: level-13
+    name: "Somme en mémoire (memory-sum)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-13
+  - type: challenge
+    id: level-14
+    name: "Soustraction sur la pile (stack-subtraction)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-14
+  - type: challenge
+    id: level-15
+    name: "Échanger des valeurs sur la pile (swap-stack-values)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-15
+  - type: challenge
+    id: level-16
+    name: "Moyenne des valeurs sur la pile (average-stack-values)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-16
+  - type: challenge
+    id: level-17-a
+    name: "Saut absolu (absolute-jump)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-17-a
+  - type: challenge
+    id: level-17-b
+    name: "Saut relatif (relative-jump)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-17-b
+  - type: challenge
+    id: level-17
+    name: "Trampoline de saut (jump-trampoline)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-17
+  - type: challenge
+    id: level-18
+    name: "Saut conditionnel (conditional-jump)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-18
+  - type: challenge
+    id: level-19
+    name: "Saut indirect (indirect-jump)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-19
+  - type: challenge
+    id: level-20
+    name: "Moyenne avec une boucle (average-loop)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-20
+  - type: challenge
+    id: level-21
+    name: "Compter les valeurs non nulles (count-non-zero)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-21
+  - type: challenge
+    id: level-22
+    name: "Mettre une chaîne en minuscules (string-lower)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-22
+  - type: challenge
+    id: level-23
+    name: "Octet le plus fréquent (most-common-byte)"
+    import:
+      dojo: computing-101
+      module: assembly-crash-course
+      challenge: level-23
