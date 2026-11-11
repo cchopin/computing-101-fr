@@ -1,5 +1,4 @@
 name: "Construire un serveur web (Building a Web Server)"
-privileged: true
 resources:
   - name: "Construire un serveur web : introduction (Building a Web Server: Introduction), en anglais"
     type: lecture
