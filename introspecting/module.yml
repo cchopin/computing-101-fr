@@ -3,6 +3,13 @@ resources:
   - type: header
     content: "Défis"
   - type: challenge
+    id: objdump
+    name: "Désassembler des programmes (Disassembling Programs)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: objdump
+  - type: challenge
     id: strace
     name: "Tracer les appels système (Tracing Syscalls)"
     import:
@@ -17,9 +24,86 @@ resources:
       module: introspecting
       challenge: gdb-launch
   - type: challenge
+    id: gdb-quit
+    name: "Quitter GDB (Quitting GDB)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-quit
+  - type: challenge
     id: gdb-starti
     name: "Démarrer des programmes dans GDB (Starting Programs in GDB)"
     import:
       dojo: computing-101
       module: introspecting
       challenge: gdb-starti
+  - type: challenge
+    id: gdb-disassemble
+    name: "Désassembler dans GDB (Disassembling in GDB)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-disassemble
+  - type: challenge
+    id: gdb-stepi
+    name: "Avancer pas à pas dans les instructions (Stepping Through Instructions)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-stepi
+  - type: challenge
+    id: gdb-print
+    name: "Lire les valeurs des registres (Reading Register Values)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-print
+  - type: challenge
+    id: gdb-set-register
+    name: "Modifier les valeurs des registres (Setting Register Values)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-set-register
+  - type: challenge
+    id: gdb-pop
+    name: "Dépiler des valeurs de la pile (Popping Stack Values)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-pop
+  - type: challenge
+    id: gdb-examine
+    name: "Examiner la mémoire (Examining Memory)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-examine
+  - type: challenge
+    id: gdb-examine-argv1
+    name: "Examiner les pointeurs de pile (Examining Stack Pointers)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-examine-argv1
+  - type: challenge
+    id: gdb-int3
+    name: "Débogage coopératif (Cooperative Debugging)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-int3
+  - type: challenge
+    id: gdb-run-args
+    name: "Lancer avec des arguments (Running with Arguments)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-run-args
+  - type: challenge
+    id: gdb-run-stdin
+    name: "Rediriger l'entrée dans GDB (Redirecting Input in GDB)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-run-stdin
