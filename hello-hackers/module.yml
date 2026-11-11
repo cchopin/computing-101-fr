@@ -1,4 +1,4 @@
-name: "Bonjour, hackers (Hello Hackers)"
+name: "Sorties et entrées (Output and Input)"
 resources:
   - name: "Appels système (System Calls), en anglais"
     type: lecture
@@ -35,3 +35,31 @@ resources:
       dojo: computing-101
       module: hello-hackers
       challenge: read
+  - type: challenge
+    id: read-exact
+    name: "Lire exactement (Reading Exactly)"
+    import:
+      dojo: computing-101
+      module: hello-hackers
+      challenge: read-exact
+  - type: challenge
+    id: open-read-write
+    name: "Ouvrir des fichiers (Opening Files)"
+    import:
+      dojo: computing-101
+      module: hello-hackers
+      challenge: open-read-write
+  - type: challenge
+    id: open-read-write-hardcode
+    name: "Coder le nom de fichier en dur (Hardcoding the Filename)"
+    import:
+      dojo: computing-101
+      module: hello-hackers
+      challenge: open-read-write-hardcode
+  - type: challenge
+    id: open-read-write-rip-relative
+    name: "Chaînes relatives à rip (RIP-Relative Strings)"
+    import:
+      dojo: computing-101
+      module: hello-hackers
+      challenge: open-read-write-rip-relative
