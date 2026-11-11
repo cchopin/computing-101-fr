@@ -1,0 +1,107 @@
+name: "Construire un serveur web (Building a Web Server)"
+privileged: true
+resources:
+  - name: "Construire un serveur web : introduction (Building a Web Server: Introduction), en anglais"
+    type: lecture
+    video: 4S78xEhxh7k
+    playlist: PL-ymxv0nOtqqYlFBiJ_gMff9zHfHMNCtG
+    slides: 1U33Vcbv2nVoufatHhmIK4XKRzyXZCujR45paGABblnk
+  - name: "Processus Linux (Building a Web Server: Linux Processes), en anglais"
+    type: lecture
+    video: nEJiM1ryJQw
+    playlist: PL-ymxv0nOtqqYlFBiJ_gMff9zHfHMNCtG
+    slides: 1l0VHGTYtAk2FzWY4c-m5e8yTS1hCnGit2ve7y7BAlyg
+  - name: "Appels système réseau (Building a Web Server: Network System Calls), en anglais"
+    type: lecture
+    video: Q1SvbIBCx1E
+    playlist: PL-ymxv0nOtqqYlFBiJ_gMff9zHfHMNCtG
+    slides: 1MxT1qcwZZHSkaaeYIKKp7Qg0IaespmlrqhZDnWkwxFo
+  - name: "HTTP (Building a Web Server: HTTP), en anglais"
+    type: lecture
+    video: 0G0aL8KTeB4
+    playlist: PL-ymxv0nOtqqYlFBiJ_gMff9zHfHMNCtG
+    slides: 1_-CxrxPUf9D_6tsueggaaOt27pQ-I7hVe4YIMz1PWA8
+  - name: "Multitraitement (Building a Web Server: Multiprocessing), en anglais"
+    type: lecture
+    video: 9jH2Le-MWuI
+    playlist: PL-ymxv0nOtqqYlFBiJ_gMff9zHfHMNCtG
+    slides: 1tycdciuY8aMmBGj98qUMq0-ubClkqeT10QNIT0hE9kU
+  - type: header
+    content: "Défis"
+  - type: challenge
+    id: exit
+    name: "Quitter (Exit)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: exit
+  - type: challenge
+    id: socket
+    name: "Créer un socket (Socket)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: socket
+  - type: challenge
+    id: bind
+    name: "Associer une adresse (Bind)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: bind
+  - type: challenge
+    id: listen
+    name: "Écouter (Listen)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: listen
+  - type: challenge
+    id: accept
+    name: "Accepter une connexion (Accept)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: accept
+  - type: challenge
+    id: static-response
+    name: "Réponse statique (Static Response)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: static-response
+  - type: challenge
+    id: dynamic-response
+    name: "Réponse dynamique (Dynamic Response)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: dynamic-response
+  - type: challenge
+    id: iterative-get-server
+    name: "Serveur GET itératif (Iterative GET Server)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: iterative-get-server
+  - type: challenge
+    id: concurrent-get-server
+    name: "Serveur GET concurrent (Concurrent GET Server)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: concurrent-get-server
+  - type: challenge
+    id: concurrent-post-server
+    name: "Serveur POST concurrent (Concurrent POST Server)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: concurrent-post-server
+  - type: challenge
+    id: web-server
+    name: "Serveur web (Web Server)"
+    import:
+      dojo: computing-101
+      module: building-a-web-server
+      challenge: web-server
