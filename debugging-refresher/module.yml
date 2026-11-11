@@ -1,0 +1,77 @@
+name: "Rappels sur le débogage (Debugging Refresher)"
+resources:
+  - name: "Cours de Robert sur GDB (Robert's GDB Walkthrough), en anglais"
+    type: lecture
+    video: r185fCzdw8Y
+    playlist: PL-ymxv0nOtqqQzEncNuE6jetlJAiBUda-
+  - type: markdown
+    name: "Aide sur GDB (GDB Help)"
+    content: |
+      Il existe plusieurs bons cours et manuels de référence sur GDB :
+
+      - [La documentation de GDB](https://sourceware.org/gdb/onlinedocs/gdb/index.html) (en anglais)
+      - [Le cours de Tudor sur GDB](https://web.archive.org/web/20250101052732/https://users.umiacs.umd.edu/~tdumitra/courses/ENEE757/Fall15/misc/gdb_tutorial.html) (en anglais)
+      - [Un exemple complet de débogage avec GDB](https://www.brendangregg.com/blog/2016-08-09/gdb-example-ncurses.html) (en anglais)
+      - [pwndbg : une extension de GDB (liste des fonctionnalités)](https://pwndbg.re/stable/features/) (en anglais)
+      - [gef : une autre extension de GDB (liste des commandes)](https://hugsy.github.io/gef/commands/aliases/) (en anglais)
+      - Le cours [Debuggers 1012 : Introductory GDB](https://ost2.fyi/Dbg1012), de OpenSecurityTraining2 (en anglais).
+  - type: header
+    content: "Défis"
+  - type: challenge
+    id: debugging-programs
+    name: "Déboguer des programmes (Debugging Programs)"
+    import:
+      dojo: computing-101
+      module: debugging-refresher
+      challenge: debugging-programs
+  - type: challenge
+    id: inspecting-registers
+    name: "Inspecter les registres (Inspecting Registers)"
+    import:
+      dojo: computing-101
+      module: debugging-refresher
+      challenge: inspecting-registers
+  - type: challenge
+    id: examining-memory
+    name: "Examiner la mémoire (Examining Memory)"
+    import:
+      dojo: computing-101
+      module: debugging-refresher
+      challenge: examining-memory
+  - type: challenge
+    id: setting-breakpoints
+    name: "Poser des points d'arrêt (Setting Breakpoints)"
+    import:
+      dojo: computing-101
+      module: debugging-refresher
+      challenge: setting-breakpoints
+  - type: challenge
+    id: gdb-scripting
+    name: "Écrire des scripts GDB (GDB Scripting)"
+    import:
+      dojo: computing-101
+      module: debugging-refresher
+      challenge: gdb-scripting
+  - type: challenge
+    id: modifying-data
+    name: "Modifier des données (Modifying Data)"
+    import:
+      dojo: computing-101
+      module: debugging-refresher
+      challenge: modifying-data
+  - type: challenge
+    id: modifying-execution
+    name: "Modifier l'exécution (Modifying Execution)"
+    progression_locked: true
+    import:
+      dojo: computing-101
+      module: debugging-refresher
+      challenge: modifying-execution
+  - type: challenge
+    id: broken-functions
+    name: "Fonctions défectueuses (Broken Functions)"
+    progression_locked: true
+    import:
+      dojo: computing-101
+      module: debugging-refresher
+      challenge: broken-functions
