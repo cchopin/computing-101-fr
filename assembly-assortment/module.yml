@@ -1,0 +1,136 @@
+name: "Petit inventaire d'assembleur (Assembly Assortment)"
+resources:
+- name: "(révision) Données (Data), en anglais"
+  type: lecture
+  video: 21MvbpgssU8
+  playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+  slides: 1SeyZbM_qCDz4t03KDZ8Q0qi1GzsSSSJAkO-KeVlAL7w
+- type: markdown
+  name: "Décalages de bits (Bit Shifting)"
+  content: |
+    Un **décalage de bits** déplace chaque bit d'une valeur de largeur fixe du même nombre de positions.
+    Un décalage à gauche rapproche les bits de l'extrémité de poids fort, fait disparaître les bits qui sortent par cette extrémité, et insère des zéros à l'extrémité de poids faible.
+    Voici un décalage à gauche de deux positions, sur un octet :
+
+    ```text
+    avant :                       1011 0010  (178)
+    perdus à l'extrémité haute :  10.. ....
+    insérés à l'extrémité basse : .... ..00
+    après un décalage à gauche de 2 :  1100 1000  (200)
+    ```
+
+    Un décalage logique à droite fait l'inverse : il rapproche les bits de l'extrémité de poids faible, fait disparaître les bits de poids faible, et insère des zéros à l'extrémité de poids fort.
+
+    ```text
+    avant :                       1101 1011  (219)
+    perdus à l'extrémité basse :  .... ..11
+    insérés à l'extrémité haute : 00.. ....
+    après un décalage à droite de 2 :  0011 0110  (54)
+    ```
+
+    Chaque position binaire vaut deux fois la position située à sa droite.
+    Décaler tous les bits d'une position vers la gauche double donc une valeur non signée, et décaler de `n` positions vers la gauche multiplie par `2^n`, tant qu'aucun bit `1` ne sort par l'extrémité haute.
+    Décaler tous les bits d'une position vers la droite divise une valeur non signée par deux en supprimant le reste, donc décaler de `n` positions vers la droite divise par `2^n`.
+
+    Sur x86 64 bits, `shl` décale vers la gauche et `shr` effectue le décalage à droite avec remplissage par des zéros.
+    Ces instructions suivent la même forme, destination en premier, que des instructions comme `add` :
+
+    ```asm
+    shl rax, 2
+    shr rax, 2
+    ```
+
+    Ces exemples utilisent un octet pour que chaque bit tienne à l'écran, mais le même mouvement a lieu sur les 64 bits de `rax`.
+- type: challenge
+  id: add-reverse
+  name: "Retrouver le calcul (Reverse the Calculation)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: add-reverse
+- type: challenge
+  id: sub-reverse
+  name: "Inverser l'inverse (Reverse the Reverse)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: sub-reverse
+- type: challenge
+  id: xor-reverse
+  name: "Opérations bit à bit (Dealing with Bitwise Operations)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: xor-reverse
+- type: challenge
+  id: is-even
+  name: "Pair ou impair (Even or Odd)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: is-even
+- type: challenge
+  id: bit-and
+  name: "Masquer des bits (Masking Bits)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: bit-and
+- type: challenge
+  id: bit-or
+  name: "Passer une chaîne en minuscules (Lowercase a String)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: bit-or
+- type: challenge
+  id: case-upper
+  name: "Passer une chaîne en majuscules (Uppercase a String)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: case-upper
+- type: challenge
+  id: case-swap
+  name: "Inverser la casse (Swap Case)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: case-swap
+- type: challenge
+  id: shift-left
+  name: "Décalage à gauche (Shifting Left)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: shift-left
+- type: challenge
+  id: shift-right
+  name: "Décalage à droite (Shifting Right)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: shift-right
+- type: markdown
+  name: "Guide : lire des données stockées dans GDB (Guide: Reading Stored Data in GDB)"
+  content: |
+    Dans [Ouvrir le fichier, avec RIP](/computing-101/hello-hackers/open-read-write-rip-relative), vous avez utilisé une étiquette et `lea` pour passer à `open` l'adresse d'octets stockés.
+    Dans [Examiner la mémoire avec GDB](/computing-101/introspecting/gdb-examine-argv1), vous avez utilisé `x/s` pour afficher la chaîne située à une adresse.
+
+    Le défi suivant combine ces deux idées, dans un programme que vous rétro-ingénierez.
+    Le programme a déjà effectué le travail de type `lea` à votre place : l'un de ses registres contiendra l'adresse, à l'exécution, d'une chaîne stockée.
+    Plutôt que de chercher chaque octet secret sous forme d'immédiate dans un `cmp`, avancez dans le code jusqu'à ce qu'un registre pointe vers la chaîne stockée, puis examinez cette adresse comme une chaîne :
+
+    ```gdb
+    (gdb) x/s $rsi
+    ```
+
+    Ici, `$rsi` n'est qu'un exemple.
+    Utilisez le registre que le programme charge avec l'adresse de la chaîne stockée, puis lancez `/challenge/reverse-me` directement avec la chaîne trouvée.
+- type: challenge
+  id: strcmp-stored
+  name: "Boucles sur des données (Loops on Data)"
+  import:
+    dojo: computing-101
+    module: assembly-assortment
+    challenge: strcmp-stored
