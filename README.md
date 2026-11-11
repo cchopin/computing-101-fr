@@ -26,9 +26,9 @@ Ce dépôt reste **privé** tant que la question des diapositives n'est pas tran
 
 Procédure vérifiée dans le code de pwn.college (`site/dojo/pages/dojos.py`, `site/dojo/api/v1/dojos.py`, `site/dojo/utils/dojo.py`) :
 
-1. Créer le dépôt GitHub, par exemple `<votre-compte>/computing-101-fr`, et y pousser ce contenu.
+1. Créer le dépôt GitHub, par exemple `<compte>/computing-101-fr`, et y pousser ce contenu.
 2. Sur pwn.college, ouvrir `/dojos/create`. Le formulaire fournit une clé de déploiement publique et privée.
-3. Ajouter la clé publique dans le dépôt, à `https://github.com/<votre-compte>/computing-101-fr/settings/keys`. Ce n'est obligatoire que pour un dépôt privé.
+3. Ajouter la clé publique dans le dépôt, à `https://github.com/<compte>/computing-101-fr/settings/keys`. Ce n'est obligatoire que pour un dépôt privé.
 4. Renseigner le dépôt au format `propriétaire/dépôt` et valider. Un compte non administrateur peut créer un dojo par jour.
 5. Pour mettre à jour après un push, utiliser le bouton **Update** de la page d'administration du dojo, ou appeler l'URL de mise à jour depuis un webhook GitHub. Le serveur fait un `fetch` puis un `reset --hard` sur la branche distante : toute modification faite directement sur le serveur est écrasée.
 

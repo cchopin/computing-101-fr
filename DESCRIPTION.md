@@ -9,7 +9,7 @@ Rejoignez-nous dans ce parcours, et apprenons l'informatique ensemble.
 
 **Note :**
 Ce dojo est un chantier en cours *et* un effort collectif !
-Pour contribuer, rendez-vous sur [GitHub](https://github.com/pwncollege/challenges/tree/main/challenges/computing-101) (dépôt d'origine, en anglais).
+Pour contribuer, on se rend sur [GitHub](https://github.com/pwncollege/challenges/tree/main/challenges/computing-101) (dépôt d'origine, en anglais).
 Pour les questions, commentaires ou retours, rejoignez [le canal Discord](https://discord.com/channels/750635557666816031/1298046190444609666) (en anglais).
 
 Cette version française est une traduction du dojo Computing 101 de pwn.college, voir le fichier README.md du dépôt.
