@@ -1,0 +1,199 @@
+name: "Manipuler les nombres bit par bit (Nibbling on Numbers)"
+description: |
+  Un octet compte huit bits ; sa moitié, quatre bits, s'appelle un *quartet* (nibble).
+  Ce module examine les nombres à partir du bit : comment un ensemble de bits devient un nombre positif ou négatif en binaire, en hexadécimal et en décimal.
+  Comprendre cela est indispensable pour savoir comment le processeur transforme des bits en données utilisables !
+resources:
+- name: "Données (Data), en anglais"
+  type: lecture
+  video: 21MvbpgssU8
+  playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+  slides: 1SeyZbM_qCDz4t03KDZ8Q0qi1GzsSSSJAkO-KeVlAL7w
+- name: "Données binaires (Binary Data), en anglais"
+  type: lecture
+  video: suXDtRgeHdU
+  playlist: PL-ymxv0nOtqrIw6GL1ih9aMoX0UdzUBWI
+  slides: 13lXkCQ-wkc-AHZkNhPAckDLX_kTt6N5Jx2bD_27Wkys
+- name: "Hexadécimal (Hex), en anglais"
+  type: lecture
+  video: POOGhx_c3K4
+  playlist: PL-ymxv0nOtqrIw6GL1ih9aMoX0UdzUBWI
+  slides: 18GJFqBmM0Iei6QNzz_uozpfKACGuv6FUxCMv108uQew
+- type: markdown
+  name: "Les octets en hexadécimal et en binaire (Bytes as Hex and Binary)"
+  content: |
+    Vous le savez : les octets sont ce qui est réellement stocké dans la mémoire de l'ordinateur.
+    Vous savez peut-être aussi que les ordinateurs raisonnent en binaire : une suite de uns et de zéros.
+    Pour des raisons historiques, on regroupe ces uns et ces zéros (les « bits ») par groupes de 8, et chaque groupe de 8 forme un octet.
+    Ce nombre est purement arbitraire : les premiers ordinateurs (avant les années 1960 environ) n'avaient pas ce découpage, ou en avaient d'autres.
+    Il serait tout à fait possible qu'un autre univers ait des octets de 16, 32 ou n'importe quel nombre de bits (même si, pour des raisons mathématiques, ce nombre restera probablement une puissance de 2).
+
+    Un seul bit peut représenter deux valeurs (`0` et `1`), deux bits en représentent quatre (`00`, `01`, `10` et `11`), trois bits en représentent huit (`000`, `001`, `010`, `011`, `100`, `101`, `110`, `111`), et quatre bits en représentent seize.
+    En comparaison, un seul chiffre décimal peut représenter 10 valeurs (de `0` à `9`).
+    Dix valeurs correspondent à environ `log2(10) == 3,3219...` bits, ce qui donne des situations étranges : le binaire `1001` vaut `9` en décimal, mais le binaire `1100` (toujours quatre chiffres binaires) vaut `12` (*deux* chiffres décimaux !).
+    Autrement dit, le décimal ne possède pas de *frontières de bits* nettes, et c'est ce décalage qui rend le passage entre décimal et binaire compliqué.
+
+    Cette absence de frontières rend le raisonnement difficile. Par exemple, on peut calculer que `97` vaut `1100001`, mais on ne le voit pas d'un coup d'œil.
+
+    Il est beaucoup plus facile de convertir de tête entre des bases dont les chiffres sont mieux alignés.
+    Par exemple, un seul chiffre hexadécimal (base 16) peut représenter 16 valeurs (`0`, `1`, `2`, `3`, `4`, `5`, `6`, `7`, `8`, `9`, `a`, `b`, `c`, `d`, `e`, `f`) : exactement ce que le binaire représente avec 4 chiffres !
+    La correspondance est donc très simple :
+
+    | Hex | Binaire | Décimal |
+    |-----|---------|---------|
+    | `0` | `0000`  | `0`     |
+    | `1` | `0001`  | `1`     |
+    | `2` | `0010`  | `2`     |
+    | `3` | `0011`  | `3`     |
+    | `4` | `0100`  | `4`     |
+    | `5` | `0101`  | `5`     |
+    | `6` | `0110`  | `6`     |
+    | `7` | `0111`  | `7`     |
+    | `8` | `1000`  | `8`     |
+    | `9` | `1001`  | `9`     |
+    | `a` | `1010`  | `10`    |
+    | `b` | `1011`  | `11`    |
+    | `c` | `1100`  | `12`    |
+    | `d` | `1101`  | `13`    |
+    | `e` | `1110`  | `14`    |
+    | `f` | `1111`  | `15`    |
+
+    Cette correspondance entre un chiffre hexadécimal et quatre bits se retient facilement (l'essentiel est de retenir `1`, `2`, `4` et `8` : on en déduit le reste rapidement).
+    Mieux encore, deux chiffres hexadécimaux font **8** bits, soit un octet !
+    En décimal, il faudrait retenir 16 correspondances pour 4 bits et 256 pour 8 bits. En hexadécimal, il suffit de retenir 16 correspondances pour 4 bits, puis d'accoler deux chiffres pour un octet !
+    Quelques exemples :
+
+    | Hex  | Binaire     | Décimal |
+    |------|-------------|---------|
+    | `00` | `0000 0000` | `0`     |
+    | `0e` | `0000 1110` | `14`    |
+    | `3e` | `0011 1110` | `62`    |
+    | `e3` | `1110 0011` | `227`   |
+    | `ee` | `1110 1110` | `238`   |
+
+    On commence à voir la beauté du système.
+    Cela devient encore plus évident avec plusieurs octets, mais les défis suivants vous le feront découvrir.
+
+    Parlons maintenant de notation.
+    Comment distinguer `11` en décimal, `11` en binaire (qui vaut `3` en décimal) et `11` en hexadécimal (qui vaut `17` en décimal) ?
+    Pour les constantes numériques, on fait précéder le binaire de `0b`, l'hexadécimal de `0x`, et on laisse le décimal tel quel. On obtient ainsi `11 == 0b1011 == 0xb`, `3 == 0b11 == 0x3` et `17 == 0b10001 == 0x11`.
+- type: markdown
+  name: "Fiche de cours (ajout, hors traduction)"
+  content: |
+    *Cette fiche n'est pas une traduction. Elle est rédigée à partir des trois présentations de ce module (« Data », « Binary Data » et « Hex »), de leurs auteurs (Yan Shoshitaishvili, Arizona State University), en anglais. Elle ne contient aucune solution de défi.*
+
+    ### 1. Représenter des nombres avec des bits
+
+    En décimal (base 10), on utilise dix chiffres, de 0 à 9. En binaire (base 2), on n'en utilise que deux, 0 et 1. Un chiffre binaire s'appelle un *bit*.
+    Comme en décimal, un nombre supérieur à 1 s'écrit avec plusieurs chiffres, chacun ayant une valeur qui dépend de sa position : chaque position vaut une puissance de la base.
+
+    Par exemple, `197` en décimal s'écrit `11000101` en binaire : 128 + 64 + 4 + 1 = 197.
+
+    Pourquoi les ordinateurs utilisent-ils le binaire ? Un circuit électronique est simple et fiable quand il ne distingue que deux états : une lampe allumée ou éteinte, une tension haute ou basse. Des systèmes à trois états (ternaires) ont existé, mais le binaire s'est imposé.
+
+    ### 2. Pourquoi le décimal gêne le passage au binaire
+
+    En binaire, les nombres s'allongent vite : `197` en décimal est `11000101`, et il devient vite difficile de faire un calcul à tête reposée.
+    Les nombres « ronds » en décimal ne correspondent pas aux nombres « ronds » en binaire : `128` est `10000000`, `192` est `11000000`, `224` est `11100000` et `240` est `11110000`. Ce sont des puissances de 2 et des sommes de puissances de 2, qui se lisent bien en binaire, mais pas en décimal.
+
+    La solution consiste à utiliser une base qui correspond à un nombre entier de bits par chiffre : la base 8 (octal, un chiffre = 3 bits) ou la base 16 (hexadécimal, un chiffre = 4 bits).
+
+    ### 3. Octal et hexadécimal
+
+    - L'**octal** (base 8) utilise les chiffres de 0 à 7 et se note avec le préfixe `0` (ou `0o`).
+    - L'**hexadécimal** (base 16) utilise les chiffres de 0 à 9, puis A à F (A = 10, F = 15). On le note avec le préfixe `0x`.
+
+    Un chiffre hexadécimal représente exactement quatre bits. C'est ce qui en fait une notation idéale pour écrire des valeurs binaires.
+
+    | Décimal | Binaire  | Octal | Hexadécimal |
+    |---------|----------|-------|-------------|
+    | 0       | 0        | 0     | 0x0         |
+    | 10      | 1010     | 012   | 0xA         |
+    | 16      | 10000    | 020   | 0x10        |
+    | 128     | 10000000 | 0200  | 0x80        |
+    | 192     | 11000000 | 0300  | 0xC0        |
+    | 240     | 11110000 | 0360  | 0xF0        |
+
+    ### 4. Octets et quartets
+
+    Un groupe de 4 bits s'appelle un *quartet* (nibble) : il correspond à un seul chiffre hexadécimal.
+    Un groupe de 8 bits s'appelle un *octet* (byte) : il correspond à deux chiffres hexadécimaux. C'est la plus petite unité de mémoire adressable de l'ordinateur.
+
+    L'octet s'est imposé dans les années 1960. Historiquement, les tailles de mots ont beaucoup varié, mais toutes les architectures modernes utilisent des octets de 8 bits.
+
+    ### 5. Représenter des données binaires en hexadécimal
+
+    Une donnée binaire quelconque peut s'écrire en hexadécimal, pour être lue par un humain. Chaque octet devient deux chiffres hexadécimaux. Par exemple, la suite d'octets `01101000 01000000 01000011 01111100` s'écrit `6840437c`.
+
+    Il faut distinguer deux notions :
+
+    - la **représentation** : afficher des données binaires sous forme hexadécimale ;
+    - l'**encodage** : stocker ou transmettre des données binaires sous forme de texte hexadécimal, par exemple dans un canal qui n'accepte que du texte.
+
+    Avantages de l'hexadécimal : c'est lisible, et facile à découper et à convertir.
+    Inconvénient : les données sont deux fois plus grandes, puisque chaque chiffre hexadécimal est transmis comme un caractère, soit un octet.
+
+    Le **décodage** fait l'inverse : on reçoit du texte hexadécimal et on en retrouve les octets, en convertissant chaque paire de chiffres en un octet.
+
+    ### 6. Nombres négatifs : le complément à deux
+
+    Pour représenter des nombres négatifs sur `n` bits, on utilise le *complément à deux* : la valeur négative `v` est représentée par le nombre non signé `v + 2^n`.
+    Le bit de poids fort sert de bit de signe : s'il vaut 1, le nombre est négatif. Il n'existe alors qu'une seule représentation de zéro, et l'addition et la soustraction se calculent de la même façon pour les nombres signés et non signés.
+    Sur 8 bits, les valeurs vont de -128 à 127. Sur 16 bits, de -32768 à 32767 ; sur 32 bits, de -2^31 à 2^31 - 1.
+    Pour convertir une valeur non signée en valeur signée, on soustrait 2^n si le bit de poids fort est à 1.
+- type: challenge
+  id: twos-complement
+  name: "Nombres négatifs (Negative Numbers)"
+  import:
+    dojo: computing-101
+    module: nibbling-on-numbers
+    challenge: twos-complement
+- type: challenge
+  id: twos-complement-short
+  name: "Nombres négatifs sur 16 bits (Negative Numbers (16-bit))"
+  import:
+    dojo: computing-101
+    module: nibbling-on-numbers
+    challenge: twos-complement-short
+- type: challenge
+  id: twos-complement-dword
+  name: "Nombres négatifs sur 32 bits (Negative Numbers (32-bit))"
+  import:
+    dojo: computing-101
+    module: nibbling-on-numbers
+    challenge: twos-complement-dword
+- type: challenge
+  id: twos-complement-encode
+  name: "Écrire des nombres négatifs (Encoding Negatives)"
+  import:
+    dojo: computing-101
+    module: nibbling-on-numbers
+    challenge: twos-complement-encode
+- type: challenge
+  id: binary-hex-encoding
+  name: "Encodage binaire et hexadécimal (Binary and Hex Encoding)"
+  import:
+    dojo: computing-101
+    module: nibbling-on-numbers
+    challenge: binary-hex-encoding
+- type: challenge
+  id: more-hex
+  name: "Davantage d'hexadécimal (More Hex)"
+  import:
+    dojo: computing-101
+    module: nibbling-on-numbers
+    challenge: more-hex
+- type: challenge
+  id: decoding-hex
+  name: "Décoder l'hexadécimal (Decoding Hex)"
+  import:
+    dojo: computing-101
+    module: nibbling-on-numbers
+    challenge: decoding-hex
+- type: challenge
+  id: mixed-conversions
+  name: "Conversions mélangées (Mixed Conversions)"
+  import:
+    dojo: computing-101
+    module: nibbling-on-numbers
+    challenge: mixed-conversions
