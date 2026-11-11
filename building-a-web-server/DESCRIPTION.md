@@ -45,7 +45,7 @@ Les arguments sont placés dans les registres dans un ordre fixé, et le numéro
 Pour accepter une connexion réseau, on enchaîne quatre appels :
 
 1. **`socket`** crée un point de communication et renvoie un descripteur. Ses arguments sont le domaine (par exemple IPv4, nommé `AF_INET`), le type (par exemple TCP, nommé `SOCK_STREAM`) et le protocole, en général `0`.
-2. **`bind`** attache le socket à une adresse. Cette adresse est une structure `sockaddr_in` qui contient la famille, le port et l'adresse IPv4. Les nombres du port et de l'adresse sont écrits dans l'ordre réseau, c'est-à-dire en gros-boutiste (*big-endian*). Une fonction comme `htons` convertit un nombre de l'ordre de la machine vers l'ordre réseau.
+2. **`bind`** attache le socket à une adresse. Cette adresse est une structure `sockaddr_in` qui contient la famille, le port et l'adresse IPv4. Les nombres du port et de l'adresse sont écrits dans l'ordre réseau, c'est-à-dire en gros-boutisme (*big-endian*). Une fonction comme `htons` convertit un nombre de l'ordre de la machine vers l'ordre réseau.
 3. **`listen`** fait passer le socket en mode passif, prêt à recevoir des connexions. Son paramètre `backlog` fixe le nombre de connexions en attente.
 4. **`accept`** prend une connexion en attente et renvoie un **nouveau** descripteur, dédié à ce client. Le socket d'origine reste disponible pour les connexions suivantes.
 

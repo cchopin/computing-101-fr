@@ -88,3 +88,38 @@ Le nom traduit précède le nom anglais entre parenthèses, par exemple « Votre
 - « registre à usage général » et « registre particulier » : les deux expressions sont courantes en français.
 - « défi » pour *challenge* : préférable à « exercice » ou « challenge », qui ne reflètent pas la vérification automatique par `/challenge/check`.
 - « mot » pour *word* : terme ambigu, précisé à chaque occurrence dans la fiche de cours.
+
+## Termes ajoutés pour les modules 2 à 8
+
+| Anglais | Français retenu | Remarque |
+|---|---|---|
+| file descriptor | descripteur de fichier | |
+| standard input, output, error | entrée standard, sortie standard, erreur standard | |
+| string | chaîne de caractères | |
+| memory address | adresse mémoire | |
+| address space | espace d'adressage | |
+| pointer | pointeur | |
+| dereference | déréférencer | Verbe, par exemple « déréférencer un pointeur ». |
+| offset | décalage | |
+| little endian | petit-boutisme | Nom : « boutisme » (endianness). |
+| big endian | gros-boutisme | |
+| debugger | débogueur | |
+| breakpoint | point d'arrêt | |
+| syscall tracer | traceur d'appels système | |
+| timer | minuteur | |
+| hint | indice | |
+| mnemonic | moyen mnémotechnique | |
+| level (défi) | niveau | Pour les défis de type « level-N ». |
+| control flow | flot d'exécution | |
+| zero flag (ZF) | indicateur de zéro (ZF) | Les indicateurs (flags) du processeur gardent leur nom anglais en majuscules. |
+| flags (processeur) | indicateurs | |
+| stack frame | cadre de pile | |
+| calling convention | convention d'appel | |
+| callee-saved register | registre préservé par l'appelé | |
+| process | processus | |
+| parent, child (fork) | parent, enfant | |
+| PID | PID | Terme conservé. |
+| socket | socket | Terme conservé. |
+| backlog | file d'attente (backlog) | |
+| port | port | |
+| trampoline | trampoline | Terme conservé. |

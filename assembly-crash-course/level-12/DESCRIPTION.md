@@ -21,7 +21,7 @@ Si l'on regardait la façon dont cela se présente réellement en mémoire, on v
 [0x1337] = 0x00
 ```
 
-Ce format de stockage « à l'envers » est voulu en x86 : on l'appelle « little endian » (petit-boutiste).
+Ce format de stockage « à l'envers » est voulu en x86 : on l'appelle « little endian » (petit-boutisme).
 
 Pour ce défi, le niveau fournit deux adresses, créées dynamiquement à chaque exécution.
 
