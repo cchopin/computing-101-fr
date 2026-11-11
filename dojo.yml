@@ -1,0 +1,32 @@
+id: computing-101-fr
+name: "Computing 101 (français)"
+type: hidden
+import:
+  dojo: computing-101
+award:
+  emoji: 💻
+modules:
+- id: your-first-program
+  import:
+    module: your-first-program
+- id: introspecting
+  import:
+    module: introspecting
+- id: memory
+  import:
+    module: memory
+- id: advanced-memory
+  import:
+    module: advanced-memory
+- id: hello-hackers
+  import:
+    module: hello-hackers
+- id: assembly-crash-course
+  import:
+    module: assembly-crash-course
+- id: debugging-refresher
+  import:
+    module: debugging-refresher
+- id: building-a-web-server
+  import:
+    module: building-a-web-server
