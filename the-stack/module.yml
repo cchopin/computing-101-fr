@@ -1,0 +1,50 @@
+name: "La pile (The Stack)"
+description: |
+  Jusqu'ici, on a lu des données à des adresses mémoire que nous avons préparées pour vous.
+  Mais votre programme dispose déjà d'une zone de mémoire prête à l'emploi : la **pile** (stack).
+  La pile est désignée par le registre `rsp`. Elle contient des données utiles sur la façon dont le programme a été lancé, et elle se remplit au fil de l'exécution.
+  Explorons-la !
+resources:
+- type: challenge
+  id: mem-stack
+  name: "Premier contact avec la pile (The Stack)"
+  import:
+    dojo: computing-101
+    module: the-stack
+    challenge: mem-stack
+- type: challenge
+  id: mem-stack-offsets
+  name: "Décalages sur la pile (Stack Offsets)"
+  import:
+    dojo: computing-101
+    module: the-stack
+    challenge: mem-stack-offsets
+- type: challenge
+  id: mem-argv1
+  name: "Arguments du programme sur la pile (Program Arguments on the Stack)"
+  import:
+    dojo: computing-101
+    module: the-stack
+    challenge: mem-argv1
+- type: challenge
+  id: mem-pop
+  name: "Dépiler une valeur (Popping From the Stack)"
+  import:
+    dojo: computing-101
+    module: the-stack
+    challenge: mem-pop
+- type: markdown
+  name: "Les adresses de la pile sur une droite numérique (Stack Addresses as a Number Line)"
+  content: |
+    La pile se comprend plus facilement si on se rappelle que les adresses sont des nombres.
+    Les schémas représentent souvent la pile verticalement, mais les nombres gardent un ordre simple, de gauche à droite :
+
+    ```text
+    adresses plus petites                                  adresses plus grandes
+    ...  rsp-0x10      rsp-0x08      rsp      rsp+0x08      rsp+0x10  ...
+    ```
+
+    Les décalages positifs par rapport à `rsp`, comme `[rsp+8]`, lisent des octets situés à des adresses plus grandes.
+    Les décalages négatifs, comme `[rsp-8]`, lisent des octets situés à des adresses plus petites.
+
+    Au démarrage d'un programme, le noyau a déjà placé les données de lancement à l'adresse contenue dans `rsp`, puis à des adresses plus grandes, vers la droite de cette droite numérique.
