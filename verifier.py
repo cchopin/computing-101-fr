@@ -14,7 +14,7 @@ import subprocess
 import sys
 
 RACINE = pathlib.Path(__file__).resolve().parent
-ORIGINE = RACINE / "sources" / "computing-101"
+ORIGINE = RACINE / "sources" / "challenges-upstream" / "challenges" / "computing-101"
 MARQUEUR_FICHE = "## Fiche de cours (ajout, hors traduction)"
 TIRETS_INTERDITS = ("—", "–")
 PONCTUATION_FRANCAISE = re.compile(r"[^\s ] [;:?!»]|« [^\s ]")

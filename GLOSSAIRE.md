@@ -123,3 +123,42 @@ Le nom traduit précède le nom anglais entre parenthèses, par exemple « Votre
 | backlog | file d'attente (backlog) | |
 | port | port | |
 | trampoline | trampoline | Terme conservé. |
+
+## Termes ajoutés pour les modules de la source actuelle
+
+| Anglais | Français retenu | Remarque |
+|---|---|---|
+| caller-saved register | registre non préservé par l'appelé | Aussi appelé registre sauvegardé par l'appelant. |
+| callee-saved register | registre préservé par l'appelé | |
+| calling convention | convention d'appel | |
+| jump table | table de sauts | |
+| switch | aiguillage (switch) | |
+| zero flag (ZF), carry flag (CF), overflow flag (OF), sign flag (SF) | drapeau zéro (ZF), de retenue (CF), de débordement (OF), de signe (SF) | Les « drapeaux » sont les indicateurs du processeur. |
+| byte low, byte high | octet de poids faible, octet de poids fort | |
+| shared library | bibliothèque partagée | |
+| size directive (`BYTE PTR`) | directive de taille | |
+| null byte, NUL terminator | octet nul, terminateur NUL | |
+| RIP-relative addressing | adressage relatif à rip | |
+| load effective address (`lea`) | chargement d'adresse effective | |
+| network byte order | ordre des octets du réseau | |
+| file descriptor (fd) | descripteur de fichier (fd) | |
+| disassembly | désassemblage | |
+| cooperative debugging | débogage coopératif | |
+| stepi | avancer d'une instruction (`stepi`) | |
+| censored | censuré | |
+| sign extension | extension de signe | |
+| bit shift | décalage de bits | |
+| mask | masque | |
+| XOR | ou exclusif (XOR) | |
+| format string | chaîne de format | |
+| formatter | formateur | |
+| escape sequence | séquence d'échappement | |
+| environment variable | variable d'environnement | |
+| struct | structure | |
+| calculator | calculatrice | |
+| byte, word, dword, qword | octet, mot, double mot, quadruple mot | |
+| short | short (16 bits) | |
+| stack frame | cadre de pile | |
+| trampoline | trampoline | Terme conservé. |
+| jump | saut | |
+| level (défi) | niveau | |

@@ -6,11 +6,10 @@ Ce dépôt ne contient ni le code des défis, ni leurs vérifications. Ils sont 
 
 ## Crédit et licence
 
-- Contenu d'origine : © 2022 pwn.college, dépôt [`pwncollege/computing-101`](https://github.com/pwncollege/computing-101), commit `38a1402207912c9e5844a66e993ba62d0f616226`.
+- Contenu d'origine : © pwn.college, dépôt [`pwncollege/challenges`](https://github.com/pwncollege/challenges), dossier `challenges/computing-101`, commit `0a4d91514c8077a5b77c25aff3ce2d6dc90c1181`. Ce dossier est sous licence BSD 2-Clause (fichier `LICENSE` du dossier) ; le reste du dépôt amont est sous licence non commerciale.
 - Les textes traduits sont dérivés de ce contenu. Le fichier [LICENSE](LICENSE) reproduit la licence BSD 2-Clause d'origine, qui doit être conservée avec toute copie ou modification.
 - Ce dépôt ne reprend aucune diapositive ni vidéo. Les liens vers les vidéos et les diapositives sont ceux de l'original, signalés comme « en anglais ».
 - Diapositives : le site de pwn.college indique que les vidéos et diapositives des cours peuvent être utilisées librement à des fins non commerciales, avec attribution, et demande d'écrire à l'équipe si pwn.college sert dans un programme d'enseignement. Une mention de licence CC BY-NC apparaît dans un résultat de recherche, mais elle n'a pas été vérifiée sur la source : à confirmer avant toute diffusion.
-- Le dépôt d'origine n'est plus maintenu à cette adresse. Le développement se poursuit sur [`pwncollege/challenges`](https://github.com/pwncollege/challenges).
 
 Ce dépôt reste **privé** tant que la question des diapositives n'est pas tranchée.
 
@@ -39,11 +38,11 @@ Le dojo est déclaré `type: hidden`. Il n'apparaît donc pas dans la liste publ
 
 ## Commit de référence
 
-La traduction est basée sur `pwncollege/computing-101` au commit `38a1402207912c9e5844a66e993ba62d0f616226`.
+La traduction est basée sur `pwncollege/challenges`, dossier `challenges/computing-101`, au commit `0a4d91514c8077a5b77c25aff3ce2d6dc90c1181`. L'ancien dépôt `pwncollege/computing-101` n'est plus maintenu.
 
 ## Sources locales
 
-Le dossier `sources/` (ignoré par git) contient les dépôts de référence clonés pour l'étude : `computing-101`, `example-dojo`, `example-import-dojo`, `dojo`. Il contient aussi les diapositives téléchargées dans `sources/slides/`.
+Le dossier `sources/` (ignoré par git) contient le dépôt de référence `challenges-upstream`, ainsi que les diapositives téléchargées dans `sources/slides/`.
 
 ## Étude préalable
 
