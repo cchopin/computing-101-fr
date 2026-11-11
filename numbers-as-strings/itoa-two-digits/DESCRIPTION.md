@@ -75,7 +75,7 @@ hacker@dojo:~$ gdb ./debug
 (gdb) run
 ```
 
-L'exécution s'arrête sur votre `int3`. Vous pouvez alors avancer pas à pas avec les techniques vues dans [Introspection logicielle](/computing-101/introspecting), en observant la mémoire de la pile et les registres, jusqu'à ce que tout fonctionne !
+L'exécution s'arrête sur votre `int3`. Vous pouvez alors avancer pas à pas avec les techniques vues dans [Introspection logicielle](https://pwn.college/computing-101-fr/introspecting), en observant la mémoire de la pile et les registres, jusqu'à ce que tout fonctionne !
 Vous pouvez aussi déboguer le programme natif qui charge votre `.so` :
 
 ```console

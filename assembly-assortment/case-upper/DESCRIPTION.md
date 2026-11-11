@@ -19,7 +19,7 @@ Cela efface le bit de casse d'une seule lettre.
 Cette fois, vous l'appliquerez à une chaîne entière.
 
 Une chaîne est une suite d'octets en mémoire, les uns après les autres, qui se termine par un octet `0` (le terminateur NUL) indiquant la fin de la chaîne.
-Pour la parcourir, il faut une boucle : la même forme que celle où l'on revient au début avec `jmp`, que vous avez pratiquée dans [Écrire des boucles](/computing-101/control-flow/loop-write).
+Pour la parcourir, il faut une boucle : la même forme que celle où l'on revient au début avec `jmp`, que vous avez pratiquée dans [Écrire des boucles](https://pwn.college/computing-101-fr/control-flow/loop-write).
 
 La boucle s'organise ainsi : lire l'octet suivant ; si c'est le NUL (`0`), sauter après la boucle et c'est terminé ; sinon effacer son bit de casse, le réécrire en mémoire, passer à l'octet suivant, et revenir au début de la boucle.
 La structure générale de la boucle est :

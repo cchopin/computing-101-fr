@@ -1,7 +1,7 @@
 Votre `atoi` à deux chiffres calculait `first * 10 + second`.
 Et s'il y a plus de deux chiffres ?
 Il suffit de garder un total courant et, pour chaque nouveau chiffre, de calculer `total = total * 10 + digit`.
-Cette répétition est une *boucle*, que vous avez pratiquée dans [Écrire des boucles](/computing-101/control-flow/loop-write) et que vous adapterez ici.
+Cette répétition est une *boucle*, que vous avez pratiquée dans [Écrire des boucles](https://pwn.college/computing-101-fr/control-flow/loop-write) et que vous adapterez ici.
 
 Lisez les chiffres de gauche à droite :
 
@@ -16,7 +16,7 @@ Lisez les chiffres de gauche à droite :
 On répète cela jusqu'à la fin de la chaîne. Par convention, celle du langage C (et utilisée ici), la fin est représentée par un octet de valeur 0x00 (c'est-à-dire `00000000` en binaire, ou la valeur 0 en décimal).
 Attention : ce n'est pas le caractère '0', qui vaut `0x30` (`00110000` en binaire).
 
-Votre boucle se résume donc ainsi : lire l'octet suivant ; s'il vaut `0`, sauter après la boucle (reportez-vous à [Écrire des boucles](/computing-101/control-flow/loop-write) pour la structure) ; sinon convertir le chiffre comme le faisait `atoi_digit`, multiplier le total par `10`, y ajouter le chiffre, puis revenir au début de la boucle.
+Votre boucle se résume donc ainsi : lire l'octet suivant ; s'il vaut `0`, sauter après la boucle (reportez-vous à [Écrire des boucles](https://pwn.college/computing-101-fr/control-flow/loop-write) pour la structure) ; sinon convertir le chiffre comme le faisait `atoi_digit`, multiplier le total par `10`, y ajouter le chiffre, puis revenir au début de la boucle.
 
 Votre `atoi` reçoit dans `rdi` un pointeur vers la chaîne et doit renvoyer la valeur entière dans `rax`.
 Parcourez les chiffres en boucle, et renvoyez le nombre.
@@ -49,4 +49,4 @@ hacker@dojo:~$ gdb ./debug
 (gdb) run
 ```
 
-L'exécution s'arrête sur votre `int3`. Vous pouvez alors avancer pas à pas avec les techniques vues dans [Introspection logicielle](/computing-101/introspecting), en observant `rdi` parcourir la chaîne et le total se construire dans `rax`, jusqu'à ce que tout fonctionne !
+L'exécution s'arrête sur votre `int3`. Vous pouvez alors avancer pas à pas avec les techniques vues dans [Introspection logicielle](https://pwn.college/computing-101-fr/introspecting), en observant `rdi` parcourir la chaîne et le total se construire dans `rax`, jusqu'à ce que tout fonctionne !

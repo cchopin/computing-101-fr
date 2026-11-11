@@ -22,4 +22,4 @@ hacker@dojo:~$ /challenge/check solve.so
 **INDICE :**
 Ce niveau demande trois boucles, les unes après les autres : une pour effacer la table de travail, une pour marquer chaque valeur rencontrée, et une pour compter les cases marquées à la fin.
 
-Pour déboguer une fonction soumise à l'intérieur d'une bibliothèque partagée, reportez-vous à [Écrire depuis une bibliothèque partagée](/computing-101/control-flow/callee-write).
+Pour déboguer une fonction soumise à l'intérieur d'une bibliothèque partagée, reportez-vous à [Écrire depuis une bibliothèque partagée](https://pwn.college/computing-101-fr/control-flow/callee-write).

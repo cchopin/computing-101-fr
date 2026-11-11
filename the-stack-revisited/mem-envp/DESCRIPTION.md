@@ -1,5 +1,5 @@
 La pile contient plus que `argc` et `argv` !
-Juste après la liste des arguments, le noyau place les **variables d'environnement** que vous avez découvertes dans le [Linux Luminarium](/linux-luminarium).
+Juste après la liste des arguments, le noyau place les **variables d'environnement** que vous avez découvertes dans le [Linux Luminarium](https://pwn.college/linux-luminarium).
 Comme `argv`, elles sont stockées sur la pile sous forme de tableau de pointeurs vers des chaînes de caractères. Chaque chaîne contient le nom et la valeur de la variable, par exemple `PATH=/usr/bin:...`, `HOME=/home/hacker` ou `PWN=COLLEGE`.
 
 Si un programme est appelé sans arguments (c'est-à-dire que `argc` vaut 1, et que la seule chaîne de `argv` est le nom du programme lui-même) et avec une seule variable d'environnement nommée `FLAG`, sa disposition de pile initiale peut ressembler à ceci :

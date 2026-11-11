@@ -26,7 +26,7 @@ Ainsi, si l'on tape (ou si l'on envoie par un tube) `HELLO HACKERS` sur l'entré
 
 Que sont ces nombres ??
 Ce sont les représentations *hexadécimales* de lettres encodées en *ASCII*.
-Si ces mots ne vous parlent pas, parcourez la première moitié environ du module [Dealing with Data](/fundamentals/data-dealings), puis revenez ici !
+Si ces mots ne vous parlent pas, parcourez la première moitié environ du module [Dealing with Data](https://pwn.college/fundamentals/data-dealings), puis revenez ici !
 
 Dans ce défi, on combine `read` avec les capacités déjà acquises avec `write`.
 Le flag est transmis sur l'entrée standard du programme : 128 octets de flag.

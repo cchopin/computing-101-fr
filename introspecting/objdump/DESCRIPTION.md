@@ -28,7 +28,7 @@ Lire de l'assembleur dans une autre syntaxe que la syntaxe Intel peut prêter à
 Ensuite, `objdump` affiche les octets bruts de chaque instruction (par exemple, les valeurs hexadécimales `0f 05` correspondent à l'instruction `syscall`), à côté de l'assembleur lisible.
 Ce sont les valeurs réellement stockées dans la mémoire de l'ordinateur pour représenter les instructions.
 Pour des raisons mathématiques, elles sont écrites en base 16 (hexadécimal), et non en base 10 (décimal), celle que nous utilisons pour compter.
-Si ce point n'est pas clair, parcourez la première moitié environ du module [Traiter les données](/fundamentals/data-dealings), puis revenez ici !
+Si ce point n'est pas clair, parcourez la première moitié environ du module [Traiter les données](https://pwn.college/fundamentals/data-dealings), puis revenez ici !
 
 Enfin, les valeurs placées dans les registres sont *aussi* écrites en hexadécimal.
 Cela peut rendre le programme difficile à comprendre.

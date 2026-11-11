@@ -8,7 +8,7 @@ Sans argument numérique, affichez `0`.
 - Déréférencez cette entrée de table pour obtenir le pointeur vers la chaîne que `atoi` attend.
 - Avancez le registre de 8 octets après chaque nombre.
 
-Rappelez-vous que `atoi` est un appel de fonction : tout état de boucle encore nécessaire après l'appel doit donc être préservé selon les [règles de convention d'appel que vous avez pratiquées précédemment](/computing-101/control-flow/caller-saved-registers).
+Rappelez-vous que `atoi` est un appel de fonction : tout état de boucle encore nécessaire après l'appel doit donc être préservé selon les [règles de convention d'appel que vous avez pratiquées précédemment](https://pwn.college/computing-101-fr/control-flow/caller-saved-registers).
 
 Les nombres, voire la somme totale, peuvent être négatifs : c'est justement pour cela que votre `atoi` et votre `itoa` gèrent le signe.
 Convertissez ensuite le total avec `itoa` dans un tampon de travail (par exemple sur la pile), puis utilisez `write` pour écrire ce nombre d'octets sur le descripteur de fichier `1`.

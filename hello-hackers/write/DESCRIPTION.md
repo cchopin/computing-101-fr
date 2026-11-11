@@ -4,7 +4,7 @@ Sans surprise, votre programme écrit du texte à l'écran en invoquant un appel
 Il s'agit de l'appel système `write`, dont le numéro est `1`.
 Cependant, l'appel `write` doit aussi indiquer, par ses paramètres, *quoi* écrire et *où* l'écrire.
 
-Vous vous souvenez peut-être, du module [Practicing Piping](/linux-luminarium/piping) du dojo [Linux Luminarium](/linux-luminarium), de la notion de *descripteurs de fichiers* (file descriptors, FD).
+Vous vous souvenez peut-être, du module [Practicing Piping](https://pwn.college/linux-luminarium/piping) du dojo [Linux Luminarium](https://pwn.college/linux-luminarium), de la notion de *descripteurs de fichiers* (file descriptors, FD).
 Pour rappel, chaque processus démarre avec trois FD :
 
 - **FD 0 :** l'*entrée standard* (Standard Input) est le canal par lequel le processus reçoit ses données. Par exemple, le shell lit par ce canal les commandes que l'on tape.

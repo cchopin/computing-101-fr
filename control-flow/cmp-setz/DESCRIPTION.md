@@ -53,7 +53,7 @@ C'est pourquoi modifier seulement `dil` suffit ici : le statut visible vaut `1`
 Une dernière remarque sur `cmp` : il peut comparer un registre avec une valeur immédiate (`cmp rdi, 42`), ou même une zone de mémoire avec une valeur immédiate (`cmp QWORD PTR [rsp], 42`).
 Mais il **ne peut pas** comparer deux zones de mémoire entre elles : une seule des deux opérandes peut être un déréférencement de mémoire.
 
-Voici maintenant votre défi. Rappelez-vous, dans le module [La pile](/computing-101/the-stack), que `[rsp]` contient `argc`, le nombre d'arguments passés à votre programme, y compris le nom du programme.
+Voici maintenant votre défi. Rappelez-vous, dans le module [La pile](https://pwn.college/computing-101-fr/the-stack), que `[rsp]` contient `argc`, le nombre d'arguments passés à votre programme, y compris le nom du programme.
 Écrivez un programme qui :
 
 1. compare `argc` à `42` (en chargeant d'abord `argc` dans un registre, ou en comparant directement à la mémoire) ;

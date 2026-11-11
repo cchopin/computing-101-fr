@@ -1,6 +1,6 @@
 Appliquons maintenant ce que vous avez appris pour vérifier un caractère précis d'un argument de la ligne de commande.
 
-Rappelez-vous, dans le module [La pile](/computing-101/the-stack), que `[rsp+16]` contient un *pointeur* vers `argv[1]`, le premier argument de la ligne de commande.
+Rappelez-vous, dans le module [La pile](https://pwn.college/computing-101-fr/the-stack), que `[rsp+16]` contient un *pointeur* vers `argv[1]`, le premier argument de la ligne de commande.
 Pour accéder au texte de l'argument, il faut d'abord charger ce pointeur dans un registre :
 
 ```asm
@@ -18,7 +18,7 @@ cmp BYTE PTR [rax], 'p'
 
 Cela lit un octet à l'adresse contenue dans `rax`, et le compare à la valeur ASCII de `'p'`.
 Rappelez-vous : `BYTE PTR` indique au processeur qu'on travaille avec un seul octet, et non une valeur complète de 64 bits.
-Vous l'avez déjà vu dans le module [Entrées et sorties](/computing-101/hello-hackers), lorsque vous avez construit des chaînes octet par octet sur la pile.
+Vous l'avez déjà vu dans le module [Entrées et sorties](https://pwn.college/computing-101-fr/hello-hackers), lorsque vous avez construit des chaînes octet par octet sur la pile.
 
 Après le `cmp`, le drapeau zéro indique si les caractères correspondent, et vous pouvez récupérer ce résultat avec `setz dil`, comme précédemment.
 

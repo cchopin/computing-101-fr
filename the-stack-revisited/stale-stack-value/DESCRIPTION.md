@@ -30,4 +30,4 @@ hacker@dojo:~$ ld -shared -o solve.so solve.o
 hacker@dojo:~$ /challenge/check solve.so
 ```
 
-Pour déboguer une fonction soumise à l'intérieur d'une bibliothèque partagée, reportez-vous à [Écrire depuis une bibliothèque partagée](/computing-101/control-flow/callee-write).
+Pour déboguer une fonction soumise à l'intérieur d'une bibliothèque partagée, reportez-vous à [Écrire depuis une bibliothèque partagée](https://pwn.college/computing-101-fr/control-flow/callee-write).

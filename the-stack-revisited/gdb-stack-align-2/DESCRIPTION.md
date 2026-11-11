@@ -13,7 +13,7 @@ hacker@dojo:~$ /challenge/program
 ```
 
 Comment vider l'environnement ?
-Vous pouvez le faire avec la commande `env`, que nous avons déjà utilisée pour afficher les variables d'environnement exportées dans le [Linux Luminarium](/linux-luminarium/variables).
+Vous pouvez le faire avec la commande `env`, que nous avons déjà utilisée pour afficher les variables d'environnement exportées dans le [Linux Luminarium](https://pwn.college/linux-luminarium/variables).
 La commande `env` peut aussi servir de *wrapper* pour contrôler précisément l'environnement d'un programme.
 Par exemple, `env -i` vide complètement l'environnement du programme enfant :
 

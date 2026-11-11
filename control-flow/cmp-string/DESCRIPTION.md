@@ -18,7 +18,7 @@ jne fail
 ```
 
 Chaque comparaison vérifie un caractère de la chaîne.
-Rappelez-vous, du module [Mémoire de l'ordinateur](/computing-101/computer-memory), que `[rax+1]` désigne l'octet situé *juste après* l'adresse contenue dans `rax`, `[rax+2]` est deux octets plus loin, et ainsi de suite.
+Rappelez-vous, du module [Mémoire de l'ordinateur](https://pwn.college/computing-101-fr/memory), que `[rax+1]` désigne l'octet situé *juste après* l'adresse contenue dans `rax`, `[rax+2]` est deux octets plus loin, et ainsi de suite.
 Comme les chaînes sont stockées sous forme d'octets consécutifs en mémoire, `[rax]` est le premier caractère, `[rax+1]` le deuxième, `[rax+2]` le troisième, etc.
 
 Si un caractère ne correspond pas, `jne` saute immédiatement à `fail` : le programme ne vérifie pas le reste.

@@ -31,7 +31,7 @@ Vérifiez donc d'abord l'octet de l'opérateur : s'il vaut `'+'`, effectuez l'a
 Ce refus fait partie du travail : reconnaître l'unique opérateur que vous gérez, et renoncer pour tous les autres.
 
 Lorsque l'opérateur est `'+'` : utilisez `atoi` sur les deux opérandes, additionnez-les, transformez la somme en texte avec `itoa` dans un tampon de travail, puis écrivez ces octets sur le descripteur de fichier `1` (la sortie standard) avec `write`.
-Réservez ce tampon sur la pile (un `sub rsp, 0x80` fait de la place, et `rsp` pointe alors dessus), comme vous aviez stocké la chaîne `/flag` sur la pile dans [Hello, Hackers](/computing-101/hello-hackers).
+Réservez ce tampon sur la pile (un `sub rsp, 0x80` fait de la place, et `rsp` pointe alors dessus), comme vous aviez stocké la chaîne `/flag` sur la pile dans [Hello, Hackers](https://pwn.college/computing-101-fr/hello-hackers).
 Quittez ensuite proprement avec le code `0`.
 
 Il s'agit d'un programme complet : assemblez-le et liez-le comme un seul programme (sans `-shared`), puis soumettez-le :

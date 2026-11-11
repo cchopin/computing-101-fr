@@ -114,8 +114,8 @@ resources:
 - type: markdown
   name: "Guide : lire des données stockées dans GDB (Guide: Reading Stored Data in GDB)"
   content: |
-    Dans [Ouvrir le fichier, avec RIP](/computing-101/hello-hackers/open-read-write-rip-relative), vous avez utilisé une étiquette et `lea` pour passer à `open` l'adresse d'octets stockés.
-    Dans [Examiner la mémoire avec GDB](/computing-101/introspecting/gdb-examine-argv1), vous avez utilisé `x/s` pour afficher la chaîne située à une adresse.
+    Dans [Ouvrir le fichier, avec RIP](https://pwn.college/computing-101-fr/hello-hackers/open-read-write-rip-relative), vous avez utilisé une étiquette et `lea` pour passer à `open` l'adresse d'octets stockés.
+    Dans [Examiner la mémoire avec GDB](https://pwn.college/computing-101-fr/introspecting/gdb-examine-argv1), vous avez utilisé `x/s` pour afficher la chaîne située à une adresse.
 
     Le défi suivant combine ces deux idées, dans un programme que vous rétro-ingénierez.
     Le programme a déjà effectué le travail de type `lea` à votre place : l'un de ses registres contiendra l'adresse, à l'exécution, d'une chaîne stockée.

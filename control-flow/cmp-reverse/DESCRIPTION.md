@@ -9,7 +9,7 @@ Comment résoudre cela ?
 Il faut lire le désassemblage du programme, analyser les instructions `cmp`, comprendre le mot de passe attendu, puis lancer le programme avec le bon argument.
 
 Vous avez déjà les outils pour cela !
-Dans le module [Introspection logicielle](/computing-101/introspecting), souvenez-vous : `objdump -d -M intel /challenge/reverse-me` désassemble le binaire et affiche ses instructions assembleur.
+Dans le module [Introspection logicielle](https://pwn.college/computing-101-fr/introspecting), souvenez-vous : `objdump -d -M intel /challenge/reverse-me` désassemble le binaire et affiche ses instructions assembleur.
 Vous verrez des instructions `cmp` semblables à celles que vous avez écrites au défi précédent, mais au lieu de caractères entre guillemets simples `''`, les valeurs comparées seront écrites en hexadécimal.
 Les valeurs immédiates de ces comparaisons *sont* les caractères du mot de passe, codés en valeurs ASCII hexadécimales.
 

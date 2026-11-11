@@ -34,7 +34,7 @@ solve:
     <votre code, se terminant par un appel système exit>
 ```
 
-La ligne `.global solve` indique à l'assembleur « rendez ce code accessible pour que d'autres puissent le trouver », exactement comme `.global _start` pour les exécutables, dans le niveau [Construire](/computing-101/your-first-program).
+La ligne `.global solve` indique à l'assembleur « rendez ce code accessible pour que d'autres puissent le trouver », exactement comme `.global _start` pour les exécutables, dans le niveau [Construire](https://pwn.college/computing-101-fr/your-first-program).
 L'étiquette `solve:` indique où se trouve le code.
 
 **Construire une bibliothèque partagée.**  
@@ -96,7 +96,7 @@ hacker@dojo:~$ gdb ./debug
 (gdb) run
 ```
 
-L'exécution s'arrête à votre `int3` ; avancez pas à pas avec les techniques du module [Introspection logicielle](/computing-101/introspecting), en surveillant les registres et le tampon.
+L'exécution s'arrête à votre `int3` ; avancez pas à pas avec les techniques du module [Introspection logicielle](https://pwn.college/computing-101-fr/introspecting), en surveillant les registres et le tampon.
 Si votre `solve` est correct, cela affiche `AAAA`, et la même logique affichera votre vrai flag lorsque vous soumettrez le `.so` au correcteur.
 
 Vous pouvez aussi déboguer le programme natif avec des octets de remplacement au lieu du flag.
