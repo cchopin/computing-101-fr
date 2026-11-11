@@ -1,0 +1,63 @@
+name: "Mémoire de l'ordinateur (Computer Memory)"
+resources:
+  - name: "(révision) Architecture des ordinateurs (Computer Architecture), en anglais"
+    type: lecture
+    video: o_kSgUPJk4c
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1sVyPL92gbzg_it9aIeC-CjXtF2tpvAmZTKjWc-SlU0c
+  - name: "Mémoire (Memory), en anglais"
+    type: lecture
+    video: HahXfnOsSUU
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1lbPbd-jLj7VS7M-ntGhpv4_8WqSfqzLBNWG68_BIRL0
+  - type: header
+    content: "Défis"
+  - type: challenge
+    id: mem-load
+    name: "Charger une valeur depuis la mémoire (Loading From Memory)"
+    import:
+      dojo: computing-101
+      module: memory
+      challenge: mem-load
+  - type: challenge
+    id: mem-load-2
+    name: "Pratiquer le chargement (More Loading Practice)"
+    import:
+      dojo: computing-101
+      module: memory
+      challenge: mem-load-2
+  - type: challenge
+    id: mem-dereference
+    name: "Déréférencer des pointeurs (Dereferencing Pointers)"
+    import:
+      dojo: computing-101
+      module: memory
+      challenge: mem-dereference
+  - type: challenge
+    id: mem-dereference-self
+    name: "Se déréférencer soi-même (Dereferencing Yourself)"
+    import:
+      dojo: computing-101
+      module: memory
+      challenge: mem-dereference-self
+  - type: challenge
+    id: mem-offsets
+    name: "Déréférencer avec un décalage (Dereferencing with Offsets)"
+    import:
+      dojo: computing-101
+      module: memory
+      challenge: mem-offsets
+  - type: challenge
+    id: mem-stored-addr
+    name: "Adresses stockées en mémoire (Stored Addresses)"
+    import:
+      dojo: computing-101
+      module: memory
+      challenge: mem-stored-addr
+  - type: challenge
+    id: mem-double-deref
+    name: "Double déréférencement (Double Dereference)"
+    import:
+      dojo: computing-101
+      module: memory
+      challenge: mem-double-deref
