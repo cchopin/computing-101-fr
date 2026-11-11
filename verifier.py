@@ -48,8 +48,23 @@ def partie_avant_fiche(texte):
     return texte.split(MARQUEUR_FICHE, 1)[0]
 
 
-def liens(texte):
-    return sorted(set(re.findall(r"\]\(([^)\s]+)\)", texte)) | set(re.findall(r"<(https?://[^>]+)>", texte)))
+def normaliser_lien(url):
+    if url == "/computing-101/computer-memory":
+        return "https://pwn.college/computing-101-fr/memory"
+    if url.startswith("/computing-101/"):
+        return "https://pwn.college/computing-101-fr/" + url[len("/computing-101/"):]
+    if url.startswith("/linux-luminarium") or url.startswith("/fundamentals/"):
+        return "https://pwn.college" + url
+    if url.startswith("https://github.com/pwncollege/computing-101"):
+        return url.replace("https://github.com/pwncollege/computing-101", "https://github.com/pwncollege/challenges/tree/main/challenges/computing-101", 1)
+    return url
+
+
+def liens(texte, normaliser=False):
+    urls = re.findall(r"\]\(([^)\s]+)\)", texte)
+    if normaliser:
+        urls = [normaliser_lien(u) for u in urls]
+    return sorted(set(urls) | set(re.findall(r"<(https?://[^>]+)>", texte)))
 
 
 def sans_code(texte):
@@ -94,7 +109,7 @@ def verifier_texte(chemin_original, chemin_traduit):
         manquants = sorted(ensemble_o - ensemble_t)
         ajoutes = sorted(ensemble_t - ensemble_o)
         erreur(f"{chemin_traduit}: code en ligne absent de l'original ou manquant (manquants: {manquants}, ajoutés: {ajoutes})")
-    if liens(avant_o) != liens(avant_t):
+    if liens(avant_o, normaliser=True) != liens(avant_t):
         erreur(f"{chemin_traduit}: liens ou images différents de l'original")
 
 
