@@ -9,21 +9,36 @@ modules:
 - id: your-first-program
   import:
     module: your-first-program
-- id: introspecting
-  import:
-    module: introspecting
 - id: memory
   import:
     module: memory
-- id: advanced-memory
+- id: the-stack
   import:
-    module: advanced-memory
+    module: the-stack
+- id: nibbling-on-numbers
+  import:
+    module: nibbling-on-numbers
+- id: introspecting
+  import:
+    module: introspecting
 - id: hello-hackers
   import:
     module: hello-hackers
-- id: assembly-crash-course
+- id: control-flow
   import:
-    module: assembly-crash-course
+    module: control-flow
+- id: endian-escapades
+  import:
+    module: endian-escapades
+- id: assembly-assortment
+  import:
+    module: assembly-assortment
+- id: the-stack-revisited
+  import:
+    module: the-stack-revisited
+- id: numbers-as-strings
+  import:
+    module: numbers-as-strings
 - id: debugging-refresher
   import:
     module: debugging-refresher
