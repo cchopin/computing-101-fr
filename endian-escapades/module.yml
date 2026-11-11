@@ -1,0 +1,158 @@
+name: "Boutisme et pièges de l'ordre des octets (Endian Escapades)"
+resources:
+- type: markdown
+  name: "Le petit-boutisme (Little-Endian)"
+  content: |
+    Toute valeur plus large qu'un octet (un nombre sur 16, 32 ou 64 bits, une adresse mémoire, etc.) doit être découpée en octets individuels pour être stockée en mémoire, car la mémoire est adressée un octet à la fois.
+    Habitués aux grands nombres décimaux (par exemple 1337), où le chiffre « de poids faible » est à droite et le chiffre « de poids fort » à gauche, on pourrait s'attendre à la même chose dans le processeur.
+    Par exemple, pour stocker la valeur sur 16 bits (2 octets) `0x1234`, on pourrait imaginer deux octets consécutifs, d'abord `12`, puis `34`.
+
+    Certains processeurs fonctionnent effectivement ainsi, mais la plupart **non**.
+    La majorité des architectures placent le chiffre de *poids faible* à gauche et le chiffre de *poids fort* à droite.
+    Dans ces architectures, la valeur `0x1234` est stockée sur deux octets consécutifs sous la forme `34 12`.
+    Comme la « petite » extrémité (celle de poids faible) vient en premier, on parle d'architectures « petit-boutistes » (Little Endian, LE). Elles représentent pratiquement toutes les architectures de processeurs modernes.
+
+    Cela paraît absurde à quiconque le découvre, mais il existe plusieurs [bonnes raisons](https://en.wikipedia.org/wiki/Endianness) à ce choix :
+
+    1. Une grande partie des calculs se fait en partant de l'extrémité de poids faible. Pensez à une addition posée : on commence par les petites valeurs, et on reporte la retenue vers la gauche. L'unité arithmétique et logique fonctionne de la même façon, et le petit-boutisme s'y prête naturellement.
+    2. L'adresse d'une valeur est celle de son octet de poids faible. Lire un `int` de 4 octets comme un `char` de 1 octet (ou un `short` de 2 octets) se fait donc à *la même adresse*, en lisant simplement moins d'octets. Sur les systèmes gros-boutistes, il faut corriger l'adresse, ce qui est plus compliqué.
+
+    Vous voilà convaincus, j'espère.
+    Voyons maintenant d'autres exemples :
+
+    | taille de la valeur | valeur décimale | valeur hexadécimale | octets gros-boutistes (PAS x86) | octets petit-boutistes (x86) |
+    |---------------|-----------|-----------|----------------------------|---------------------------|
+    | 8 (1 octet)   | `65`         | `0x41`               | `41`                      | `41`                      |
+    | 16 (2 octets) | `4660`       | `0x1234`             | `12 34`                   | `34 12`                   |
+    | 32 (4 octets) | `1145258561` | `0x44434241`         | `44 43 42 41`             | `41 42 43 44`             |
+    | 64 (8 octets) | `1145258561` | `0x0000000044434241` | `00 00 00 00 44 43 42 41` | `41 42 43 44 00 00 00 00` |
+
+    Pour un seul octet, les deux colonnes sont identiques : il n'y a pas d'ordre à choisir. Le boutisme n'a donc d'effet qu'à partir de deux octets.
+    Les lignes de 32 et 64 bits représentent le même *nombre*. La version sur 64 bits est simplement complétée par des octets nuls, qui, étant les octets de poids fort, se trouvent aux adresses les plus hautes.
+
+    Le boutisme est avant tout une notion de processeur.
+    Il réapparaît dès qu'on sort du processeur, par exemple lors de l'envoi de données sur le réseau, où l'encodage gros-boutiste est fréquent.
+    En assembleur, on n'a souvent pas à y penser. Par exemple, une valeur écrite avec `mov rax, 0x1234` puis `push rax`, puis relue avec `pop rax`, revient inchangée : `push` l'écrit en petit-boutiste sur la pile, et `pop` la rétablit dans le registre.
+    Le boutisme ne compte donc *qu'en mémoire*. Mais dès qu'on regarde la mémoire sous forme d'octets (dans un affichage hexadécimal, dans un débogueur ou dans un exploit), l'ordre des octets saute aux yeux, et il faut le lire tel que le processeur l'a écrit.
+- type: markdown
+  name: "Ordre en mémoire et valeur des registres"
+  content: |
+    La confusion la plus fréquente se situe à la frontière entre l'ordre des octets en mémoire et la valeur affichée pour un registre.
+    Supposons que `rdi` pointe vers ces huit octets :
+
+    ```text
+    Adresse    Octet
+    [rdi+0]    41
+    [rdi+1]    42
+    [rdi+2]    43
+    [rdi+3]    44
+    [rdi+4]    45
+    [rdi+5]    46
+    [rdi+6]    47
+    [rdi+7]    48
+    ```
+
+    Un chargement sur 64 bits lit ces octets à partir de l'adresse la plus basse :
+
+    ```asm
+    mov rax, [rdi]
+    ```
+
+    Comme x86 est petit-boutiste, `[rdi+0]` devient l'octet de poids faible de `rax`, `[rdi+1]` le suivant, et ainsi de suite.
+    La valeur du registre est donc `0x4847464544434241`.
+    Écrite en hexadécimal, l'octet de poids fort s'affiche à gauche, ce qui inverse l'ordre par rapport aux adresses :
+
+    ```text
+    ordre des adresses en mémoire :  41 42 43 44 45 46 47 48
+    ordre hexadécimal du registre :  48 47 46 45 44 43 42 41
+    valeur de rax :                  0x4847464544434241
+    ```
+
+    Les octets n'ont pas bougé en mémoire.
+    Le processeur a simplement interprété l'octet de plus basse adresse comme la partie de poids faible du nombre.
+- type: markdown
+  name: "Octets, mots et compagnie"
+  content: |
+    En assembleur, on choisit en permanence *combien d'octets* une opération manipule : un, deux, quatre ou huit.
+    x86 donne un nom à chacune de ces tailles. Il est utile de les connaître, car on les rencontre partout : dans le désassemblage, dans les directives de taille de l'assembleur, et dans les noms de registres déjà utilisés.
+
+    | Nom                  | Bits | Octets | Accès partiel à `rax` | Accès mémoire                             |
+    |----------------------|------|--------|-----------------------|-------------------------------------------|
+    | byte                 | 8    | 1      | `mov al, [rdi]`       | `mov BYTE PTR [rdi], 0x11`                |
+    | word                 | 16   | 2      | `mov ax, [rdi]`       | `mov WORD PTR [rdi], 0x1122`              |
+    | doubleword (`dword`) | 32   | 4      | `mov eax, [rdi]`      | `mov DWORD PTR [rdi], 0x11223344`         |
+    | quadword (`qword`)   | 64   | 8      | `mov rax, [rdi]`      | `mov QWORD PTR [rdi], 0x1122334455667788` |
+
+    Vous connaissez déjà certains de ces registres : `al` est l'octet de poids faible de `rax`, `ax` les 2 octets de poids faible, `eax` les 4 octets, et `rax` les 8 octets.
+    Les noms de tailles ne font que dire la même chose autrement : `al` contient un octet, `eax` un double mot, `rax` un quadruple mot.
+
+    **Pourquoi un « mot » fait-il 16 bits ?**
+    Ces noms remontent aux premiers processeurs d'Intel, qui travaillaient chacun avec le morceau de données qui leur était naturel.
+    Les ancêtres du processeur x86-64, le 8008 (1972) puis le 8080, étaient des processeurs 8 bits, qui déplaçaient les données un *octet* à la fois. L'octet (8 bits) est donc le point de départ des tailles.
+    La génération suivante, le 8086 (1978), était un processeur 16 bits : ses registres faisaient 16 bits, et 16 bits était le morceau naturel qu'il manipulait.
+    Mais le 8086 devait rester *compatible* avec le 8080, pour des raisons commerciales : il devait exécuter les programmes écrits pour le 8080. Le mot « octet » devait donc garder 8 bits, et il fallait un nouveau terme pour 16 bits. On a choisi « mot » (word).
+    Quand les processeurs 32 bits (le 386) puis 64 bits (x86-64) sont arrivés, on ne pouvait pas non plus *redéfinir* « mot » sans casser tous les programmes et tous les assembleurs qui s'en servaient. On a donc défini les nouvelles tailles par rapport à ce mot d'origine : un **double mot** (dword) vaut deux mots, soit 32 bits, et un **quadruple mot** (qword) vaut quatre mots, soit 64 bits.
+
+    **La collision du mot « word ».**
+    En dehors des directives de taille de x86, les architectes emploient « word » plus librement : le *mot machine* (« word size », ou largeur de mot) désigne la largeur naturelle avec laquelle un processeur travaille, en pratique la taille de ses registres.
+    Selon cette définition, x86-64 est une machine à mots de 64 bits.
+    Le même terme désigne donc deux tailles différentes : en assembleur x86, un `WORD` fait 16 bits, quelle que soit la largeur de la machine, alors que « le mot de la machine » vaut toute la largeur d'un registre, 64 bits sur x86-64.
+    Quand vous lisez « word », demandez-vous laquelle des deux tailles est visée : le mot de 16 bits fixe de x86, ou le sens courant de « largeur d'un registre ».
+    Pour éviter la confusion, on emploie souvent le terme *short* pour une valeur de 16 bits.
+    Ainsi, `byte`, `short`, `dword` et `qword` ne posent pas ce problème : ils désignent toujours 8, 16, 32 et 64 bits.
+- type: challenge
+  id: sign-extension
+  name: "Extension de signe (Sign Extension)"
+  import:
+    dojo: computing-101
+    module: endian-escapades
+    challenge: sign-extension
+- type: challenge
+  id: endian-qword
+  name: "Octets petit-boutistes (Little-Endian Bytes)"
+  import:
+    dojo: computing-101
+    module: endian-escapades
+    challenge: endian-qword
+- type: challenge
+  id: endian-qwords
+  name: "Quadruple mot par quadruple mot (Qword by Qword)"
+  import:
+    dojo: computing-101
+    module: endian-escapades
+    challenge: endian-qwords
+- type: challenge
+  id: endian-dword
+  name: "Double mot par double mot (Dword by Dword)"
+  import:
+    dojo: computing-101
+    module: endian-escapades
+    challenge: endian-dword
+- type: challenge
+  id: endian-word
+  name: "Mot par mot (Word by Word)"
+  import:
+    dojo: computing-101
+    module: endian-escapades
+    challenge: endian-word
+- type: challenge
+  id: endian-byte
+  name: "Octet par octet (Byte by Byte)"
+  import:
+    dojo: computing-101
+    module: endian-escapades
+    challenge: endian-byte
+- type: challenge
+  id: endian-struct
+  name: "Décortiquer une structure (Cracking a Struct)"
+  import:
+    dojo: computing-101
+    module: endian-escapades
+    challenge: endian-struct
+- type: challenge
+  id: endian-struct-scrambled
+  name: "Structure brouillée (Scrambled Struct)"
+  import:
+    dojo: computing-101
+    module: endian-escapades
+    challenge: endian-struct-scrambled
