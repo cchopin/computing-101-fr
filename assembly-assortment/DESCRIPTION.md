@@ -1,10 +1,10 @@
-Vous avez déjà une connaissance pratique de l'assembleur grâce au parcours suivi jusqu'ici.
+On a déjà une connaissance pratique de l'assembleur grâce au parcours suivi jusqu'ici.
 Élargissons-la !
 
 Ce module explore les effets de plusieurs instructions d'assembleur différentes, pour apprendre à les reconnaître et à ne pas paniquer en les voyant.
-Dans la plupart des défis, vous rétro-ingéniérez un binaire pour comprendre l'effet d'une instruction sur des données, puis vous lui fournirez une saisie qu'il acceptera.
-Dans quelques autres, vous utiliserez vous-même une instruction, en écrivant une petite fonction autour d'elle.
-Dans les deux cas, si vous comprenez ce que fait l'instruction, vous obtiendrez les flags !
+Dans la plupart des défis, on rétro-ingénie un binaire pour comprendre l'effet d'une instruction sur des données, puis on lui fournit une saisie qu'il acceptera.
+Dans quelques autres, on utilise soi-même une instruction, en écrivant une petite fonction autour d'elle.
+Dans les deux cas, si l'on comprend ce que fait l'instruction, on obtient les flags !
 
 ---
 

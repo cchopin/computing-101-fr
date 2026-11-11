@@ -46,18 +46,18 @@ x/a $rsp+16
 On obtient un très grand nombre hexadécimal, de la forme `0x7ffc001c4750`.
 
 **Deuxième étape :**
-Lisez le texte du premier argument à cette adresse :
+Lire le texte du premier argument à cette adresse :
 
 ```text
 x/s 0x7ffc001c4750
 ```
 
 `/s` demande à `x` d'afficher la valeur comme une chaîne de caractères (**s**tring).
-Remplacez l'adresse par celle obtenue à l'étape précédente.
+Remplacer l'adresse par celle obtenue à l'étape précédente.
 Cela affiche le flag !
 
 Faites-le !
 
-1. Lancez le programme.
+1. Lancer le programme.
 2. `x/a $rsp+16` pour obtenir l'adresse du premier argument.
 3. `x/s <address>` pour lire la chaîne contenant le flag.

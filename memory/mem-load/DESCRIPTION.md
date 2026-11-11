@@ -1,6 +1,6 @@
 Vue depuis un programme, la mémoire de l'ordinateur est un immense endroit où les données sont rangées.
 Comme les maisons d'une rue, chaque emplacement de la mémoire a une *adresse* numérique, et ces numéros se suivent (en général).
-Les ordinateurs modernes disposent d'une mémoire énorme, et la vue qu'a un programme typique de sa mémoire présente de grands trous. Imaginez une portion de rue où aucune maison n'a encore été construite : les adresses correspondantes sont sautées.
+Les ordinateurs modernes disposent d'une mémoire énorme, et la vue qu'a un programme typique de sa mémoire présente de grands trous. Imaginons une portion de rue où aucune maison n'a encore été construite : les adresses correspondantes sont sautées.
 Ce ne sont que des détails : l'essentiel est que les ordinateurs stockent les données en mémoire, en général de façon séquentielle.
 
 Dans ce défi, on pratique l'accès aux données stockées en mémoire.

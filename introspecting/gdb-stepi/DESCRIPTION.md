@@ -5,11 +5,11 @@ Dans ce défi, le désassemblage est **censuré** : la valeur secrète est remp
 On ne peut donc pas *lire* la valeur dans le code, mais on peut encore *exécuter* ce code !
 Quand le processeur exécute `mov rdi, CENSORED`, il charge la valeur secrète réelle dans le registre `rdi`.
 
-Pour exécuter une seule instruction dans gdb, utilisez la commande `stepi` (**step** one **i**nstruction, c'est-à-dire « avancer d'une **i**nstruction », abrégée `si`) :
+Pour exécuter une seule instruction dans gdb, utiliser la commande `stepi` (**step** one **i**nstruction, c'est-à-dire « avancer d'une **i**nstruction », abrégée `si`) :
 
 ```gdb
 (gdb) stepi
 ```
 
 Une fois passée l'instruction `mov`, nous lisons le registre `rdi` à la place et affichons la valeur secrète.
-Soumettez-la avec `/challenge/submit-number` !
+La soumettre avec `/challenge/submit-number` !

@@ -61,4 +61,4 @@ Après `pop rdi` :
 La valeur `3` a été retirée du sommet de la pile pour être placée dans `rdi`, et `rsp` a avancé de 8 octets, pour pointer vers la valeur suivante.
 La donnée située à `1337000` est toujours présente en mémoire, mais pour la pile elle a disparu : `rsp` est passé au-delà.
 
-Dans ce défi, utilisez `pop` pour lire le nombre d'arguments, et quittez avec cette valeur !
+Dans ce défi, utiliser `pop` pour lire le nombre d'arguments, et quitter avec cette valeur !

@@ -12,7 +12,7 @@ Plusieurs arguments `-ex` peuvent être enchaînés.
 Enfin, certaines commandes peuvent être exécutées à chaque session gdb si on les place dans `~/.gdbinit`.
 Il est sans doute utile d'y mettre `set disassembly-flavor intel`.
 
-Dans un script gdb, les *commandes de point d'arrêt* (breakpoint commands) sont une construction très puissante. Considérez le script suivant :
+Dans un script gdb, les *commandes de point d'arrêt* (breakpoint commands) sont une construction très puissante. Considérer le script suivant :
 
 ```gdb
 start

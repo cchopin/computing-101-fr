@@ -15,4 +15,4 @@ Dump of assembler code for function main:
 End of assembler dump.
 ```
 
-Lisez le résultat pour trouver le nombre secret, puis soumettez-le avec `/challenge/submit-number`.
+Lire le résultat pour trouver le nombre secret, puis le soumettre avec `/challenge/submit-number`.

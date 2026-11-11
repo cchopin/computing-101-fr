@@ -22,13 +22,13 @@ On remarque plusieurs choses :
 3. C'est *vraiment* simple !
 
 Dans ce défi, on écrit son premier code assembleur. Il faut placer la valeur `60` dans `rax`.
-Le programme est enregistré dans un fichier d'extension `.s` (par exemple `rax-challenge.s`). Cette extension n'est pas obligatoire, mais c'est la convention pour les fichiers d'assembleur. Passez ensuite ce fichier `.s` au programme de vérification en argument :
+Le programme est enregistré dans un fichier d'extension `.s` (par exemple `rax-challenge.s`). Cette extension n'est pas obligatoire, mais c'est la convention pour les fichiers d'assembleur. Passer ensuite ce fichier `.s` au programme de vérification en argument :
 
 ```console
 hacker@dojo:~$ /challenge/check rax-challenge.s
 ```
 
-Le fichier `.s` est l'entrée du programme de vérification : n'essayez pas de l'exécuter directement.
+Le fichier `.s` est l'entrée du programme de vérification : ne pas essayer de l'exécuter directement.
 Le code peut être écrit dans n'importe quel éditeur de texte, y compris celui de l'espace de travail VSCode de pwn.college.
 
 ---

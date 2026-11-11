@@ -95,13 +95,13 @@ resources:
   expandable: False
   name: "La calculatrice (The Calculator)"
   content: |
-    Vous pouvez transformer un texte en nombre avec votre `atoi`, et un nombre en texte avec votre `itoa`.
-    Maintenant, vous allez utiliser les deux ensemble pour construire une petite calculatrice en ligne de commande.
+    On peut transformer un texte en nombre avec son `atoi`, et un nombre en texte avec son `itoa`.
+    Maintenant, on va utiliser les deux ensemble pour construire une petite calculatrice en ligne de commande.
     Elle lit une expression dans `argv` (un opérande de gauche, un opérateur et un opérande de droite), par exemple `prog 6 + 7`.
-    Les opérandes sont des chaînes que vous savez déjà traiter : on applique `atoi` à chacune.
+    Les opérandes sont des chaînes déjà maîtrisées : on applique `atoi` à chacune.
     L'opérateur est la nouveauté : c'est un caractère unique selon lequel le programme se branche pour décider du calcul, et il s'arrête pour tout opérateur non pris en charge.
-    On applique ensuite `itoa` au résultat, puis `write` vers la sortie standard, exactement comme pour votre programme d'addition.
-    Nous ajouterons un groupe d'opérateurs à la fois : l'addition, puis la soustraction, puis la multiplication, puis les opérateurs bit à bit, et enfin les opérateurs unaires. Chacun réutilise les `atoi` et `itoa` que vous avez déjà écrits.
+    On applique ensuite `itoa` au résultat, puis `write` vers la sortie standard, exactement comme pour le programme d'addition.
+    On ajoutera un groupe d'opérateurs à la fois : l'addition, puis la soustraction, puis la multiplication, puis les opérateurs bit à bit, et enfin les opérateurs unaires. Chacun réutilise les `atoi` et `itoa` déjà écrits.
 - type: challenge
   id: calc-1-add
   name: "Addition (Addition)"
@@ -151,9 +151,9 @@ resources:
     Le code qui exécute une telle recette s'appelle un **formateur**.
     `printf` est le nom traditionnel d'un formateur qui affiche son résultat.
 
-    Ce mini-module vous fera construire votre propre `printf`.
-    Votre version sera particulière : elle sera à vous !
-    De nombreuses autres versions de `printf` existent. Par exemple, la « bibliothèque standard C », qui fournit des fonctions utiles pour écrire des applications en langage C, en contient une implémentation, et votre ligne de commande en dispose aussi :
+    Ce mini-module fera construire son propre `printf`.
+    Cette version sera particulière : elle sera à soi !
+    De nombreuses autres versions de `printf` existent. Par exemple, la « bibliothèque standard C », qui fournit des fonctions utiles pour écrire des applications en langage C, en contient une implémentation, et la ligne de commande en dispose aussi :
 
     ```console
     hacker@dojo:~$ printf Hello

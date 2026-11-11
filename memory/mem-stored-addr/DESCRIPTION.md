@@ -1,5 +1,5 @@
 Les pointeurs peuvent devenir encore plus intéressants !
-Imaginez qu'un ami habite une autre maison de la même rue.
+Imaginons qu'un ami habite une autre maison de la même rue.
 Au lieu de retenir son adresse, on pourrait l'écrire sur un papier, et ranger ce papier chez *soi*.
 Pour obtenir des données de l'ami, il faudrait alors indiquer au processeur la maison de départ, le faire chercher l'adresse de l'ami à l'intérieur, puis utiliser cette adresse comme pointeur vers sa maison.
 

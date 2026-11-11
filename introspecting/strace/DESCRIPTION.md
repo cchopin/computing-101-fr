@@ -14,7 +14,7 @@ hacker@dojo:~$
 `strace` indique quels appels système sont déclenchés, quels paramètres leur sont passés et quelles données ils renvoient.
 La syntaxe de la sortie est `system_call(parameter, parameter, parameter, ...)`, où le premier mot désigne l'appel système.
 Cette syntaxe est empruntée à un langage de programmation appelé C, mais il est inutile de s'en préoccuper pour l'instant.
-Retenez simplement comment lire cette syntaxe précise.
+Il suffit de retenir comment lire cette syntaxe précise.
 
 Dans cet exemple, `strace` signale deux appels système : le second est l'appel `exit` par lequel le programme demande sa propre fin, et l'on voit le paramètre qui lui a été passé (42).
 Le premier est un appel `execve`. Nous le verrons plus tard : c'est en quelque sorte le pendant de `exit`, puisqu'il démarre un nouveau programme (ici, `your-program`).

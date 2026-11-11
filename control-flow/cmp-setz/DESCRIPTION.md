@@ -14,7 +14,7 @@ cmp rdi, 42
 ```
 
 Cela calcule en interne `rdi - 42`, mais `rdi` n'est *pas* modifié.
-En revanche, le processeur règle un bit particulier appelé **drapeau zéro** (ZF, Zero Flag) : si le résultat de la soustraction est nul (c'est-à-dire si les deux valeurs sont égales), ZF passe à 1.
+En revanche, le processeur règle un bit particulier appelé **indicateur zéro** (ZF, Zero Flag) : si le résultat de la soustraction est nul (c'est-à-dire si les deux valeurs sont égales), ZF passe à 1.
 Si `rdi` contient `42`, alors `42 - 42 = 0`, et ZF vaut 1.
 Si `rdi` contient autre chose, le résultat n'est pas nul, et ZF vaut 0.
 
@@ -30,7 +30,7 @@ Celle que nous utilisons ici est `setz` (« set if zero », définir si zéro)
 setz dil
 ```
 
-Cette instruction regarde le drapeau zéro et :
+Cette instruction regarde l'indicateur zéro et :
 - si ZF = 1 (les valeurs **étaient** égales, c'est-à-dire que le résultat de la soustraction était nul), elle écrit `1` dans `dil` ;
 - si ZF = 0 (les valeurs **n'étaient pas** égales), elle écrit `0` dans `dil`.
 

@@ -30,4 +30,4 @@ End of assembler dump.
 
 Il s'agit du même programme que dans le défi objdump, cette fois exécuté dans gdb.
 Comme précédemment, on peut retrouver ses secrets en lisant le désassemblage, même si nous irons plus loin plus tard !
-Pour l'instant, lancez `starti` après avoir chargé le binaire dans gdb, et nous nous occupons du reste.
+Pour l'instant, lancer `starti` après avoir chargé le binaire dans gdb, et nous nous occupons du reste.

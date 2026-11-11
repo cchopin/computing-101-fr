@@ -7,7 +7,7 @@ mov rsi, 42
 ```
 
 On peut aussi copier des données d'un registre à un autre !
-Regardez :
+Voir :
 
 ```assembly
 mov rsi, 42

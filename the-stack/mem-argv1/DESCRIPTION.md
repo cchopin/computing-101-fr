@@ -47,4 +47,4 @@ mov rdi, [rdi]      # suivre le pointeur pour lire les données réelles (par ex
 ```
 
 Dans ce défi, le programme est lancé avec un argument.
-Lisez la valeur du premier argument et quittez avec cette valeur !
+Lire la valeur du premier argument et quitter avec cette valeur !

@@ -1,8 +1,8 @@
 Les vrais programmes lisent rarement un tampon à une taille uniforme.
 Ils lisent des *structures* (struct) : quelques champs de tailles *différentes*, placés les uns après les autres en mémoire.
 
-Ce `/challenge/reverse-me` traite votre mot de passe comme une structure.
-Vous ne connaissez peut-être pas le langage C, mais si vous le connaissiez, la structure serait définie ainsi :
+Ce `/challenge/reverse-me` traite le mot de passe comme une structure.
+On ne connaît peut-être pas le langage C, mais si on le connaissait, la structure serait définie ainsi :
 
 ```c
 struct { uint64_t a; uint32_t b; uint16_t c; uint8_t d; uint8_t e; };
@@ -25,8 +25,8 @@ cmp    al,  0x..
 ```
 
 Ce défi reprend à lui seul l'ensemble du module.
-Pour chaque champ, lisez trois informations dans l'accès : sa *largeur* (d'après `rax`, `eax`, `ax` ou `al`), son *décalage* (`[rdi+X]`) et sa *valeur* (remettez l'immédiate dans l'ordre des octets selon la largeur du champ).
-Recomposez les champs dans l'ordre des décalages, et vous obtenez le mot de passe.
+Pour chaque champ, lire trois informations dans l'accès : sa *largeur* (d'après `rax`, `eax`, `ax` ou `al`), son *décalage* (`[rdi+X]`) et sa *valeur* (remettre l'immédiate dans l'ordre des octets selon la largeur du champ).
+Recomposer les champs dans l'ordre des décalages, et on obtient le mot de passe.
 
 ```console
 hacker@dojo:~$ objdump -d -M intel /challenge/reverse-me
@@ -36,4 +36,4 @@ hacker@dojo:~$ /challenge/reverse-me YOUR_PASSWORD_HERE
 ---
 **ATTENTION** :
 `/challenge/reverse-me` est un binaire **SUID** : sous gdb, il abandonne ses privilèges, et le `open("/flag")` qu'il contient échoue silencieusement.
-Utilisez `objdump` pour le lire, mais lancez-le **directement** pour obtenir le flag.
+Utiliser `objdump` pour le lire, mais le lancer **directement** pour obtenir le flag.

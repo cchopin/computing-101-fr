@@ -1,4 +1,4 @@
-Voici une nouvelle instruction pour votre boîte à outils : `and`.
+Voici une nouvelle instruction pour la boîte à outils : `and`.
 
 Un `and` bit à bit compare deux valeurs bit par bit.
 Chaque bit de sortie vaut `1` seulement si *les deux* bits d'entrée valent `1`, et `0` sinon.
@@ -26,14 +26,14 @@ Il ne reste que le bit de poids faible de la valeur, isolé.
 
 Ce bit a une propriété particulière : il indique si le nombre entier est pair ou impair.
 Un nombre est pair exactement lorsque son bit de poids faible vaut `0`, et impair lorsqu'il vaut `1`.
-En masquant tout sauf le bit de poids faible, comme vous venez de le faire, on obtient donc la parité du nombre.
+En masquant tout sauf le bit de poids faible, comme on vient de le faire, on obtient donc la parité du nombre.
 
 Écrivez une fonction nommée `solve` qui reçoit dans `rdi` une valeur sur 64 bits et renvoie dans `rax` `1` si la valeur est **paire**, et `0` si elle est **impaire**.
 
 Attention : le bit isolé vaut `1` pour un nombre *impair*, alors que `solve` doit renvoyer `1` pour un nombre *pair*.
 Le bit de poids faible n'est donc pas directement la réponse : il faut en inverser la valeur.
 
-Construisez-la en bibliothèque partagée, puis transmettez-la au correcteur :
+La construire en bibliothèque partagée, puis la transmettre au correcteur :
 
 ```console
 hacker@dojo:~$ as -o solve.o solve.s

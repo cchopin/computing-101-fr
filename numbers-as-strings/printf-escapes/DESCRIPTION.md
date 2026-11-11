@@ -1,4 +1,4 @@
-Maintenant, votre chaîne de format contient de la syntaxe.
+Maintenant, la chaîne de format contient de la syntaxe.
 La barre oblique inverse ouvre des séquences d'échappement comme `\n`, et le signe pour cent introduit des marqueurs de format comme `%d`.
 
 Il en résulte un problème pratique : la sortie doit parfois contenir une vraie barre oblique inverse ou un vrai signe pour cent.
@@ -13,11 +13,11 @@ argv[1]:  "progress: 100%%"
 output:   "progress: 100%"
 ```
 
-Quand votre parcours rencontre `\\`, sautez ces deux octets et écrivez un octet barre oblique inverse avec `write`.
-Quand il rencontre `%%`, sautez ces deux octets et écrivez un octet signe pour cent.
-Continuez à gérer le texte ordinaire et les échappements `\n`.
+Quand le parcours rencontre `\\`, sauter ces deux octets et écrire un octet barre oblique inverse avec `write`.
+Quand il rencontre `%%`, sauter ces deux octets et écrire un octet signe pour cent.
+Continuer à gérer le texte ordinaire et les échappements `\n`.
 
-Construisez et soumettez comme précédemment :
+Construire et soumettre comme précédemment :
 
 ```console
 hacker@dojo:~$ as -o prog.o prog.s
@@ -27,4 +27,4 @@ progress: 100%
 hacker@dojo:~$ /challenge/check prog
 ```
 
-Transformez les octets de syntaxe doublés en un seul octet littéral.
+Transformer les octets de syntaxe doublés en un seul octet littéral.

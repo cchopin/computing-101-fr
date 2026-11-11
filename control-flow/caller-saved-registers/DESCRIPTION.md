@@ -8,7 +8,7 @@ En général, une convention d'appel répartit les registres en deux groupes, po
 - les registres **sauvegardés par l'appelant** (caller-saved) peuvent être librement écrasés par n'importe quelle fonction appelée. Si une valeur contenue dans l'un d'eux est nécessaire *après* un appel, c'est le travail de l'appelant de la sauvegarder avant, puis de la restaurer. En général, on fait cela avec `push` avant l'appel et `pop` après. Sur x86-64, ces registres sont `rax` (que les fonctions appelées écrasent pour y placer leur valeur de retour), `rcx`, `rdx`, `rsi`, `rdi`, `r8`, `r9`, `r10` et `r11`.
 - les registres **préservés par l'appelé** (callee-saved) doivent être laissés intacts par les fonctions appelées. Les fonctions appelées *peuvent* les utiliser, mais elles doivent les restaurer dans leur état d'origine. Sur x86-64, ce sont `rbx`, `rbp`, `r12`, `r13`, `r14` et `r15`.
 
-Notez que cette règle n'est qu'une *convention*.
+À noter que cette règle n'est qu'une *convention*.
 Du code peut la violer, mais cela n'arrive pas vraiment avec du code raisonnable.
 
 Ce niveau oblige à explorer les registres sauvegardés par l'appelant.

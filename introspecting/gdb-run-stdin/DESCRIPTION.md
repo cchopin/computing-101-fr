@@ -7,4 +7,4 @@ La syntaxe est celle de la redirection du shell, mais elle se place après `run`
 ```
 
 Dans ce défi, `/challenge/debug-me` lit l'entrée nécessaire dans `/challenge/secret`.
-Lancez-le sous gdb en redirigeant `/challenge/secret` vers son entrée standard, lisez le nombre secret qu'il affiche, puis soumettez ce nombre avec `/challenge/submit-number`.
+Le lancer sous gdb en redirigeant `/challenge/secret` vers son entrée standard, lire le nombre secret qu'il affiche, puis soumettre ce nombre avec `/challenge/submit-number`.

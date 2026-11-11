@@ -14,9 +14,9 @@ mov    rax, [rdi+0]
 cmp    rax, rbx
 ```
 
-Vous ne pouvez donc plus lire le mot de passe en descendant simplement le désassemblage.
-Retrouvez la *valeur* de chaque champ comme précédemment, mais lisez aussi son *décalage* dans le chargement `[rdi+X]` : c'est là que ses octets doivent être placés.
-Mettez chaque champ à son décalage, concaténez-les dans l'ordre des décalages, et vous obtenez le mot de passe.
+On ne peut donc plus lire le mot de passe en descendant simplement le désassemblage.
+Retrouver la *valeur* de chaque champ comme précédemment, mais lire aussi son *décalage* dans le chargement `[rdi+X]` : c'est là que ses octets doivent être placés.
+Mettre chaque champ à son décalage, les concaténer dans l'ordre des décalages, et on obtient le mot de passe.
 
 ```console
 hacker@dojo:~$ objdump -d -M intel /challenge/reverse-me
@@ -26,4 +26,4 @@ hacker@dojo:~$ /challenge/reverse-me YOUR_PASSWORD_HERE
 ---
 **ATTENTION** :
 `/challenge/reverse-me` est un binaire **SUID** : sous gdb, il abandonne ses privilèges, et le `open("/flag")` qu'il contient échoue silencieusement.
-Utilisez `objdump` pour le lire, mais lancez-le **directement** pour obtenir le flag.
+Utiliser `objdump` pour le lire, mais le lancer **directement** pour obtenir le flag.

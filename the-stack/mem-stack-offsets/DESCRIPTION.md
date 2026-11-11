@@ -22,4 +22,4 @@ C'est parce que beaucoup de valeurs placées sur la pile, comme les nombres ou l
 Mais il s'agit surtout d'une convention : en réalité, la pile est, comme toute zone de mémoire, une suite continue d'octets individuels. Pour l'instant, on la traite comme une suite de valeurs de 8 octets (64 bits).
 
 Dans ce défi, une valeur secrète a été cachée sur la pile, à un décalage de 128 octets par rapport à `rsp`.
-Lisez la valeur située à `[rsp+128]` et utilisez-la comme code de retour !
+Lire la valeur située à `[rsp+128]` et l'utiliser comme code de retour !

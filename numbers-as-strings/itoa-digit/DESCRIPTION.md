@@ -1,4 +1,4 @@
-Vous avez transformé une saisie texte en nombre, mais les vrais programmes doivent aussi *afficher* des nombres sous forme de texte.
+On a transformé une saisie texte en nombre, mais les vrais programmes doivent aussi *afficher* des nombres sous forme de texte.
 L'inverse de `atoi` s'appelle `itoa` (integer to ASCII). Nous allons le construire de la même façon : d'abord avec un seul chiffre, puis nous passerons à la suite !
 
 Dans l'opération inverse de `atoi`, le caractère d'un chiffre est simplement sa valeur plus `'0'` (`0x30`).
@@ -9,8 +9,8 @@ Ainsi, si le caractère ASCII `'7'` est devenu la valeur `7` en retranchant `0x3
 ```
 
 Nous commençons par `itoa_digit`.
-Votre `itoa_digit` reçoit une valeur dans `rdi` (un seul chiffre, de `0` à `9`) et renvoie son caractère ASCII dans `rax`.
-Pensez à `.global itoa_digit` pour que le défi puisse la trouver.
+L'`itoa_digit` reçoit une valeur dans `rdi` (un seul chiffre, de `0` à `9`) et renvoie son caractère ASCII dans `rax`.
+Penser à `.global itoa_digit` pour que le défi puisse la trouver.
 
 Le niveau précédent était un exécutable complet.
 Celui-ci revient au fonctionnement en bibliothèque partagée, comme pour les fonctions `atoi` précédentes :
@@ -21,4 +21,4 @@ hacker@dojo:~$ ld -shared -o your-solve.so your-solve.o
 hacker@dojo:~$ /challenge/check your-solve.so
 ```
 
-Ajoutez `0x30`, renvoyez le caractère, et réclamez le flag.
+Ajouter `0x30`, renvoyer le caractère, et réclamer le flag.

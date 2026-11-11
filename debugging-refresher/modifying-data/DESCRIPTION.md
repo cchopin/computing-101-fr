@@ -27,7 +27,7 @@ continue
 Cet exemple montre comment interrompre automatiquement sur les appels système, et comment utiliser des conditions dans les commandes pour n'exécuter certaines commandes gdb que si la condition est remplie.
 
 Dans le niveau précédent, la solution en script gdb devait sans doute encore être copiée et collée à la main.
-Cette fois, essayez d'écrire un script qui n'a jamais besoin de dialoguer avec le programme, et qui résout automatiquement chaque défi en modifiant correctement les registres et la mémoire.
+Cette fois, tenter d'écrire un script qui n'a jamais besoin de dialoguer avec le programme, et qui résout automatiquement chaque défi en modifiant correctement les registres et la mémoire.
 
 ----
 **DOCUMENTATION UTILE :**

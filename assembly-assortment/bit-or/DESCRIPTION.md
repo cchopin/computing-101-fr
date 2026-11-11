@@ -25,10 +25,10 @@ La minuscule s'obtient donc en activant ce bit sur la majuscule :
 En activant le bit de casse avec `or`, toute majuscule devient sa forme minuscule.
 
 Écrivez une fonction qui reçoit dans `rdi` une lettre ASCII majuscule et renvoie sa forme minuscule dans `rax`.
-Appelez-la `chr_lower`. Nommez vos fonctions d'après ce qu'elles font : votre code restera lisible à mesure qu'il grandit.
-Exportez-la avec `.global chr_lower`.
+La nommer `chr_lower`. Nommer les fonctions d'après ce qu'elles font : le code restera lisible à mesure qu'il grandit.
+L'exporter avec `.global chr_lower`.
 
-Construisez-la en bibliothèque partagée, puis transmettez-la au correcteur :
+La construire en bibliothèque partagée, puis la transmettre au correcteur :
 
 ```console
 hacker@dojo:~$ as -o chr_lower.o chr_lower.s

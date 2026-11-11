@@ -8,4 +8,4 @@ Dans ce niveau, la valeur secrète est placée à l'adresse `123400` au lieu de 
 +────────────────────+
 ```
 
-Chargez-la dans `rdi`, puis appelez `exit` avec cette valeur comme code de retour !
+La charger dans `rdi`, puis appeler `exit` avec cette valeur comme code de retour !

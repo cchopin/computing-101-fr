@@ -22,13 +22,13 @@ Disassembly of section .text:
 
 Quelques points sont à noter.
 D'abord, par défaut, `objdump` utilise la mauvaise syntaxe d'assembleur, c'est pourquoi on passe l'option `-M intel`.
-N'oubliez pas cette option !
+Ne pas oublier cette option !
 Lire de l'assembleur dans une autre syntaxe que la syntaxe Intel peut prêter à confusion, et nuire à la santé.
 
 Ensuite, `objdump` affiche les octets bruts de chaque instruction (par exemple, les valeurs hexadécimales `0f 05` correspondent à l'instruction `syscall`), à côté de l'assembleur lisible.
 Ce sont les valeurs réellement stockées dans la mémoire de l'ordinateur pour représenter les instructions.
 Pour des raisons mathématiques, elles sont écrites en base 16 (hexadécimal), et non en base 10 (décimal), celle que nous utilisons pour compter.
-Si ce point n'est pas clair, parcourez la première moitié environ du module [Traiter les données](https://pwn.college/fundamentals/data-dealings), puis revenez ici !
+Si ce point n'est pas clair, parcourir la première moitié environ du module [Traiter les données](https://pwn.college/fundamentals/data-dealings), puis revenir ici !
 
 Enfin, les valeurs placées dans les registres sont *aussi* écrites en hexadécimal.
 Cela peut rendre le programme difficile à comprendre.
@@ -39,7 +39,7 @@ Plus intéressant encore, juste avant *cela*, il place `0x539` dans `rdi`. Cette
 Ce « secret » est anodin, mais en lisant le code d'un logiciel, on peut en extraire beaucoup d'autres, dont certains sont sensibles pour la sécurité.
 
 Ce défi entraîne à cette extraction de secrets, avec un binaire situé dans `/challenge/disassemble-me`.
-Utilisez `objdump` pour le désassembler et trouvez le nombre chargé dans `rdi` avant d'être effacé.
-Soumettez ensuite ce nombre avec `/challenge/submit-number`.
+Utiliser `objdump` pour le désassembler et trouver le nombre chargé dans `rdi` avant d'être effacé.
+Soumettre ensuite ce nombre avec `/challenge/submit-number`.
 Le nombre est affiché en hexadécimal dans le désassemblage, mais `/challenge/submit-number` accepte aussi bien l'hexadécimal (par exemple `0x539`) que le décimal (par exemple `1337`).
 Bon courage !

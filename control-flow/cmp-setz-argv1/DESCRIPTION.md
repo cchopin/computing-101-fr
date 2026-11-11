@@ -20,7 +20,7 @@ Cela lit un octet à l'adresse contenue dans `rax`, et le compare à la valeur A
 À retenir : `BYTE PTR` indique au processeur qu'on travaille avec un seul octet, et non une valeur complète de 64 bits.
 On l'a déjà vu dans le module [Entrées et sorties](https://pwn.college/computing-101-fr/hello-hackers), lorsque des chaînes ont été construites octet par octet sur la pile.
 
-Après le `cmp`, le drapeau zéro indique si les caractères correspondent, et on peut récupérer ce résultat avec `setz dil`, comme précédemment.
+Après le `cmp`, l'indicateur zéro indique si les caractères correspondent, et on peut récupérer ce résultat avec `setz dil`, comme précédemment.
 
 Défi : écrire un programme qui vérifie si le premier caractère de `argv[1]` est `'p'`.
 Quitter avec `1` si c'est le cas, `0` sinon.

@@ -39,7 +39,7 @@ L'étiquette `solve:` indique où se trouve le code.
 
 **Construire une bibliothèque partagée.**  
 On sait déjà assembler un programme avec `as` et le lier avec `ld`.
-Pour produire une bibliothèque partagée au lieu d'un exécutable, passez `-shared` à `ld` :
+Pour produire une bibliothèque partagée au lieu d'un exécutable, passer `-shared` à `ld` :
 
 ```console
 hacker@dojo:~$ as -o your-solve.o your-solve.s

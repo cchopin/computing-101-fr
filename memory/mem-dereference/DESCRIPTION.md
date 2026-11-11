@@ -58,4 +58,4 @@ Mais si l'on écrit `mov rdi, rax` dans les mêmes conditions, le processeur pla
 Pour le processeur, une donnée reste une donnée : elle ne prend un sens particulier que selon la façon dont on l'utilise.
 
 Dans ce défi, `rax` a été initialisé avec l'adresse de la donnée secrète rangée en mémoire.
-Déréférencez `rax` pour charger la donnée secrète dans `rdi`, et utilisez-la comme code de retour du programme pour obtenir le flag !
+Déréférencer `rax` pour charger la donnée secrète dans `rdi`, et l'utiliser comme code de retour du programme pour obtenir le flag !

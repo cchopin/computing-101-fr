@@ -14,4 +14,4 @@ Dans gdb, les noms de registres sont précédés de `$`, ce qui permet de lire `
 $1 = 1337
 ```
 
-Soumettez ensuite la valeur avec `/challenge/submit-number`.
+Soumettre ensuite la valeur avec `/challenge/submit-number`.

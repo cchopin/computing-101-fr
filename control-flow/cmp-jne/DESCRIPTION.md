@@ -16,7 +16,7 @@ On dit alors qu'il « prend la branche ».
 Si les valeurs *sont* égales, le processeur se contente de passer à l'instruction suivante.
 On dit alors qu'il ne prend pas la branche et « tombe » (fall through) sur l'instruction suivante.
 
-En coulisses, `jne` teste le drapeau zéro (ZF) que `cmp` a réglé : `jne` saute quand ZF = 0, c'est-à-dire quand la soustraction n'était pas nulle, donc quand les valeurs différaient.
+En coulisses, `jne` teste l'indicateur zéro (ZF) que `cmp` a réglé : `jne` saute quand ZF = 0, c'est-à-dire quand la soustraction n'était pas nulle, donc quand les valeurs différaient.
 Il existe aussi `je` (**j**ump if **e**qual, saut si égal), qui fait l'inverse : il saute quand les valeurs *sont* égales.
 
 Mais qu'est-ce que `fail` ?

@@ -19,14 +19,14 @@ x $rsp
 
 Faites-le !
 
-1. Lancez le programme.
-2. Examinez le sommet de la pile.
-3. Quittez gdb et soumettez la valeur avec `/challenge/submit-number`.
+1. Lancer le programme.
+2. Examiner le sommet de la pile.
+3. Quitter gdb et soumettre la valeur avec `/challenge/submit-number`.
 
 ----
 
 **NOTE :**
 `x` affiche les valeurs en _hexadécimal_ par défaut.
 On peut changer le format d'affichage en ajoutant `/` à la commande.
-Par exemple, pour voir la valeur en décimal, utilisez `x/d $rsp`.
+Par exemple, pour voir la valeur en décimal, utiliser `x/d $rsp`.
 Dans tous les cas, `/challenge/submit-number` accepte l'hexadécimal (par exemple `0x2a`) comme le décimal (par exemple `42`).

@@ -1,9 +1,9 @@
-Le défi du niveau précédent héritait de l'environnement de votre shell interactif, aussi bien dans gdb qu'en dehors.
-En réalité, les différences d'environnement sont souvent plus importantes entre votre configuration locale et la cible que vous analysez.
-Le binaire que vous déboguez depuis votre shell, et le même binaire exécuté comme service, tâche cron ou script distant, voient des environnements complètement différents (un autre `HOME`, un autre `PATH`, un *ensemble* de variables totalement différent).
+Le défi du niveau précédent héritait de l'environnement du shell interactif, aussi bien dans gdb qu'en dehors.
+En réalité, les différences d'environnement sont souvent plus importantes entre la configuration locale et la cible analysée.
+Le binaire déboguégé depuis le shell, et le même binaire exécuté comme service, tâche cron ou script distant, voient des environnements complètement différents (un autre `HOME`, un autre `PATH`, un *ensemble* de variables totalement différent).
 
 Ce niveau explore ce principe un peu plus loin.
-Ici, le wrapper `gdb` définit son propre environnement au lieu d'hériter de celui de votre shell, et le défi, lorsqu'il est lancé directement, vous oblige à faire de même : il exige un environnement ne contenant qu'une seule variable.
+Ici, le wrapper `gdb` définit son propre environnement au lieu d'hériter de celui du shell, et le défi, lorsqu'il est lancé directement, oblige à faire de même : il exige un environnement ne contenant qu'une seule variable.
 Par exemple :
 
 ```console
@@ -13,7 +13,7 @@ hacker@dojo:~$ /challenge/program
 ```
 
 Comment vider l'environnement ?
-Vous pouvez le faire avec la commande `env`, que nous avons déjà utilisée pour afficher les variables d'environnement exportées dans le [Linux Luminarium](https://pwn.college/linux-luminarium/variables).
+On peut le faire avec la commande `env`, que nous avons déjà utilisée pour afficher les variables d'environnement exportées dans le [Linux Luminarium](https://pwn.college/linux-luminarium/variables).
 La commande `env` peut aussi servir de *wrapper* pour contrôler précisément l'environnement d'un programme.
 Par exemple, `env -i` vide complètement l'environnement du programme enfant :
 
@@ -32,4 +32,4 @@ hacker@dojo:~$ /challenge/program
 ```
 
 Cela permet de contrôler très finement son environnement.
-Dans ce défi, vous utiliserez ce contrôle fin pour aligner des adresses dans un cadre un peu plus réaliste. Gardez cette possibilité en tête pour d'autres situations !
+Dans ce défi, ce contrôle fin sert à aligner des adresses dans un cadre un peu plus réaliste. Garder cette possibilité en tête pour d'autres situations !

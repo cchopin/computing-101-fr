@@ -1,5 +1,5 @@
 Dans le niveau précédent, on a construit le nom « /flag » en écrivant chaque octet sur la pile.
-C'est une technique utile, mais pénible à écrire et difficile à relire : essayez de repérer une faute de frappe dans une longue phrase écrite ainsi !
+C'est une technique utile, mais pénible à écrire et difficile à relire : tenter de repérer une faute de frappe dans une longue phrase écrite ainsi !
 Ce défi montre une meilleure façon de faire.
 
 Le code d'assembleur peut aussi contenir des octets qui ne sont pas destinés à être exécutés.

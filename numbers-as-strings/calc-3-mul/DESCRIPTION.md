@@ -1,8 +1,8 @@
 Maintenant, apprenons à la calculatrice à multiplier !
 
 La multiplication a sa propre instruction : `imul`.
-De même que vous avez utilisé `add` pour `'+'` et `sub` pour `'-'`, vous utiliserez `imul` pour `'*'`.
-Vous l'avez déjà rencontrée dans `atoi-two-digits`, où `imul rax, 10` multipliait votre total courant par dix ; ici, elle multiplie vos deux opérandes de la même façon.
+De même qu'on a utilisé `add` pour `'+'` et `sub` pour `'-'`, on utilisera `imul` pour `'*'`.
+Elle a déjà été rencontrée dans `atoi-two-digits`, où `imul rax, 10` multipliait le total courant par dix ; ici, elle multiplie les deux opérandes de la même façon.
 
 ```
 "6"   ->  atoi  ->   6
@@ -11,12 +11,12 @@ Vous l'avez déjà rencontrée dans `atoi-two-digits`, où `imul rax, 10` multip
 42   ->  itoa  ->  "42"
 ```
 
-Ajoutez une troisième branche sur l'octet de l'opérateur : s'il vaut `'*'`, effectuez `imul` sur les opérandes ; `'+'` et `'-'` fonctionnent comme avant, et tout autre opérateur fait toujours quitter avec un code de sortie non nul.
+Ajouter une troisième branche sur l'octet de l'opérateur : s'il vaut `'*'`, effectuer `imul` sur les opérandes ; `'+'` et `'-'` fonctionnent comme avant, et tout autre opérateur fait toujours quitter avec un code de sortie non nul.
 
-Une difficulté du shell : `*` a un sens particulier pour le shell (il se développe en noms de fichiers). Il faut donc le mettre entre guillemets lorsque vous lancez votre programme à la main : `./prog 6 '*' 7` ou `./prog 6 "*" 7`.
-Le caractère reçu par votre programme reste un simple `'*'`.
+Une difficulté du shell : `*` a un sens particulier pour le shell (il se développe en noms de fichiers). Il faut donc le mettre entre guillemets lorsqu'on lance le programme à la main : `./prog 6 '*' 7` ou `./prog 6 "*" 7`.
+Le caractère reçu par le programme reste un simple `'*'`.
 
-Construisez et soumettez comme précédemment :
+Construire et soumettre comme précédemment :
 
 ```console
 hacker@dojo:~$ as -o prog.o prog.s
@@ -26,4 +26,4 @@ hacker@dojo:~$ ./prog 6 '*' 7
 hacker@dojo:~$ /challenge/check prog
 ```
 
-Ajoutez la branche de multiplication et affichez le produit.
+Ajouter la branche de multiplication et afficher le produit.

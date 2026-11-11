@@ -60,4 +60,4 @@ Cette fois, la valeur secrète se trouve à un décalage de 8 octets par rapport
 
 Bien sûr, l'adresse réelle n'est pas `31337`.
 Elle sera choisie au hasard et placée dans `rdi`.
-Déréférencez `rdi` avec un décalage de `8` pour obtenir le flag !
+Déréférencer `rdi` avec un décalage de `8` pour obtenir le flag !

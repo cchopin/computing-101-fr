@@ -1,4 +1,4 @@
-La sortie littérale, les échappements de saut de ligne et la syntaxe échappée vous donnent la boucle « parcourir et écrire ».
+La sortie littérale, les échappements de saut de ligne et la syntaxe échappée donnent la boucle « parcourir et écrire ».
 Ajoutons maintenant le premier marqueur : `%d`.
 
 L'octet `%` signifie « ceci est un marqueur ».
@@ -11,12 +11,12 @@ argv[2]:  "-42"
 output:   "value=-42"
 ```
 
-Quand votre parcours atteint `%d`, sautez les deux octets du marqueur, convertissez la chaîne suivante de `argv` avec `atoi`, reconvertissez le nombre obtenu en texte avec le `itoa` signé, et écrivez ces chiffres immédiatement avec `write`.
-Continuez ensuite le parcours de la chaîne de format.
+Quand le parcours atteint `%d`, sauter les deux octets du marqueur, convertir la chaîne suivante de `argv` avec `atoi`, reconvertir le nombre obtenu en texte avec l'`itoa` signé, et écrire ces chiffres immédiatement avec `write`.
+Continuer ensuite le parcours de la chaîne de format.
 Pour ce niveau, la chaîne de format contient au plus un marqueur `%d`.
-Continuez à gérer le texte ordinaire, `\n`, `\\` et `%%` comme précédemment.
+Continuer à gérer le texte ordinaire, `\n`, `\\` et `%%` comme précédemment.
 
-Construisez et soumettez comme précédemment :
+Construire et soumettre comme précédemment :
 
 ```console
 hacker@dojo:~$ as -o prog.o prog.s
@@ -26,4 +26,4 @@ value=-42
 hacker@dojo:~$ /challenge/check prog
 ```
 
-Remplacez les marqueurs décimaux au fur et à mesure du parcours.
+Remplacer les marqueurs décimaux au fur et à mesure du parcours.

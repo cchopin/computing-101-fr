@@ -7,8 +7,8 @@ Au lieu de « s'arrêter sur l'octet 0 », la règle devient : « s'arrêter
 Un test rapide et sans ramification pour un caractère `c` : calculer `c - 0x30` (on retranche `0x30`), puis vérifier que le résultat est dans l'intervalle `0`-`9` à l'aide d'une comparaison *non signée*.
 Tout ce qui n'est pas un chiffre (ponctuation, lettres, espace, et même l'octet 0 : soustraire `'0'` à 0 donne un nombre négatif en complément à deux, donc très grand lorsqu'on le lit comme non signé) tombe hors de cet intervalle.
 
-Pour effectuer une comparaison non signée, utilisez l'instruction `ja`, qui signifie « **j**ump if **a**bove » (sauter si la dernière comparaison est supérieure, en non signé).
-Vous devez faire le `cmp` (reportez-vous aux leçons précédentes du dojo), puis :
+Pour effectuer une comparaison non signée, utiliser l'instruction `ja`, qui signifie « **j**ump if **a**bove » (sauter si la dernière comparaison est supérieure, en non signé).
+Il faut faire le `cmp` (voir les leçons précédentes du dojo), puis :
 
 ```
 ja  done
@@ -19,4 +19,4 @@ done:
    ret
 ```
 
-Pour le reste, conservez la solution du niveau précédent : un `'-'` au début signifie toujours un nombre négatif, le calcul reste le même, et vous obtenez le flag une fois la solution correcte !
+Pour le reste, conserver la solution du niveau précédent : un `'-'` au début signifie toujours un nombre négatif, le calcul reste le même, et on obtient le flag une fois la solution correcte !

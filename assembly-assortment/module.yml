@@ -114,19 +114,19 @@ resources:
 - type: markdown
   name: "Guide : lire des données stockées dans GDB (Guide: Reading Stored Data in GDB)"
   content: |
-    Dans [Ouvrir le fichier, avec RIP](https://pwn.college/computing-101-fr/hello-hackers/open-read-write-rip-relative), vous avez utilisé une étiquette et `lea` pour passer à `open` l'adresse d'octets stockés.
-    Dans [Examiner la mémoire avec GDB](https://pwn.college/computing-101-fr/introspecting/gdb-examine-argv1), vous avez utilisé `x/s` pour afficher la chaîne située à une adresse.
+    Dans [Ouvrir le fichier, avec RIP](https://pwn.college/computing-101-fr/hello-hackers/open-read-write-rip-relative), on a utilisé une étiquette et `lea` pour passer à `open` l'adresse d'octets stockés.
+    Dans [Examiner la mémoire avec GDB](https://pwn.college/computing-101-fr/introspecting/gdb-examine-argv1), on a utilisé `x/s` pour afficher la chaîne située à une adresse.
 
-    Le défi suivant combine ces deux idées, dans un programme que vous rétro-ingénierez.
-    Le programme a déjà effectué le travail de type `lea` à votre place : l'un de ses registres contiendra l'adresse, à l'exécution, d'une chaîne stockée.
-    Plutôt que de chercher chaque octet secret sous forme d'immédiate dans un `cmp`, avancez dans le code jusqu'à ce qu'un registre pointe vers la chaîne stockée, puis examinez cette adresse comme une chaîne :
+    Le défi suivant combine ces deux idées, dans un programme dont on fera la rétro-ingénierie.
+    Le programme a déjà effectué le travail de type `lea` à la place de l'apprenant : l'un de ses registres contiendra l'adresse, à l'exécution, d'une chaîne stockée.
+    Plutôt que de chercher chaque octet secret sous forme d'immédiate dans un `cmp`, avancer dans le code jusqu'à ce qu'un registre pointe vers la chaîne stockée, puis examiner cette adresse comme une chaîne :
 
     ```gdb
     (gdb) x/s $rsi
     ```
 
     Ici, `$rsi` n'est qu'un exemple.
-    Utilisez le registre que le programme charge avec l'adresse de la chaîne stockée, puis lancez `/challenge/reverse-me` directement avec la chaîne trouvée.
+    Utiliser le registre que le programme charge avec l'adresse de la chaîne stockée, puis lancer `/challenge/reverse-me` directement avec la chaîne trouvée.
 - type: challenge
   id: strcmp-stored
   name: "Boucles sur des données (Loops on Data)"

@@ -43,4 +43,4 @@ Le programme doit :
 En cas de problème ?
 Utiliser `strace` pour tracer les appels système.
 Si `open` renvoie `-1`, le pointeur ou l'encodage de la chaîne est peut-être incorrect.
-Essayez `x/s $rsp` dans `gdb` pour voir la chaîne réellement présente sur la pile.
+Essayer `x/s $rsp` dans `gdb` pour voir la chaîne réellement présente sur la pile.

@@ -1,4 +1,4 @@
-Vous avez vu qu'une valeur sur plusieurs octets se trouve en mémoire octet de poids faible en premier : la relire dans un registre inverse donc ses octets.
+On a vu qu'une valeur sur plusieurs octets se trouve en mémoire octet de poids faible en premier : la relire dans un registre inverse donc ses octets.
 Un registre ne contient que huit octets, mais beaucoup de valeurs sont plus larges (et plus larges que ce que le processeur peut lire en une fois).
 
 Selon le programme, ces valeurs peuvent être lues à la suite, registre par registre.
@@ -28,9 +28,9 @@ Stockée octet par octet, cette chaîne de caractères n'est *pas* affectée par
 Ce que le boutisme change, ce sont les octets *une fois chargés dans un registre après le `mov`* : chacun, étant une valeur sur plusieurs octets, se relit en commençant par l'octet de poids faible.
 Ainsi, si `rdi` pointe vers ce tampon, `mov rsi, [rdi]` donne la valeur `0x4847464544434241`, et `mov rsi, [rdi+8]` donne `0x504f4e4d4c4b4a49`.
 
-Pour reconstituer une valeur plus longue, gardez les quadruples mots dans l'ordre où vous les obtenez, mais inversez les octets à l'intérieur de chacun.
+Pour reconstituer une valeur plus longue, garder les quadruples mots dans l'ordre où on les obtient, mais inverser les octets à l'intérieur de chacun.
 
-Désassemblez `/challenge/reverse-me`, lisez les deux valeurs sur quadruple mot auxquelles il compare votre saisie, remettez chacune dans l'ordre des octets, concaténez-les dans l'ordre, puis lancez le programme avec le résultat :
+Désassembler `/challenge/reverse-me`, lire les deux valeurs sur quadruple mot auxquelles il compare la saisie, remettre chacune dans l'ordre des octets, le concaténer dans l'ordre, puis lancer le programme avec le résultat :
 
 ```console
 hacker@dojo:~$ objdump -d -M intel /challenge/reverse-me
@@ -40,4 +40,4 @@ hacker@dojo:~$ /challenge/reverse-me YOUR_PASSWORD_HERE
 ---
 **ATTENTION** :
 `/challenge/reverse-me` est un binaire **SUID** : sous gdb, il abandonne ses privilèges, et le `open("/flag")` qu'il contient échoue silencieusement.
-Utilisez `objdump` pour le lire, mais lancez-le **directement** pour obtenir le flag.
+Utiliser `objdump` pour le lire, mais le lancer **directement** pour obtenir le flag.

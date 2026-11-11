@@ -1,4 +1,4 @@
-Vous avez rencontré `and` avec le test pair ou impair. Ici, vous allez l'utiliser pour ne garder que les bits voulus.
+On a rencontré `and` avec le test pair ou impair. Ici, on va l'utiliser pour ne garder que les bits voulus.
 
 Un `and` bit à bit compare deux valeurs bit par bit : chaque bit de sortie vaut `1` seulement si *les deux* bits d'entrée valent `1`.
 C'est donc l'outil du *masquage* : on conserve les bits voulus et on force les autres à zéro.
@@ -21,10 +21,10 @@ and rax, 0xF
 Un usage courant consiste à isoler l'octet de poids faible d'une valeur, c'est-à-dire ses 8 bits de poids faible, en la masquant avec `0xFF`.
 
 Écrivez une fonction qui reçoit dans `rdi` une valeur sur 64 bits et renvoie dans `rax` uniquement son octet de poids faible.
-Appelez-la `LOBYTE`, en majuscules : elle désigne l'octet de poids faible (**LO**w **BYTE**), et ce nom sert souvent d'abréviation pour cette fonction dans les outils que vous rencontrerez plus tard.
-Exportez-la avec `.global LOBYTE`.
+La nommer `LOBYTE`, en majuscules : elle désigne l'octet de poids faible (**LO**w **BYTE**), et ce nom sert souvent d'abréviation pour cette fonction dans les outils qu'on rencontrera plus tard.
+L'exporter avec `.global LOBYTE`.
 
-Construisez-la en bibliothèque partagée, puis transmettez-la au correcteur :
+La construire en bibliothèque partagée, puis la transmettre au correcteur :
 
 ```console
 hacker@dojo:~$ as -o lobyte.o lobyte.s

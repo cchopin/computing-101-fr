@@ -15,4 +15,4 @@ Dans ce défi, le binaire qui contient le secret est `/challenge/debug-me`.
 Une fois ce fichier chargé dans gdb, le reste se fait « par magie » : nous nous chargeons de l'analyse et nous donnons le nombre secret.
 Dans les niveaux suivants, on apprendra à retrouver ce nombre soi-même !
 
-Une fois le nombre obtenu, échangez-le contre le flag avec `/challenge/submit-number`.
+Une fois le nombre obtenu, l'échanger contre le flag avec `/challenge/submit-number`.

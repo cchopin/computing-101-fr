@@ -15,4 +15,4 @@ Dans ce défi, il faut :
 2. placer `1337` dans `rdi`, puis avancer encore d'une instruction ;
 3. afficher le nombre secret résultant, puis le soumettre avec `/challenge/submit-number`.
 
-Lancez `gdb /challenge/debug-me` et modifiez ce registre !
+Lancer `gdb /challenge/debug-me` et modifier ce registre !

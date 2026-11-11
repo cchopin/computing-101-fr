@@ -5,24 +5,24 @@ x86 fournit *les deux* résultats avec une seule instruction `div`, mais `div` e
 `div rcx` divise la valeur de **128 bits** formée par la concaténation de `rdx:rax` par `rcx`, et place le quotient dans `rax` et le reste dans `rdx`.
 Il en découle trois conséquences :
 
-- Elle divise `rdx:rax`, et pas seulement `rax` : il faut donc d'abord mettre `rdx` à zéro (`xor rdx, rdx`), sinon `div` traite les restes de registres comme la moitié haute de votre nombre (et peut faire planter le programme).
-- Le diviseur vient d'un registre et non d'une valeur immédiate : chargez donc le `10` dans un registre (par exemple `mov rcx, 10; div rcx`).
-- Vous ne contrôlez pas le dividende : c'est *toujours* `rdx:rax`.
+- Elle divise `rdx:rax`, et pas seulement `rax` : il faut donc d'abord mettre `rdx` à zéro (`xor rdx, rdx`), sinon `div` traite les restes de registres comme la moitié haute du nombre (et peut faire planter le programme).
+- Le diviseur vient d'un registre et non d'une valeur immédiate : charger donc le `10` dans un registre (par exemple `mov rcx, 10; div rcx`).
+- Le dividende ne se contrôle pas : c'est *toujours* `rdx:rax`.
 
 Après le `div`, `rax` contient les dizaines et `rdx` les unités.
-Transformez chacune en caractère comme le faisait `itoa_digit` (en ajoutant `0x30`), puis stockez les deux.
+Transformer chacune en caractère comme le faisait `itoa_digit` (en ajoutant `0x30`), puis stocker les deux.
 
-Écrivez `itoa(value, buf)`, que le défi appellera.
+Écrire `itoa(value, buf)`, que le défi appellera.
 Cette fonction reçoit une valeur (`10` à `99`) dans `rdi`, et un pointeur vers le tampon de « sortie » dans `rsi`.
-Découpez le nombre de `rdi` avec `div`, convertissez les deux chiffres comme ci-dessus, puis écrivez leurs caractères dans ce tampon.
-Renvoyez ensuite le nombre de caractères écrits (ici 2).
-Pensez à `.global itoa`.
+Découper le nombre de `rdi` avec `div`, convertir les deux chiffres comme ci-dessus, puis écrire leurs caractères dans ce tampon.
+Renvoyer ensuite le nombre de caractères écrits (ici 2).
+Penser à `.global itoa`.
 
 **Écrire des caractères.**
-Votre fonction `itoa_digit` du niveau précédent renvoyait le résultat dans `rax`, sans que vous ayez à l'écrire dans un tampon.
+La fonction `itoa_digit` du niveau précédent renvoyait le résultat dans `rax`, sans avoir à l'écrire dans un tampon.
 Ici, il faut l'écrire.
-Votre caractère réel tient sur *un octet* (8 bits), alors que le registre qui le contient fait 64 bits (8 octets).
-Vous ne voulez que le dernier octet (celui de « poids faible »), auquel on accède directement par les *alias de registres partiels*, selon le registre :
+Le caractère réel tient sur *un octet* (8 bits), alors que le registre qui le contient fait 64 bits (8 octets).
+On ne veut que le dernier octet (celui de « poids faible »), auquel on accède directement par les *alias de registres partiels*, selon le registre :
 
 | registre | octet de poids faible |
 | -------- | ---------------------- |
@@ -43,15 +43,15 @@ Vous ne voulez que le dernier octet (celui de « poids faible »), auquel on a
 | `r14`    | `r14b`                 |
 | `r15`    | `r15b`                 |
 
-Ainsi, si votre caractère est dans `rax` et que le tampon est pointé par `rsi`, il faut écrire `mov [rsi], al`.
+Ainsi, si le caractère est dans `rax` et que le tampon est pointé par `rsi`, il faut écrire `mov [rsi], al`.
 
-C'est délicat, mais faites-le soigneusement, et le flag sera votre récompense !
+C'est délicat, mais il faut le faire soigneusement, et le flag sera la récompense !
 
 ----
 
 **Débogage :**
 Ce niveau peut être délicat à réussir.
-Pour le déboguer, ajoutez un `_start` à votre code, comme ceci :
+Pour le déboguer, ajouter un `_start` au code, comme ceci :
 
 ```asm
 .global _start
@@ -66,7 +66,7 @@ _start:
     syscall
 ```
 
-Assemblez et liez-le comme un exécutable normal (sans `-shared`, car cette version a un point d'entrée), puis chargez-le dans `gdb` :
+Assembler et lier le fichier comme un exécutable normal (sans `-shared`, car cette version a un point d'entrée), puis le charger dans `gdb` :
 
 ```console
 hacker@dojo:~$ as -o debug.o debug.s
@@ -75,12 +75,12 @@ hacker@dojo:~$ gdb ./debug
 (gdb) run
 ```
 
-L'exécution s'arrête sur votre `int3`. Vous pouvez alors avancer pas à pas avec les techniques vues dans [Introspection logicielle](https://pwn.college/computing-101-fr/introspecting), en observant la mémoire de la pile et les registres, jusqu'à ce que tout fonctionne !
-Vous pouvez aussi déboguer le programme natif qui charge votre `.so` :
+L'exécution s'arrête sur le `int3`. On peut alors avancer pas à pas avec les techniques vues dans [Introspection logicielle](https://pwn.college/computing-101-fr/introspecting), en observant la mémoire de la pile et les registres, jusqu'à ce que tout fonctionne !
+On peut aussi déboguer le programme natif qui charge la `.so` :
 
 ```console
 hacker@dojo:~$ gdb --args /challenge/harness your-solve.so 42
 (gdb) run
 ```
 
-Le premier argument après `/challenge/harness` est votre bibliothèque, et le second le nombre de test transmis à `itoa`.
+Le premier argument après `/challenge/harness` est la bibliothèque, et le second le nombre de test transmis à `itoa`.

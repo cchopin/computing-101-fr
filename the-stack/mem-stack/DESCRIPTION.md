@@ -35,5 +35,5 @@ la situation ressemble à ceci (les adresses réelles sont données à titre d'e
 `rsp` pointe vers la pile, et la valeur qui s'y trouve est `3` : une pour le nom du programme, une pour `hello`, une pour `world`.
 La pile contient aussi d'autres données, comme on le voit sur le schéma, mais on ne s'en occupe pas pour l'instant.
 
-Dans ce défi, lisez le nombre d'arguments à `[rsp]` et utilisez-le comme code de retour du programme.
+Dans ce défi, lire le nombre d'arguments à `[rsp]` et l'utiliser comme code de retour du programme.
 Le programme sera lancé plusieurs fois avec différents arguments, pour vérifier que la lecture est correcte !

@@ -1,5 +1,5 @@
 La pile contient plus que `argc` et `argv` !
-Juste après la liste des arguments, le noyau place les **variables d'environnement** que vous avez découvertes dans le [Linux Luminarium](https://pwn.college/linux-luminarium).
+Juste après la liste des arguments, le noyau place les **variables d'environnement** découvertes dans le [Linux Luminarium](https://pwn.college/linux-luminarium).
 Comme `argv`, elles sont stockées sur la pile sous forme de tableau de pointeurs vers des chaînes de caractères. Chaque chaîne contient le nom et la valeur de la variable, par exemple `PATH=/usr/bin:...`, `HOME=/home/hacker` ou `PWN=COLLEGE`.
 
 Si un programme est appelé sans arguments (c'est-à-dire que `argc` vaut 1, et que la seule chaîne de `argv` est le nom du programme lui-même) et avec une seule variable d'environnement nommée `FLAG`, sa disposition de pile initiale peut ressembler à ceci :
@@ -31,17 +31,17 @@ Si un programme est appelé sans arguments (c'est-à-dire que `argc` vaut 1, et 
 Deux points sont à remarquer :
 
 1. `argv` et `envp` sont **terminés par un pointeur NULL** : le noyau écrit un pointeur `NULL` à la fin de chaque liste de pointeurs.
-   C'est ainsi que les programmes (et vous !) savent où se termine chaque liste : on parcourt les pointeurs jusqu'à rencontrer un `NULL`.
+   C'est ainsi que les programmes savent où se termine chaque liste : on parcourt les pointeurs jusqu'à rencontrer un `NULL`.
    Sur le schéma, le `NULL` en `rsp+16` marque la fin de `argv`, et un autre en `rsp+32` marque la fin de `envp`.
 
 2. Les chaînes de `envp` ont la forme `NOM=VALEUR` (par exemple `PATH=/usr/bin:/bin`).
    Ainsi, `envp[0]` pointe vers une chaîne qui commence par le nom de la première variable d'environnement.
 
-Dans ce défi, nous définissons la variable d'environnement `FLAG` avec le flag réel, puis nous lançons votre programme sans argument et sans autre variable d'environnement.
-Autrement dit, `[rsp+24]` contiendra un pointeur vers la chaîne `FLAG=...`, et vous obtiendrez le flag en l'affichant avec `write()` !
+Dans ce défi, nous définissons la variable d'environnement `FLAG` avec le flag réel, puis nous lançons le programme sans argument et sans autre variable d'environnement.
+Autrement dit, `[rsp+24]` contiendra un pointeur vers la chaîne `FLAG=...`, et le flag s'obtient en l'affichant avec `write()` !
 
 C'est un défi de programme complet : il faut donc soumettre un exécutable, et non une bibliothèque partagée.
-Assemblez et liez votre programme, puis transmettez l'exécutable au correcteur :
+Assembler et lier le programme, puis transmettre l'exécutable au correcteur :
 
 ```console
 hacker@dojo:~$ as -o envp.o envp.s

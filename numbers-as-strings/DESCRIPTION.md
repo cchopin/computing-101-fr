@@ -1,10 +1,10 @@
-Vous avez appris à lire et à écrire des registres, à parcourir la mémoire, et à empaqueter votre code sous forme de fonction dans une bibliothèque partagée.
+On a appris à lire et à écrire des registres, à parcourir la mémoire, et à empaqueter le code sous forme de fonction dans une bibliothèque partagée.
 Maintenant, réunissons ces compétences pour construire de vrais algorithmes.
-Quand vous devez déboguer une de ces soumissions `.so`, reportez-vous à [Écrire depuis une bibliothèque partagée](https://pwn.college/computing-101-fr/control-flow/callee-write) pour la méthode de débogage des bibliothèques partagées.
+Pour déboguer une de ces soumissions `.so`, voir [Écrire depuis une bibliothèque partagée](https://pwn.college/computing-101-fr/control-flow/callee-write) pour la méthode de débogage des bibliothèques partagées.
 
 Au fil de ce module, nous enrichirons progressivement nos solutions jusqu'à obtenir un code qui répond à un besoin très courant des programmes : transformer du texte en nombres.
 Chemin faisant, nous apprendrons à écrire du code assembleur réutilisable, à comprendre le lien entre texte et nombres, et à raisonner sur les algorithmes (et sur leurs limites !).
-Vous gagnerez en connaissances, et en flags !
+On gagnera en connaissances, et en flags !
 
 ---
 

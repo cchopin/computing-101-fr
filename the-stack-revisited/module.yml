@@ -1,8 +1,8 @@
 name: "La pile, revisitée (The Stack, Revisited)"
 description: |
-  Lorsque vous avez rencontré la pile pour la première fois, elle n'était qu'une zone de données préparée par le noyau : argc, argv, quelques pointeurs.
-  Maintenant que vous avez écrit vos propres fonctions, fait vos propres appels, et vu rsp bouger avec push et pop, il est temps de revenir sur la pile avec un regard plus précis.
-  Comment est-elle réellement organisée ? Pourquoi « croît-elle vers le bas », et qu'est-ce que cela implique pour les données accessibles ? Et comment la façon dont *votre programme a été lancé* détermine-t-elle les adresses de tout ce qui s'y trouve ?
+  Lorsque la pile a été rencontrée pour la première fois, elle n'était qu'une zone de données préparée par le noyau : argc, argv, quelques pointeurs.
+  Maintenant que des fonctions ont été écrites, des appels faits, et que rsp a été vu bouger avec push et pop, il est temps de revenir sur la pile avec un regard plus précis.
+  Comment est-elle réellement organisée ? Pourquoi « croît-elle vers le bas », et qu'est-ce que cela implique pour les données accessibles ? Et comment la façon dont *le programme a été lancé* détermine-t-elle les adresses de tout ce qui s'y trouve ?
 resources:
 - type: challenge
   id: caller-frame
