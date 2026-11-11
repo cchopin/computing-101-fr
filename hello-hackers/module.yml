@@ -1,0 +1,37 @@
+name: "Bonjour, hackers (Hello Hackers)"
+resources:
+  - name: "Appels système (System Calls), en anglais"
+    type: lecture
+    video: vspq0u2tvhU
+    playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+    slides: 1vEuZ1PW8Wvm88INmWbjoKY8srEKSkv2g4o-V42BsN9Y
+  - type: header
+    content: "Défis"
+  - type: challenge
+    id: write
+    name: "Écrire du texte (Writing Output)"
+    import:
+      dojo: computing-101
+      module: hello-hackers
+      challenge: write
+  - type: challenge
+    id: write-exit
+    name: "Enchaîner les appels système (Chaining Syscalls)"
+    import:
+      dojo: computing-101
+      module: hello-hackers
+      challenge: write-exit
+  - type: challenge
+    id: hello-hackers
+    name: "Écrire des chaînes de caractères (Writing Strings)"
+    import:
+      dojo: computing-101
+      module: hello-hackers
+      challenge: hello-hackers
+  - type: challenge
+    id: read
+    name: "Lire des données (Reading Data)"
+    import:
+      dojo: computing-101
+      module: hello-hackers
+      challenge: read
