@@ -38,8 +38,8 @@ def lire_yaml(chemin):
 
 def decouper_code(texte):
     """Retourne (blocs de code délimités, code en ligne) hors section fiche."""
-    blocs = re.findall(r"^```[^\n]*\n(.*?)^```", texte, flags=re.S | re.M)
-    sans_blocs = re.sub(r"^```[^\n]*\n.*?^```", "", texte, flags=re.S | re.M)
+    blocs = re.findall(r"^[ \t]*```[^\n]*\n(.*?)^[ \t]*```", texte, flags=re.S | re.M)
+    sans_blocs = re.sub(r"^[ \t]*```[^\n]*\n.*?^[ \t]*```", "", texte, flags=re.S | re.M)
     en_ligne = re.findall(r"`([^`]+)`", sans_blocs)
     return blocs, en_ligne
 
@@ -53,7 +53,7 @@ def liens(texte):
 
 
 def sans_code(texte):
-    texte = re.sub(r"^```[^\n]*\n.*?^```", "", texte, flags=re.S | re.M)
+    texte = re.sub(r"^[ \t]*```[^\n]*\n.*?^[ \t]*```", "", texte, flags=re.S | re.M)
     return re.sub(r"`[^`]+`", "", texte)
 
 
