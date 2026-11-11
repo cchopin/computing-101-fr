@@ -1,0 +1,174 @@
+name: "Flot de contrôle (Control Flow)"
+resources:
+- name: "(révision) Registres (Registers), en anglais"
+  type: lecture
+  video: IWbIZerH930
+  playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+  slides: 1U8Rsz7FNTmy-3wGtPB-YCyanIIbox1J90adze9-1cfo
+- name: "Flot de contrôle (Control Flow), en anglais"
+  type: lecture
+  video: 0a8NlF7z7Ro
+  playlist: PL-ymxv0nOtqox6nF4HXtXHnTQFGkRQU_2
+  slides: 1wX5TH6DQjXw4GJo_T6I9GF7bhC689T52HSHaMUCmj1E
+- type: markdown
+  name: "Fiche de cours (ajout, hors traduction)"
+  content: |
+    *Cette fiche n'est pas une traduction. Elle est rédigée à partir des présentations « Control Flow » (Yan Shoshitaishvili, Arizona State University, en anglais), complétées par la présentation « Registers » du premier module. Elle ne contient aucune solution de défi.*
+
+    ### 1. Le processeur exécute des instructions en mémoire
+
+    Les instructions sont stockées en mémoire, sous forme de code binaire. Le processeur les exécute dans l'ordre, l'une après l'autre, en gardant l'adresse de la prochaine instruction dans le registre `rip`.
+    Sans instruction particulière, cette adresse augmente simplement au fur et à mesure. Pour changer d'endroit, il faut une instruction de saut.
+
+    ### 2. Les sauts inconditionnels
+
+    L'instruction `jmp` place `rip` à une nouvelle adresse : l'exécution reprend là, sans condition.
+    On écrit généralement l'adresse sous forme d'une *étiquette* (label), que l'assembleur remplace par l'adresse réelle. Une étiquette est un simple repère dans le code, elle n'est pas une instruction.
+
+    Un saut ne suffit pas à prendre des décisions : il faut aussi des sauts *conditionnels*.
+
+    ### 3. Les sauts conditionnels et les indicateurs
+
+    Un saut conditionnel ne se produit que si une condition est vraie. Les conditions sont lues dans le registre des indicateurs (`rflags`), qui est mis à jour par la plupart des instructions arithmétiques, ainsi que par `cmp` (une soustraction dont le résultat est jeté) et `test` (un `and` dont le résultat est jeté).
+
+    Les indicateurs principaux sont :
+
+    - le **drapeau de retenue** (CF, Carry Flag) : le 65e bit était-il à 1 ?
+    - le **drapeau zéro** (ZF, Zero Flag) : le résultat était-il 0 ?
+    - le **drapeau de débordement** (OF, Overflow Flag) : le résultat a-t-il « basculé » entre positif et négatif ?
+    - le **drapeau de signe** (SF, Signed Flag) : le bit de signe du résultat était-il à 1 (c'est-à-dire le résultat était-il négatif) ?
+
+    Quelques sauts courants, avec leur condition :
+
+    | Instruction | Saute si | Lecture |
+    |---|---|---|
+    | `je` / `jz` | ZF = 1 | égal, ou nul |
+    | `jne` / `jnz` | ZF = 0 | différent, ou non nul |
+    | `ja` | CF = 0 et ZF = 0 | supérieur (non signé) |
+    | `jb` | CF = 1 | inférieur (non signé) |
+    | `jg` | ZF = 0 et SF = OF | supérieur (signé) |
+    | `jl` | SF ≠ OF | inférieur (signé) |
+    | `js` / `jns` | SF = 1 / SF = 0 | négatif / positif |
+
+    Par exemple, `cmp` compare deux valeurs : si elles sont égales, ZF vaut 1, et `je` saute.
+
+    Pour les comparaisons, il faut choisir le saut selon que les nombres sont signés ou non. Grâce au complément à deux, seuls les sauts eux-mêmes doivent tenir compte de cette différence.
+
+    ### 4. Les boucles
+
+    Avec des sauts conditionnels et inconditionnels, on construit une boucle : on incrémente un compteur, on le compare à une limite, et on revient en arrière tant que la condition est vraie. C'est le mécanisme sous-jacent des boucles `for` et `while` des langages de haut niveau.
+
+    ### 5. Les fonctions
+
+    Le code assembleur est découpé en fonctions. L'instruction `call` empile l'adresse de l'instruction suivante (l'adresse de retour), puis saute vers la fonction. L'instruction `ret` dépile cette adresse et y revient.
+
+    Pour échanger des valeurs, la fonction appelante et la fonction appelée doivent s'accorder sur une *convention d'appel* (calling convention) :
+
+    - sur Linux x86-64, les premiers arguments sont passés dans `rdi`, `rsi`, `rdx`, `rcx`, `r8` et `r9`, et la valeur de retour est placée dans `rax` ;
+    - les registres sont partagés entre les fonctions. La convention indique donc lesquels doivent être préservés.
+
+    ### 6. Registres à sauvegarder par l'appelant et par l'appelé
+
+    - Les registres **sauvegardés par l'appelant** (caller-saved) peuvent être modifiés par la fonction appelée. Si l'appelant a besoin de leur valeur après l'appel, il doit la sauvegarder avant (souvent avec `push`) et la restaurer ensuite (avec `pop`). Sur x86-64, il s'agit de `rax`, `rcx`, `rdx`, `rsi`, `rdi`, `r8`, `r9`, `r10` et `r11`.
+    - Les registres **préservés par l'appelé** (callee-saved) doivent être rendus dans leur état d'origine par la fonction appelée. Si elle les utilise, elle les sauvegarde à l'entrée et les restaure avant de revenir. Sur x86-64, il s'agit de `rbx`, `rbp`, `r12`, `r13`, `r14` et `r15`.
+
+    Il ne s'agit que d'une convention : le code peut ne pas la respecter, mais le code raisonnable la suit.
+    Le registre `rsp` doit toujours rester cohérent, et la pile doit être restaurée avant tout retour.
+- type: challenge
+  id: cmp-setz
+  name: "Comparer des valeurs (Comparing Values)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: cmp-setz
+- type: challenge
+  id: cmp-setz-argv1
+  name: "Comparer des caractères (Comparing Characters)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: cmp-setz-argv1
+- type: challenge
+  id: cmp-jne
+  name: "Flot de contrôle conditionnel (Conditional Control Flow)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: cmp-jne
+- type: challenge
+  id: cmp-string
+  name: "Comparer des chaînes (Comparing Strings)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: cmp-string
+- type: challenge
+  id: cmp-reverse
+  name: "Retrouver le mot de passe (Reverse the Password)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: cmp-reverse
+- type: challenge
+  id: switch
+  name: "Conditions sans conditions (Conditionals Without Conditionals)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: switch
+- type: challenge
+  id: loop
+  name: "Reconnaître des boucles (Recognizing Loops)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: loop
+- type: challenge
+  id: loop-write
+  name: "Écrire des boucles (Writing Loops)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: loop-write
+- type: challenge
+  id: callee-write
+  name: "Écrire depuis une bibliothèque partagée (Writing From a Shared Library)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: callee-write
+- type: challenge
+  id: callee-return
+  name: "Renvoyer une valeur (Returning a Value)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: callee-return
+- type: challenge
+  id: callee-callback
+  name: "Appeler à travers un pointeur (Calling Through a Pointer)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: callee-callback
+- type: challenge
+  id: callee-callback-arg
+  name: "Appeler à travers un pointeur avec un argument (Calling Through a Pointer with an Argument)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: callee-callback-arg
+- type: challenge
+  id: caller-saved-registers
+  name: "Préserver les registres sauvegardés par l'appelant (Saving Caller-Saved Registers)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: caller-saved-registers
+- type: challenge
+  id: callee-saved-registers
+  name: "Préserver les registres préservés par l'appelé (Saving Callee-Saved Registers)"
+  import:
+    dojo: computing-101
+    module: control-flow
+    challenge: callee-saved-registers
