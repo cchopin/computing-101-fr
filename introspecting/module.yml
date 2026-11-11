@@ -1,0 +1,25 @@
+name: "Introspection logicielle (Software Introspection)"
+resources:
+  - type: header
+    content: "Défis"
+  - type: challenge
+    id: strace
+    name: "Tracer les appels système (Tracing Syscalls)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: strace
+  - type: challenge
+    id: gdb-launch
+    name: "Lancer GDB (Starting GDB)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-launch
+  - type: challenge
+    id: gdb-starti
+    name: "Démarrer des programmes dans GDB (Starting Programs in GDB)"
+    import:
+      dojo: computing-101
+      module: introspecting
+      challenge: gdb-starti
