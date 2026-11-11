@@ -4,13 +4,13 @@ Comme le dit l'adage, le code est une donnée, et la donnée est du code.
 
 Utiliser gdb de façon interactive, comme dans les niveaux précédents, est très puissant, mais les scripts gdb le sont tout autant.
 En écrivant un script gdb, on peut très vite créer un outil d'analyse sur mesure.
-Si vous savez utiliser gdb en interactif, vous savez déjà écrire un script gdb : la syntaxe est exactement la même.
+Si l'on sait utiliser gdb en interactif, on sait déjà écrire un script gdb : la syntaxe est exactement la même.
 On peut écrire les commandes dans un fichier, par exemple `x.gdb`, puis lancer gdb avec l'option `-x <PATH_TO_SCRIPT>`.
 Ce fichier exécute toutes les commandes une fois gdb lancé.
 On peut aussi exécuter une commande isolée avec `-ex '<COMMAND>'`.
 Plusieurs arguments `-ex` peuvent être enchaînés.
 Enfin, certaines commandes peuvent être exécutées à chaque session gdb si on les place dans `~/.gdbinit`.
-Vous voudrez sans doute y mettre `set disassembly-flavor intel`.
+Il est sans doute utile d'y mettre `set disassembly-flavor intel`.
 
 Dans un script gdb, les *commandes de point d'arrêt* (breakpoint commands) sont une construction très puissante. Considérez le script suivant :
 
@@ -26,7 +26,7 @@ continue
 
 Ici, chaque fois que l'instruction à `main+42` est atteinte, on affiche une variable locale, puis on poursuit l'exécution.
 
-Voyons maintenant un script similaire, un peu plus avancé, qui utilise des commandes que vous n'avez pas encore vues :
+Voyons maintenant un script similaire, un peu plus avancé, qui utilise des commandes pas encore vues :
 
 ```gdb
 start
@@ -44,8 +44,8 @@ Ici, `silent` indique que gdb ne doit pas signaler qu'un point d'arrêt a été 
 Puis la commande `set` définit une variable dans la session gdb, dont la valeur est celle de notre variable locale.
 Enfin, la valeur courante est affichée avec une chaîne formatée.
 
-Utilisez les scripts gdb pour récupérer les valeurs aléatoires de ce niveau.
-Cela peut paraître difficile, mais cela vous servira beaucoup dans la suite de votre parcours.
+Utiliser les scripts gdb pour récupérer les valeurs aléatoires de ce niveau.
+Cela peut paraître difficile, mais cela servira beaucoup dans la suite du parcours.
 
 ----
 **DOCUMENTATION UTILE :**

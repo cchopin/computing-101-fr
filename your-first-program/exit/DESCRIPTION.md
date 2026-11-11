@@ -26,4 +26,4 @@ L'appel `exit` met fin au programme.
 En quittant explicitement le programme, on évite le plantage rencontré avec le programme précédent !
 
 Le numéro de l'appel `exit` est `60`.
-À vous de jouer : écrivez votre premier programme. Il doit placer `60` dans `rax`, puis invoquer `syscall` pour quitter proprement !
+À jouer : écrire un premier programme qui place `60` dans `rax`, puis invoquer `syscall` pour quitter proprement !

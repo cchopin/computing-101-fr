@@ -7,7 +7,7 @@ Par exemple, `x/8i $rip` affiche les 8 instructions suivantes à partir de l'ins
 Pour afficher les instructions avec la syntaxe assembleur correcte, utilisez la commande `set disassembly-flavor intel`.
 
 Pour résoudre ce niveau, il faut déterminer la valeur aléatoire placée sur la pile (la valeur lue depuis `/dev/urandom`).
-Réfléchissez aux arguments de l'appel système read.
+Réfléchir aux arguments de l'appel système read.
 
 ----
 **DOCUMENTATION UTILE :**

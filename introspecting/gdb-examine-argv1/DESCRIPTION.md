@@ -1,4 +1,4 @@
-Dans le niveau précédent, vous avez utilisé `x` pour lire `argc` au sommet de la pile.
+Dans le niveau précédent, on a utilisé `x` pour lire `argc` au sommet de la pile.
 Mais la pile contient plus que `argc` !
 
 Juste après le nombre d'arguments, la pile stocke des *pointeurs* vers chaque argument du programme.
@@ -36,14 +36,14 @@ Pour le trouver, il faut deux commandes `x`, avec deux formats d'affichage diff�
 
 **Première étape :**
 Il faut le *pointeur* vers le premier argument.
-Vous l'avez déjà fait, mais cette fois dans gdb.
+On l'a déjà fait, mais cette fois dans gdb.
 
 ```text
 x/a $rsp+16
 ```
 
 `/a` demande à `x` d'afficher la valeur comme une **a**dresse mémoire.
-Vous obtiendrez un très grand nombre hexadécimal, de la forme `0x7ffc001c4750`.
+On obtient un très grand nombre hexadécimal, de la forme `0x7ffc001c4750`.
 
 **Deuxième étape :**
 Lisez le texte du premier argument à cette adresse :

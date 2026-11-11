@@ -1,5 +1,5 @@
 Les ordinateurs stockent les données sous forme d'octets, eux-mêmes formés de bits.
-Les registres que vous connaissez, comme `rax`, ont une largeur de 64 bits : ils peuvent contenir des valeurs de 0 (tous les bits à 0) à `2^64-1` (tous les bits à 1).
+Les registres connus, comme `rax`, ont une largeur de 64 bits : ils peuvent contenir des valeurs de 0 (tous les bits à 0) à `2^64-1` (tous les bits à 1).
 Mais comment stocker des nombres *négatifs* ?
 
 Une première méthode consistait à utiliser un *bit de signe* : un `5` décimal positif pouvait être stocké sous la forme de l'octet `00000101`, et un `5` négatif sous la forme `10000101`.
@@ -45,5 +45,5 @@ C'est un peu compliqué, mais on finit par s'y habituer.
 Par ailleurs, si on considère la valeur comme non signée, on peut la traiter comme `255` dans les calculs voulus, et tout fonctionne quand même !
 
 Passons à la pratique.
-Ce défi vous obligera à comprendre le complément à deux sur des octets.
-Lancez `/challenge/decode` et obtenez le flag !
+Ce défi oblige à comprendre le complément à deux sur des octets.
+Lancer `/challenge/decode` pour obtenir le flag !

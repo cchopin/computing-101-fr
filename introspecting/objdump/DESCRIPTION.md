@@ -1,8 +1,8 @@
-Dans le module précédent, vous avez écrit des programmes en assembleur, puis vous les avez construits en exécutables.
-Mais que faire quand quelqu'un vous donne un programme et que vous voulez comprendre ce qu'il fait ?
+Dans le module précédent, on a écrit des programmes en assembleur, puis on les a construits en exécutables.
+Mais que faire quand quelqu'un donne un programme et qu'on veut comprendre ce qu'il fait ?
 C'est là qu'intervient le **désassemblage** : il consiste à convertir le code machine binaire d'un exécutable *en retour* en instructions d'assembleur lisibles.
 
-Il existe des outils bien plus puissants, que vous découvrirez plus tard, mais on commence avec l'un des outils de désassemblage les plus courants : `objdump`.
+Il existe des outils bien plus puissants, découverts plus tard, mais on commence avec l'un des outils de désassemblage les plus courants : `objdump`.
 Pour un fichier binaire, `objdump -d` désassemble les sections exécutables et affiche les instructions d'assembleur :
 
 ```console
@@ -23,7 +23,7 @@ Disassembly of section .text:
 Quelques points sont à noter.
 D'abord, par défaut, `objdump` utilise la mauvaise syntaxe d'assembleur, c'est pourquoi on passe l'option `-M intel`.
 N'oubliez pas cette option !
-Lire de l'assembleur dans une autre syntaxe que la syntaxe Intel peut prêter à confusion, et nuire à votre santé.
+Lire de l'assembleur dans une autre syntaxe que la syntaxe Intel peut prêter à confusion, et nuire à la santé.
 
 Ensuite, `objdump` affiche les octets bruts de chaque instruction (par exemple, les valeurs hexadécimales `0f 05` correspondent à l'instruction `syscall`), à côté de l'assembleur lisible.
 Ce sont les valeurs réellement stockées dans la mémoire de l'ordinateur pour représenter les instructions.

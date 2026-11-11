@@ -1,6 +1,6 @@
-Le niveau précédent vous a montré une puissance brute, mais peu raffinée.
-Ce niveau vous obligera à la raffiner, car la fonction `win` ne fonctionne plus.
-Placez un point d'arrêt sur cette fonction (`break`), observez autour de vous et comprenez ce qui ne va pas.
+Le niveau précédent a montré une puissance brute, mais peu raffinée.
+Ce niveau oblige à la raffiner, car la fonction `win` ne fonctionne plus.
+Poser un point d'arrêt sur cette fonction (`break`), observer l'environnement et comprendre ce qui ne va pas.
 
 ----
 **DOCUMENTATION UTILE :**

@@ -22,8 +22,8 @@ resources:
 - type: markdown
   name: "Les octets en hexadécimal et en binaire (Bytes as Hex and Binary)"
   content: |
-    Vous le savez : les octets sont ce qui est réellement stocké dans la mémoire de l'ordinateur.
-    Vous savez peut-être aussi que les ordinateurs raisonnent en binaire : une suite de uns et de zéros.
+    On le sait : les octets sont ce qui est réellement stocké dans la mémoire de l'ordinateur.
+    On sait peut-être aussi que les ordinateurs raisonnent en binaire : une suite de uns et de zéros.
     Pour des raisons historiques, on regroupe ces uns et ces zéros (les « bits ») par groupes de 8, et chaque groupe de 8 forme un octet.
     Ce nombre est purement arbitraire : les premiers ordinateurs (avant les années 1960 environ) n'avaient pas ce découpage, ou en avaient d'autres.
     Il serait tout à fait possible qu'un autre univers ait des octets de 16, 32 ou n'importe quel nombre de bits (même si, pour des raisons mathématiques, ce nombre restera probablement une puissance de 2).
@@ -72,7 +72,7 @@ resources:
     | `ee` | `1110 1110` | `238`   |
 
     On commence à voir la beauté du système.
-    Cela devient encore plus évident avec plusieurs octets, mais les défis suivants vous le feront découvrir.
+    Cela devient encore plus évident avec plusieurs octets, mais les défis suivants le feront découvrir.
 
     Parlons maintenant de notation.
     Comment distinguer `11` en décimal, `11` en binaire (qui vaut `3` en décimal) et `11` en hexadécimal (qui vaut `17` en décimal) ?

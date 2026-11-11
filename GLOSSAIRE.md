@@ -133,7 +133,7 @@ Le nom traduit précède le nom anglais entre parenthèses, par exemple « Votre
 | calling convention | convention d'appel | |
 | jump table | table de sauts | |
 | switch | aiguillage (switch) | |
-| zero flag (ZF), carry flag (CF), overflow flag (OF), sign flag (SF) | drapeau zéro (ZF), de retenue (CF), de débordement (OF), de signe (SF) | Les « drapeaux » sont les indicateurs du processeur. |
+| zero flag (ZF), carry flag (CF), overflow flag (OF), sign flag (SF) | indicateur de zéro (ZF), de retenue (CF), de débordement (OF), de signe (SF) | Les indicateurs (flags) du processeur. |
 | byte low, byte high | octet de poids faible, octet de poids fort | |
 | shared library | bibliothèque partagée | |
 | size directive (`BYTE PTR`) | directive de taille | |

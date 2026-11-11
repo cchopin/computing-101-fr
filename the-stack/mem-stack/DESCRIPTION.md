@@ -1,5 +1,5 @@
-Jusqu'ici, on a lu des données à des adresses mémoire que nous vous avons données : soit en dur (comme `133700`), soit stockées dans un registre (comme `rax`).
-Mais il existe une zone de mémoire à laquelle votre programme accède sans aucune préparation de notre part : la **pile** (stack).
+Jusqu'ici, on a lu des données à des adresses mémoire que nous avons données : soit en dur (comme `133700`), soit stockées dans un registre (comme `rax`).
+Mais il existe une zone de mémoire à laquelle le programme accède sans aucune préparation de notre part : la **pile** (stack).
 
 La pile est une zone de mémoire allouée, utilisée comme espace de travail temporaire par le programme. Le registre `rsp` (*Stack Pointer*, pointeur de pile) pointe sur son sommet.
 On reviendra plus tard sur la pile. Pour l'instant, l'élément important est le suivant : au démarrage d'un programme, `rsp` pointe vers une donnée qui indique le nombre d'arguments de la ligne de commande, y compris le nom du programme lui-même.

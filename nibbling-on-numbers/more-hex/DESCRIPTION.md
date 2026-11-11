@@ -4,7 +4,7 @@ Un seul chiffre hexadécimal s'appelle un _quartet_ (nibble), ce qui fait sourir
 On travaille presque toujours au niveau de l'_octet_, jamais en dessous.
 
 Nous nous entraînons dans ce défi.
-Découpez les 8 bits de chaque octet en deux groupes de 4, transformez chaque groupe en chiffre hexadécimal, puis écrivez les octets de gauche à droite. Par exemple :
+Découper les 8 bits de chaque octet en deux groupes de 4, transformer chaque groupe en chiffre hexadécimal, puis écrire les octets de gauche à droite. Par exemple :
 
 ```
 1110 0011   0101 1010   1001 0000
@@ -12,4 +12,4 @@ Découpez les 8 bits de chaque octet en deux groupes de 4, transformez chaque gr
 -> 0xe35a90
 ```
 
-À vous de jouer : lancez `/challenge/convert` et gagnez ce flag !
+À jouer : lancer `/challenge/convert` pour obtenir le flag !

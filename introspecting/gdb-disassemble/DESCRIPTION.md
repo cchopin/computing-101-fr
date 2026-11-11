@@ -1,7 +1,7 @@
-Dans le niveau précédent, nous exécutions la commande `disassemble` à votre place, après le lancement du programme.
-Cette fois, c'est à vous !
+Dans le niveau précédent, nous exécutions la commande `disassemble` à la place de l'apprenant, après le lancement du programme.
+Cette fois, c'est à faire soi-même !
 
-Après avoir lancé le programme avec `starti`, il faut exécuter vous-même la commande `disassemble` :
+Après avoir lancé le programme avec `starti`, il faut exécuter soi-même la commande `disassemble` :
 
 ```gdb
 (gdb) starti

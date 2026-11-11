@@ -1,5 +1,5 @@
-Une part essentielle de l'analyse dynamique consiste à amener le programme dans l'état qui vous intéresse.
-Jusqu'ici, les défis posaient automatiquement les points d'arrêt à votre place, pour suspendre l'exécution aux états intéressants.
+Une part essentielle de l'analyse dynamique consiste à amener le programme dans l'état qu'on souhaite analyser.
+Jusqu'ici, les défis posaient automatiquement les points d'arrêt, pour suspendre l'exécution aux états intéressants.
 Il est important de savoir le faire soi-même.
 
 Il existe plusieurs façons de faire avancer l'exécution du programme.
@@ -8,7 +8,7 @@ La commande `nexti <n>`, ou `ni <n>` en abrégé, avance d'une instruction en sa
 Le paramètre `<n>` est facultatif, et permet de faire plusieurs pas à la fois.
 La commande `finish` termine la fonction en cours d'exécution.
 La commande paramétrée `break *<address>` pose un point d'arrêt à l'adresse indiquée.
-Vous avez déjà utilisé la commande `continue`, qui poursuit l'exécution jusqu'au prochain point d'arrêt.
+La commande `continue`, déjà utilisée, poursuit l'exécution jusqu'au prochain point d'arrêt.
 
 Pendant le pas à pas, il peut être utile d'afficher en permanence certaines valeurs.
 Plusieurs méthodes existent.
@@ -20,7 +20,7 @@ Autre option : la commande `layout regs`. Elle fait passer gdb en mode TUI et a
 Pour résoudre ce niveau, il faut déterminer une suite de valeurs aléatoires placées sur la pile.
 Comme précédemment, `run` lance le programme, mais il l'interrompt : il faut alors poursuivre son exécution avec précaution.
 
-Entraînez-vous à combiner `stepi`, `nexti`, `break`, `continue` et `finish`, pour bien comprendre ces commandes.
+S'entraîner à combiner `stepi`, `nexti`, `break`, `continue` et `finish`, pour bien comprendre ces commandes.
 Elles sont toutes indispensables pour naviguer dans l'exécution d'un programme.
 
 ----
@@ -35,5 +35,5 @@ Elles sont toutes indispensables pour naviguer dans l'exécution d'un programme.
 - Les [différentes commandes de pas à pas](https://sourceware.org/gdb/current/onlinedocs/gdb#Continuing-and-Stepping) de gdb (toute cette section)
 
 **NOTE :**
-Ce défi vous demande de *lire* et de *comprendre* de l'assembleur !
-Pas d'inquiétude : cette compétence vous servira beaucoup plus tard dans pwn.college.
+Ce défi demande de *lire* et de *comprendre* de l'assembleur !
+Pas d'inquiétude : cette compétence servira beaucoup plus tard dans pwn.college.

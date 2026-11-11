@@ -11,6 +11,6 @@ Comme un octet correspond à deux chiffres hexadécimaux, décoder un octet revi
 ```
 
 C'est exactement ce que fait un programme qui reçoit des données encodées en hexadécimal : il transforme chaque paire de chiffres en l'octet correspondant avant de traiter les données.
-Écrivez les 8 bits complets, zéros de tête compris : chaque chiffre hexadécimal vaut toujours exactement 4 bits.
+Écrire les 8 bits complets, zéros de tête compris : chaque chiffre hexadécimal vaut toujours exactement 4 bits.
 
-Lancez `/challenge/convert` et obtenez le flag !
+Lancer `/challenge/convert` pour obtenir le flag !

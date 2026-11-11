@@ -14,10 +14,9 @@ resources:
 
     Cela paraît absurde à quiconque le découvre, mais il existe plusieurs [bonnes raisons](https://en.wikipedia.org/wiki/Endianness) à ce choix :
 
-    1. Une grande partie des calculs se fait en partant de l'extrémité de poids faible. Pensez à une addition posée : on commence par les petites valeurs, et on reporte la retenue vers la gauche. L'unité arithmétique et logique fonctionne de la même façon, et le petit-boutisme s'y prête naturellement.
+    1. Une grande partie des calculs se fait en partant de l'extrémité de poids faible. Prenons une addition posée : on commence par les petites valeurs, et on reporte la retenue vers la gauche. L'unité arithmétique et logique fonctionne de la même façon, et le petit-boutisme s'y prête naturellement.
     2. L'adresse d'une valeur est celle de son octet de poids faible. Lire un `int` de 4 octets comme un `char` de 1 octet (ou un `short` de 2 octets) se fait donc à *la même adresse*, en lisant simplement moins d'octets. Sur les systèmes gros-boutistes, il faut corriger l'adresse, ce qui est plus compliqué.
 
-    Vous voilà convaincus, j'espère.
     Voyons maintenant d'autres exemples :
 
     | taille de la valeur | valeur décimale | valeur hexadécimale | octets gros-boutistes (PAS x86) | octets petit-boutistes (x86) |
@@ -83,7 +82,7 @@ resources:
     | doubleword (`dword`) | 32   | 4      | `mov eax, [rdi]`      | `mov DWORD PTR [rdi], 0x11223344`         |
     | quadword (`qword`)   | 64   | 8      | `mov rax, [rdi]`      | `mov QWORD PTR [rdi], 0x1122334455667788` |
 
-    Vous connaissez déjà certains de ces registres : `al` est l'octet de poids faible de `rax`, `ax` les 2 octets de poids faible, `eax` les 4 octets, et `rax` les 8 octets.
+    On connaît déjà certains de ces registres : `al` est l'octet de poids faible de `rax`, `ax` les 2 octets de poids faible, `eax` les 4 octets, et `rax` les 8 octets.
     Les noms de tailles ne font que dire la même chose autrement : `al` contient un octet, `eax` un double mot, `rax` un quadruple mot.
 
     **Pourquoi un « mot » fait-il 16 bits ?**
@@ -97,7 +96,7 @@ resources:
     En dehors des directives de taille de x86, les architectes emploient « word » plus librement : le *mot machine* (« word size », ou largeur de mot) désigne la largeur naturelle avec laquelle un processeur travaille, en pratique la taille de ses registres.
     Selon cette définition, x86-64 est une machine à mots de 64 bits.
     Le même terme désigne donc deux tailles différentes : en assembleur x86, un `WORD` fait 16 bits, quelle que soit la largeur de la machine, alors que « le mot de la machine » vaut toute la largeur d'un registre, 64 bits sur x86-64.
-    Quand vous lisez « word », demandez-vous laquelle des deux tailles est visée : le mot de 16 bits fixe de x86, ou le sens courant de « largeur d'un registre ».
+    Quand on lit « word », il faut se demander laquelle des deux tailles est visée : le mot de 16 bits fixe de x86, ou le sens courant de « largeur d'un registre ».
     Pour éviter la confusion, on emploie souvent le terme *short* pour une valeur de 16 bits.
     Ainsi, `byte`, `short`, `dword` et `qword` ne posent pas ce problème : ils désignent toujours 8, 16, 32 et 64 bits.
 - type: challenge

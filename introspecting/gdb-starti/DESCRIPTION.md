@@ -1,5 +1,5 @@
 Les débogueurs, gdb compris, observent le programme débogué *pendant son exécution* pour exposer des informations sur son comportement à l'exécution.
-Dans le niveau précédent, nous lancions le programme à votre place. Ici, la magie est un peu réduite : il faut démarrer l'exécution du programme soi-même, et nous ferons le reste (par exemple, retrouver la valeur secrète à partir de celle-ci).
+Dans le niveau précédent, nous lancions le programme à la place. Ici, la magie est un peu réduite : il faut démarrer l'exécution du programme soi-même, et nous ferons le reste (par exemple, retrouver la valeur secrète à partir de celle-ci).
 
 Quand on lance gdb, il finit par afficher une invite de commandes, qui ressemble à ceci :
 
@@ -14,7 +14,7 @@ On démarre un programme avec la commande `starti` :
 ```
 
 `starti` démarre le programme à sa toute **p**remière **i**nstruction.
-Une fois le programme lancé, vous pouvez utiliser d'autres commandes gdb pour examiner son état réel à l'exécution.
+Une fois le programme lancé, on peut utiliser d'autres commandes gdb pour examiner son état réel à l'exécution.
 On commence par le code en cours d'exécution, que l'on peut désassembler avec la commande `disassemble` !
 Par exemple :
 

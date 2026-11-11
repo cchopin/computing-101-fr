@@ -1,7 +1,7 @@
-Dans le niveau précédent, gdb se fermait automatiquement pour vous.
-Cette fois, c'est à vous !
+Dans le niveau précédent, gdb se fermait automatiquement.
+Cette fois, c'est à faire soi-même !
 
-Quand vous avez fini de travailler dans gdb, vous le quittez avec la commande `quit` (ou simplement `q`) :
+Quand on a fini de travailler dans gdb, on le quitte avec la commande `quit` (ou simplement `q`) :
 
 ```gdb
 (gdb) quit

@@ -21,6 +21,6 @@ Contrairement à `jne` (qui ne saute que si une condition est remplie), `jmp` sa
 En revenant en arrière vers l'étiquette `loop`, le programme refait la même logique de comparaison sur la paire de caractères *suivante*.
 La boucle se termine soit sur une différence (`jne fail`), soit lorsque le caractère nul de fin est atteint après que les autres caractères ont été comparés avec succès au mot de passe (`je success`).
 
-C'est le mécanisme de base de toutes les boucles `for` et `while`, et de toutes les opérations sur les chaînes que vous rencontrerez dans du code compilé.
+C'est le mécanisme de base de toutes les boucles `for` et `while`, et de toutes les opérations sur les chaînes que l'on rencontre dans du code compilé.
 
-Analysez le binaire, retrouvez le mot de passe et obtenez le flag !
+Analyser le binaire, retrouver le mot de passe, et obtenir le flag !

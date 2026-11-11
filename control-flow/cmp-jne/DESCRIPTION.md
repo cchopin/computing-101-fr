@@ -1,9 +1,9 @@
-Dans les défis précédents, vous avez utilisé `setz` pour récupérer le résultat d'une comparaison sous forme de `0` ou `1` dans `dil`, puis vous l'avez passé directement comme code de retour.
+Dans les défis précédents, `setz` a servi à récupérer le résultat d'une comparaison sous forme de `0` ou `1` dans `dil`, passé directement comme code de retour.
 C'était astucieux, mais limité.
-Et si vous voulez que votre programme fasse des *actions* différentes selon que les valeurs sont égales ou non ?
+Et si le programme doit faire des *actions* différentes selon que les valeurs sont égales ou non ?
 
 C'est là qu'interviennent les **sauts conditionnels**.
-Au lieu de stocker le résultat de la comparaison dans un registre, vous demandez au processeur de *sauter* vers un autre endroit de votre code selon le résultat du `cmp`.
+Au lieu de stocker le résultat de la comparaison dans un registre, on demande au processeur de *sauter* vers un autre endroit du code selon le résultat du `cmp`.
 Le saut conditionnel le plus utile ici est `jne` (**j**ump if **n**ot **e**qual, saut si différent) :
 
 ```asm
@@ -32,9 +32,9 @@ fail:
 ```
 
 L'assembleur remplace l'étiquette par une adresse, donc `jne fail` devient quelque chose comme `jne <adresse>` dans le code machine réel.
-Vous pouvez donner presque n'importe quel nom à une étiquette (`fail`, `error`, `done`, `loop`, etc.), mais ce nom doit décrire ce qui se passe à cet endroit.
+On peut donner presque n'importe quel nom à une étiquette (`fail`, `error`, `done`, `loop`, etc.), mais ce nom doit décrire ce qui se passe à cet endroit.
 
-Avec les sauts conditionnels, votre programme peut suivre deux *chemins* d'exécution :
+Avec les sauts conditionnels, le programme peut suivre deux *chemins* d'exécution :
 
 ```
 main:
@@ -56,7 +56,7 @@ Si la comparaison réussit (les valeurs sont égales), l'exécution tombe sur le
 Si la comparaison échoue (les valeurs ne sont pas égales), l'exécution saute à l'étiquette `fail` et quitte avec `1`, ce qui signale un échec du programme.
 
 Cet exemple est simple, mais nous commençons par le simple !
-Le défi : écrivez un programme qui vérifie si le premier caractère de `argv[1]` est `'p'`, en utilisant des sauts conditionnels au lieu de `setz` :
+Le défi : écrire un programme qui vérifie si le premier caractère de `argv[1]` est `'p'`, en utilisant des sauts conditionnels au lieu de `setz` :
 
 1. charger le pointeur `argv[1]`, depuis `[rsp+16]`, dans un registre ;
 2. comparer l'octet `BYTE PTR` situé à cette adresse à `'p'` ;
@@ -64,5 +64,5 @@ Le défi : écrivez un programme qui vérifie si le premier caractère de `argv
 4. écrire le cas de succès qui tombe à la suite (`exit(0)`) ;
 5. définir l'étiquette `fail:` et écrire le cas d'échec (`exit(1)`).
 
-La difficulté : le cas de succès (saut *non* pris) se trouve entre votre `jne` et le cas d'échec vers lequel pointe `jne`.
+La difficulté : le cas de succès (saut *non* pris) se trouve entre le `jne` et le cas d'échec vers lequel pointe `jne`.
 Cela demande un peu d'habitude, mais on s'y fait !

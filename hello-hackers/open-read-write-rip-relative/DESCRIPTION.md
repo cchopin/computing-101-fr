@@ -74,11 +74,11 @@ On peut voir `path` comme l'adresse à laquelle se trouve le premier octet de `"
 Une remarque sur le calcul : bien que l'on écrive `[rip+path]`, ce qui est *réellement* ajouté à `rip` est l'écart entre les adresses de `rip` (qui pointe ici vers l'instruction suivant `lea`) et de la chaîne « /flag ».
 La syntaxe est un peu étrange, c'est une autre particularité de x86.
 
-Utilisez cette technique dans ce défi pour indiquer le chemin passé à `open`.
+Cette technique sert dans ce défi à indiquer le chemin passé à `open`.
 Le programme doit ouvrir le nom de fichier stocké, `read` depuis le fd renvoyé vers la mémoire, `write` exactement le nombre d'octets renvoyé par `read` (`mov rdx, rax`, comme dans le défi read-exact), et `exit` avec le code `42`.
 Les éléments nouveaux sont :
 
 1. stocker le nom de fichier avec `.asciz`, après le code ;
 2. charger l'adresse du nom de fichier pour `open` avec `lea rdi, [rip + path]`.
 
-Lancez `/challenge/check` avec votre programme, lisez le flag, et écrivez-le sur la sortie standard !
+Lancer `/challenge/check` avec le programme, lire le flag, et l'écrire sur la sortie standard !

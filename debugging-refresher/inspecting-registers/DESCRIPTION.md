@@ -4,8 +4,8 @@ On peut voir les valeurs de tous les registres avec `info registers`. On peut au
 
 Pour résoudre ce niveau, il faut déterminer la valeur aléatoire actuelle du registre r12, en hexadécimal.
 
-Comme précédemment, lancez le défi, exécutez la commande `run` de gdb, puis suivez les consignes.
-Une fois la valeur affichée, pensez à `continue` pour passer à l'étape suivante du défi !
+Comme précédemment, lancer le défi, exécuter la commande `run` de gdb, puis suivre les consignes.
+Une fois la valeur affichée, penser à `continue` pour passer à l'étape suivante du défi !
 
 ----
 **DOCUMENTATION UTILE :**

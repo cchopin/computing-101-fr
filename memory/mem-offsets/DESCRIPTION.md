@@ -1,7 +1,7 @@
-Vous savez maintenant déréférencer des pointeurs en mémoire comme un pro ! Mais un pointeur ne désigne pas toujours directement la donnée recherchée.
+On sait maintenant déréférencer des pointeurs en mémoire comme un pro ! Mais un pointeur ne désigne pas toujours directement la donnée recherchée.
 Il peut par exemple pointer vers une collection de données (un livre entier, par exemple), et il faut alors viser un endroit précis à l'intérieur de cette collection.
 
-Par exemple, si votre pointeur (disons `rdi`) désigne une suite de nombres en mémoire, comme ceci :
+Par exemple, si le pointeur (disons `rdi`) désigne une suite de nombres en mémoire, comme ceci :
 
 ```text
     Address │ Contents

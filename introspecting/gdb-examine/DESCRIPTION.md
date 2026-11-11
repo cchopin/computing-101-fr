@@ -1,4 +1,4 @@
-Dans le dernier niveau, vous pouviez utiliser `stepi` pour exécuter `pop rdi`, puis `print $rdi` pour lire le secret.
+Dans le dernier niveau, on pouvait utiliser `stepi` pour exécuter `pop rdi`, puis `print $rdi` pour lire le secret.
 Cette fois, il n'y a plus de `pop` : le programme se termine immédiatement :
 
 ```text
@@ -11,7 +11,7 @@ Le secret est toujours `argc`, et il se trouve juste au sommet de la pile, mais 
 Il faut examiner la mémoire directement !
 
 La commande `x` (e**x**amine, « examiner ») de gdb permet de regarder le contenu de la mémoire.
-Comme vous l'avez vu plus tôt, le pointeur de pile (`$rsp`) pointe au départ directement sur `argc`. On peut donc le lire avec :
+Comme on l'a vu plus tôt, le pointeur de pile (`$rsp`) pointe au départ directement sur `argc`. On peut donc le lire avec :
 
 ```text
 x $rsp

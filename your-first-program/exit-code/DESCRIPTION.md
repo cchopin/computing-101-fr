@@ -1,4 +1,4 @@
-Comme vous le savez peut-être, chaque programme se termine avec un *code de retour* (exit code).
+Comme on le sait peut-être, chaque programme se termine avec un *code de retour* (exit code).
 Ce code est transmis en paramètre à l'appel système `exit`.
 
 De la même façon que le numéro d'un appel système (par exemple `60` pour `exit`) est placé dans le registre `rax`, les paramètres d'un appel système sont eux aussi transmis par des registres.

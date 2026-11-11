@@ -3,4 +3,4 @@ Quand cela arrive, il faut disposer d'une boîte à outils fiable pour comprendr
 Bien sûr, les *mêmes* techniques servent à comprendre un code qu'on n'a *pas* écrit, pour le corriger ou l'exploiter selon les besoins.
 
 Ce module présente plusieurs façons d'introspecter, de déboguer et de comprendre un logiciel.
-Ces connaissances essentielles vous accompagneront dans la suite de pwn.college, à retenir donc !
+Ces connaissances essentielles accompagneront la suite de pwn.college, à retenir donc !

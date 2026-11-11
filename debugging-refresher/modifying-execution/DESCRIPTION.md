@@ -1,4 +1,4 @@
-Ce niveau vous fait découvrir une partie de la vraie puissance de gdb.
+Ce niveau fait découvrir une partie de la vraie puissance de gdb.
 
 ----
 **DOCUMENTATION UTILE :**

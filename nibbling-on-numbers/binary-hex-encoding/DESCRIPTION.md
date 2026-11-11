@@ -10,4 +10,4 @@ Pour convertir un octet du binaire vers l'hexadécimal, on découpe ses 8 bits e
 ->  0xe3     l'hexadécimal !
 ```
 
-Lancez `/challenge/convert` et obtenez le flag !
+Lancer `/challenge/convert` pour obtenir le flag !

@@ -36,7 +36,7 @@ resources:
     - le **drapeau de retenue** (CF, Carry Flag) : le 65e bit était-il à 1 ?
     - le **drapeau zéro** (ZF, Zero Flag) : le résultat était-il 0 ?
     - le **drapeau de débordement** (OF, Overflow Flag) : le résultat a-t-il « basculé » entre positif et négatif ?
-    - le **drapeau de signe** (SF, Signed Flag) : le bit de signe du résultat était-il à 1 (c'est-à-dire le résultat était-il négatif) ?
+    - le **drapeau de signe** (SF, Sign Flag) : le bit de signe du résultat était-il à 1 (c'est-à-dire le résultat était-il négatif) ?
 
     Quelques sauts courants, avec leur condition :
 

@@ -1,4 +1,4 @@
-Jusqu'ici, vos programmes étaient assez simples : déplacer des valeurs, lire de la mémoire, invoquer un appel système.
+Jusqu'ici, les programmes étaient assez simples : déplacer des valeurs, lire de la mémoire, invoquer un appel système.
 Mais les vrais programmes doivent prendre des *décisions* : « si cette condition est vraie, faire ceci, sinon faire cela ».
 C'est la base du **flot de contrôle** (control flow), et elle commence par la capacité à *comparer* des valeurs.
 
@@ -38,7 +38,7 @@ En résumé : `1` veut dire « ça correspond ! », et `0` veut dire « non
 Il existe aussi l'instruction complémentaire `setnz` (« set if not zero »), qui fait l'inverse, mais nous n'en aurons pas besoin ici.
 
 Mais qu'est-ce que `dil` ?
-Jusqu'ici, vous avez travaillé avec des registres 64 bits comme `rdi`, `rax` ou `rsp`.
+Jusqu'ici, le travail s'est fait avec des registres 64 bits comme `rdi`, `rax` ou `rsp`.
 L'instruction `setz`, elle, n'écrit qu'un seul octet (8 bits).
 Heureusement, on peut accéder à des parties plus petites des registres 64 bits.
 Pour `rdi` :
@@ -46,15 +46,15 @@ Pour `rdi` :
 - `rdi` fait 64 bits au total ;
 - `dil` est uniquement l'octet de poids faible (8 bits les plus à droite) de `rdi` : le **l**ow byte de r**di**.
 
-Quand vous écrivez `setz dil`, vous placez un `0` ou un `1` dans le seul octet de poids faible de `rdi`, sans changer les octets de poids fort.
+Avec `setz dil`, un `0` ou un `1` est placé dans le seul octet de poids faible de `rdi`, sans changer les octets de poids fort.
 `rdi` est la valeur passée à l'appel système `exit`, mais Linux ne retient que les 8 bits de poids faible de cette valeur comme statut de sortie du processus.
 C'est pourquoi modifier seulement `dil` suffit ici : le statut visible vaut `1` (égalité !) ou `0` (pas égal !), quels que soient les octets de poids fort de `rdi`.
 
 Une dernière remarque sur `cmp` : il peut comparer un registre avec une valeur immédiate (`cmp rdi, 42`), ou même une zone de mémoire avec une valeur immédiate (`cmp QWORD PTR [rsp], 42`).
 Mais il **ne peut pas** comparer deux zones de mémoire entre elles : une seule des deux opérandes peut être un déréférencement de mémoire.
 
-Voici maintenant votre défi. Rappelez-vous, dans le module [La pile](https://pwn.college/computing-101-fr/the-stack), que `[rsp]` contient `argc`, le nombre d'arguments passés à votre programme, y compris le nom du programme.
-Écrivez un programme qui :
+Voici maintenant le défi. Se rappeler, dans le module [La pile](https://pwn.college/computing-101-fr/the-stack), que `[rsp]` contient `argc`, le nombre d'arguments passés au programme, y compris le nom du programme.
+Écrire un programme qui :
 
 1. compare `argc` à `42` (en chargeant d'abord `argc` dans un registre, ou en comparant directement à la mémoire) ;
 2. utilise `setz dil` pour définir le code de retour : `1` si argc vaut 42, `0` sinon ;

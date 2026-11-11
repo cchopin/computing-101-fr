@@ -11,7 +11,7 @@ syscall             <- exit(0) --- the secret is gone!
 ```
 
 Le code est entièrement visible et rien n'est censuré, mais on ne peut pas déterminer le secret en lisant seulement le désassemblage, car `argc` dépend du nombre d'arguments avec lequel le programme est lancé.
-Dans ce défi, gdb s'en charge à votre place. Plus tard, nous vous montrerons aussi comment définir les arguments du programme dans gdb !
+Dans ce défi, gdb s'en charge à la place. Plus tard, on montrera aussi comment définir les arguments du programme dans gdb !
 
 Pour l'instant, il faut :
 1. lancer le programme ;

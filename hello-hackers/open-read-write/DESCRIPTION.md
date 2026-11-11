@@ -37,7 +37,7 @@ Le programme doit :
 
 ----
 **DÉBOGAGE :**
-Vous rencontrez un problème ?
-Utilisez `strace` pour voir les appels système en action : il montre exactement les arguments reçus par chaque appel et ce qu'il renvoie.
-Si `open` renvoie `-1`, vérifiez le pointeur vers le nom de fichier.
+En cas de problème ?
+Utiliser `strace` pour voir les appels système en action : il montre exactement les arguments reçus par chaque appel et ce qu'il renvoie.
+Si `open` renvoie `-1`, vérifier le pointeur vers le nom de fichier.
 Si `read` renvoie `0`, le descripteur renvoyé par `open` est peut-être incorrect.

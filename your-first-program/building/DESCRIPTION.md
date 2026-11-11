@@ -1,6 +1,6 @@
-Vous avez donc écrit votre premier programme ?
+On a donc écrit son premier programme ?
 Jusqu'ici, c'est nous qui nous sommes chargés de le transformer en exécutable que le processeur peut lancer.
-Dans ce défi, c'est vous qui le construisez !
+Dans ce défi, on le construit soi-même !
 
 Pour construire un exécutable binaire, il faut :
 

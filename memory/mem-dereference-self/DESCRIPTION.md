@@ -15,7 +15,7 @@ mov rax, [rax]   # after this, rax will be 42
 Dans cet extrait, `rax` passe du rôle de pointeur au rôle de registre qui contient la donnée lue en mémoire.
 Le processeur rend tout cela possible !
 
-Dans ce défi, vous allez explorer ce principe.
+Dans ce défi, on va explorer ce principe.
 Au lieu d'initialiser `rax` comme précédemment, on a fait de `rdi` le pointeur vers la valeur secrète !
 Il faut déréférencer `rdi` pour charger cette valeur dans `rdi`, puis appeler `exit` avec cette valeur comme code de retour.
 Bon courage !

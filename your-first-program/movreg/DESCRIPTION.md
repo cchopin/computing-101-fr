@@ -21,5 +21,5 @@ On aurait pu appeler cette instruction `set` (affecter) plutôt que `mov`. Pourq
 Passons au défi !
 Dans ce défi, une valeur secrète est placée dans le registre `rsi`, et le programme doit se terminer en renvoyant cette valeur comme code de retour.
 Comme `exit` utilise la valeur de `rdi` comme code de retour, il faut copier la valeur secrète de `rsi` dans `rdi`.
-Lancez `/challenge/check` avec votre code pour obtenir le flag ! `/challenge/check` place la valeur secrète dans `rsi` avant d'exécuter votre code.
+Lancer `/challenge/check` avec le code écrit pour obtenir le flag ! `/challenge/check` place la valeur secrète dans `rsi` avant d'exécuter le code écrit.
 Bon courage !

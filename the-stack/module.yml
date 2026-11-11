@@ -1,7 +1,7 @@
 name: "La pile (The Stack)"
 description: |
-  Jusqu'ici, on a lu des données à des adresses mémoire que nous avons préparées pour vous.
-  Mais votre programme dispose déjà d'une zone de mémoire prête à l'emploi : la **pile** (stack).
+  Jusqu'ici, on a lu des données à des adresses mémoire que nous avons préparées à l'avance.
+  Mais un programme dispose déjà d'une zone de mémoire prête à l'emploi : la **pile** (stack).
   La pile est désignée par le registre `rsp`. Elle contient des données utiles sur la façon dont le programme a été lancé, et elle se remplit au fil de l'exécution.
   Explorons-la !
 resources:

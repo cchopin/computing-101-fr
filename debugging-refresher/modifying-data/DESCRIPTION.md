@@ -7,8 +7,8 @@ Par exemple, `set $rdi = 0` met `$rdi` à zéro.
 `set *((uint64_t *) $rsp) = 0x1234` place la valeur 0x1234 dans le premier élément de la pile.
 `set *((uint16_t *) 0x31337000) = 0x1337` écrit 0x1337 sur 2 octets à l'adresse 0x31337000.
 
-Supposons que votre cible soit une application réseau qui lit depuis une socket, sur le descripteur 42.
-Pour votre analyse, il serait peut-être plus simple qu'elle lise plutôt depuis l'entrée standard.
+Supposons que la cible soit une application réseau qui lit depuis une socket, sur le descripteur 42.
+Pour l'analyse, il serait peut-être plus simple qu'elle lise plutôt depuis l'entrée standard.
 On peut y parvenir avec le script gdb suivant :
 
 ```gdb
@@ -26,7 +26,7 @@ continue
 
 Cet exemple montre comment interrompre automatiquement sur les appels système, et comment utiliser des conditions dans les commandes pour n'exécuter certaines commandes gdb que si la condition est remplie.
 
-Dans le niveau précédent, votre solution en script gdb devait sans doute encore être copiée et collée à la main.
+Dans le niveau précédent, la solution en script gdb devait sans doute encore être copiée et collée à la main.
 Cette fois, essayez d'écrire un script qui n'a jamais besoin de dialoguer avec le programme, et qui résout automatiquement chaque défi en modifiant correctement les registres et la mémoire.
 
 ----

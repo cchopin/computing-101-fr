@@ -1,7 +1,7 @@
-Dans le défi précédent, vous avez utilisé `cmp` et `jne` pour vérifier un seul caractère et brancher vers un chemin d'échec.
+Dans le défi précédent, `cmp` et `jne` ont servi à vérifier un seul caractère et à brancher vers un chemin d'échec.
 Mais vérifier un seul caractère suffit rarement : les mots de passe, les commandes et les noms de fichiers sont des *chaînes* de plusieurs caractères.
 
-La bonne nouvelle : vous savez déjà tout ce qu'il faut pour vérifier une chaîne entière.
+La bonne nouvelle : tout ce qu'il faut pour vérifier une chaîne entière est déjà connu.
 Il suffit d'enchaîner plusieurs paires `cmp` / `jne`, une par caractère, toutes vers la même étiquette `fail` :
 
 ```asm
@@ -18,7 +18,7 @@ jne fail
 ```
 
 Chaque comparaison vérifie un caractère de la chaîne.
-Rappelez-vous, du module [Mémoire de l'ordinateur](https://pwn.college/computing-101-fr/memory), que `[rax+1]` désigne l'octet situé *juste après* l'adresse contenue dans `rax`, `[rax+2]` est deux octets plus loin, et ainsi de suite.
+Se rappeler, du module [Mémoire de l'ordinateur](https://pwn.college/computing-101-fr/memory), que `[rax+1]` désigne l'octet situé *juste après* l'adresse contenue dans `rax`, `[rax+2]` est deux octets plus loin, et ainsi de suite.
 Comme les chaînes sont stockées sous forme d'octets consécutifs en mémoire, `[rax]` est le premier caractère, `[rax+1]` le deuxième, `[rax+2]` le troisième, etc.
 
 Si un caractère ne correspond pas, `jne` saute immédiatement à `fail` : le programme ne vérifie pas le reste.
@@ -27,7 +27,7 @@ Seulement si *toutes* les comparaisons réussissent (tous les caractères corres
 C'est ainsi que fonctionnent de nombreuses comparaisons de chaînes au plus bas niveau : comparer octet par octet, et abandonner à la première différence.
 
 Pratiquons maintenant.
-Écrivez un programme qui vérifie si le premier argument commence par la chaîne `"pwn"` :
+Écrire un programme qui vérifie si le premier argument commence par la chaîne `"pwn"` :
 
 1. charger le pointeur du premier argument, depuis `[rsp+16]` ;
 2. comparer l'octet situé au décalage 0 à `'p'`, avec `jne fail` si ce n'est pas le cas ;

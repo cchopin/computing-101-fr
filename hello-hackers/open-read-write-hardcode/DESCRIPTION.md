@@ -26,7 +26,7 @@ Quelques remarques :
 
 Une fois ces octets écrits, `rsp` pointe vers la chaîne terminée par un zéro `"/flag"`, prête à être passée à `open`.
 
-**À vous !**
+**À jouer !**
 Cette fois, aucun argument n'est transmis au programme.
 Il faut construire soi-même le nom de fichier.
 
@@ -40,7 +40,7 @@ Le programme doit :
 
 ----
 **DÉBOGAGE :**
-Vous rencontrez un problème ?
-Utilisez `strace` pour tracer vos appels système.
+En cas de problème ?
+Utiliser `strace` pour tracer les appels système.
 Si `open` renvoie `-1`, le pointeur ou l'encodage de la chaîne est peut-être incorrect.
 Essayez `x/s $rsp` dans `gdb` pour voir la chaîne réellement présente sur la pile.

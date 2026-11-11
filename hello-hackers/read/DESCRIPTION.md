@@ -1,4 +1,4 @@
-Vous savez maintenant envoyer des données vers la sortie standard avec `write`.
+On sait maintenant envoyer des données vers la sortie standard avec `write`.
 Mais comment un programme reçoit-il des données ?
 Il les *lit* (read) depuis l'entrée standard !
 
@@ -26,7 +26,7 @@ Ainsi, si l'on tape (ou si l'on envoie par un tube) `HELLO HACKERS` sur l'entré
 
 Que sont ces nombres ??
 Ce sont les représentations *hexadécimales* de lettres encodées en *ASCII*.
-Si ces mots ne vous parlent pas, parcourez la première moitié environ du module [Dealing with Data](https://pwn.college/fundamentals/data-dealings), puis revenez ici !
+Si ces mots ne parlent pas, il faut parcourir la première moitié environ du module [Dealing with Data](https://pwn.college/fundamentals/data-dealings), puis revenir ici !
 
 Dans ce défi, on combine `read` avec les capacités déjà acquises avec `write`.
 Le flag est transmis sur l'entrée standard du programme : 128 octets de flag.
@@ -43,9 +43,9 @@ On peut donc utiliser `rsp` comme adresse mémoire : `mov rsi, rsp`.
 
 ----
 **DÉBOGAGE :**
-Vous rencontrez un problème ?
-Rappelez-vous le module Introspection !
-Compilez votre programme et lancez-le avec `strace` pour voir ce qui se passe au niveau des appels système, ou lancez-le dans `gdb` pour examiner les valeurs des registres et de la mémoire.
+En cas de problème ?
+Il est utile de revoir le module Introspection.
+Compiler le programme et le lancer avec `strace` pour voir ce qui se passe au niveau des appels système, ou le lancer dans `gdb` pour examiner les valeurs des registres et de la mémoire.
 
 **RAPPEL :**
 Les étapes 2 et 3 sont déjà écrites, en grande partie (dans les défis précédents, on chargeait `rsi` depuis `[rsp+16]`, mais ici on le place directement à `rsp` avec `mov rsi, rsp`).
