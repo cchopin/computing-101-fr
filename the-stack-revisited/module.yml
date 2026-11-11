@@ -1,0 +1,69 @@
+name: "La pile, revisitée (The Stack, Revisited)"
+description: |
+  Lorsque vous avez rencontré la pile pour la première fois, elle n'était qu'une zone de données préparée par le noyau : argc, argv, quelques pointeurs.
+  Maintenant que vous avez écrit vos propres fonctions, fait vos propres appels, et vu rsp bouger avec push et pop, il est temps de revenir sur la pile avec un regard plus précis.
+  Comment est-elle réellement organisée ? Pourquoi « croît-elle vers le bas », et qu'est-ce que cela implique pour les données accessibles ? Et comment la façon dont *votre programme a été lancé* détermine-t-elle les adresses de tout ce qui s'y trouve ?
+resources:
+- type: challenge
+  id: caller-frame
+  name: "Atteindre le cadre de l'appelant (Reaching Into the Caller's Frame)"
+  import:
+    dojo: computing-101
+    module: the-stack-revisited
+    challenge: caller-frame
+- type: challenge
+  id: stale-stack-value
+  name: "Charger des données périmées de la pile (Loading Stale Stack Data)"
+  import:
+    dojo: computing-101
+    module: the-stack-revisited
+    challenge: stale-stack-value
+- type: challenge
+  id: stale-stack-data
+  name: "Voler des données périmées de la pile (Stealing Stale Stack Data)"
+  import:
+    dojo: computing-101
+    module: the-stack-revisited
+    challenge: stale-stack-data
+- type: challenge
+  id: reserve-frame
+  name: "Réserver son propre cadre (Reserving Your Own Frame)"
+  import:
+    dojo: computing-101
+    module: the-stack-revisited
+    challenge: reserve-frame
+- type: challenge
+  id: build-frame
+  name: "Utiliser son propre cadre (Using Your Own Frame)"
+  import:
+    dojo: computing-101
+    module: the-stack-revisited
+    challenge: build-frame
+- type: challenge
+  id: mem-envp
+  name: "Variables d'environnement sur la pile (Environment Variables on the Stack)"
+  import:
+    dojo: computing-101
+    module: the-stack-revisited
+    challenge: mem-envp
+- type: challenge
+  id: mem-stack-align
+  name: "Aligner la pile par l'environnement (Aligning the Stack Through the Environment)"
+  import:
+    dojo: computing-101
+    module: the-stack-revisited
+    challenge: mem-stack-align
+- type: challenge
+  id: gdb-stack-align
+  name: "Aligner la pile avec GDB (Aligning the Stack Through GDB)"
+  import:
+    dojo: computing-101
+    module: the-stack-revisited
+    challenge: gdb-stack-align
+- type: challenge
+  id: gdb-stack-align-2
+  name: "Aligner la pile avec GDB, généralisé (Aligning the Stack Through GDB, Generalized)"
+  import:
+    dojo: computing-101
+    module: the-stack-revisited
+    challenge: gdb-stack-align-2
