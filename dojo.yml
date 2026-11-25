@@ -1,6 +1,6 @@
 id: computing-101-fr
 name: "Computing 101 (français)"
-type: hidden
+type: public
 import:
   dojo: computing-101
 award:
